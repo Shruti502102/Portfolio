@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shruti's Certification Portfolio</title>
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #f9f9f9;
+      margin: 0;
+      padding: 0;
+      color: #333;
+    }
+
+    header {
+      background: #4b0082;
+      color: white;
+      padding: 20px;
+      text-align: center;
+    }
+
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+      animation: fadeIn 2s ease-in-out;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 30px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+      animation: slideUp 1s ease-in-out;
+    }
+
+    .filter-btns {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .filter-btns button {
+      margin: 0 10px;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 20px;
+      background: #eee;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    .filter-btns button:hover,
+    .filter-btns button.active {
+      background: #4b0082;
+      color: white;
+    }
+
+    .certification {
+      margin: 15px 0;
+      padding: 15px;
+      border-left: 5px solid #4b0082;
+      background: #fafafa;
+      transition: 0.3s;
+    }
+
+    .certification:hover {
+      background: #f0f0ff;
+      transform: translateX(5px);
+    }
+
+    .certification a {
+      color: #4b0082;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .certification p {
+      margin: 5px 0;
+    }
+
+    @keyframes slideUp {
+      from { opacity: 0; transform: translateY(50px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    .hidden {
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Shruti's Certifications</h1>
+</header>
+
+<div class="container">
+  <div class="filter-btns">
+    <button class="active" onclick="filterCerts('all')">All</button>
+    <button onclick="filterCerts('coursera')">Coursera</button>
+    <button onclick="filterCerts('infosys')">Infosys</button>
+    <button onclick="filterCerts('workshop')">Workshops</button>
+  </div>
+
+  <div id="certList">
+    <!-- All certificates in reverse chronology -->
+    <div class="certification workshop">
+      <p><strong>Ai Chatbot</strong> – Feb 24, 2025 – <em>Ai Academia</em></p>
+      <a href="https://ibb.co/pvtx15X1">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Big Data - 201</strong> – Mar 20, 2025 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/8ghQXjMW/1-ea38229c-a433-428d-9a58-a9df14e4e89a-1.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification workshop">
+      <p><strong>Basic Training in Data Analytics (BI)</strong> – Mar 14, 2025 – <em>NCET</em></p>
+      <a href="https://ibb.co/jvR91THy">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Data Analysis with Pandas</strong> – Mar 27, 2025 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/QFrHrc0W/1-7e18552c-d274-4107-92ae-48bf0bfcf2a0-3.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Introduction to NoSQL Databases</strong> – Mar 28, 2024 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/VHLSEQYTRE7D">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>ReactJS</strong> – Oct 8, 2024 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/LDQF5GMG/1-6f20d441-f3e8-431e-8108-cab33067e147-3.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>TensorFlow ML Systems</strong> – Sep 24, 2024 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/zVj0DWjR/1-a36c5328-b99b-4254-b513-a6b845d4dec1-1.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Data Visualization Using R</strong> – Feb 20, 2024 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/nML2t2W7/1-f53b25d9-2716-4eba-8a30-6f2e81ef8706.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Python Project for Data Science</strong> – Feb 20, 2024 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/H7ST5LV6B74F">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Data Visualization with Python</strong> – Feb 18, 2024 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/tpHTM5rr/1-c2e36f32-2da0-48db-aeee-34020b0ee3da.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Java Programming (Course 2)</strong> – Feb 18, 2024 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/NgYdjBGW/1-497f1496-0a08-4ba9-ba76-1f44d1a7c92e.jpg">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Data Analysis with Python</strong> – Nov 2, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/verify/4DYVCHTWPE7J">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Basic Data Descriptors...</strong> – Oct 30, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/92XJHVUDJ934">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Python Programming Fundamentals</strong> – Oct 14, 2023 – <em>Infosys</em></p>
+      <a href="https://ibb.co/MD45hp2">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Create Animated Social Media Posts with Canva</strong> – May 20, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/4YDZZS6456E7">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Build a Free Website with WordPress</strong> – May 12, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/KL4UEK4RUJQN">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Human-Centered Design for Inclusive Innovation</strong> – Apr 10, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/DSAFV7NPP5F3">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Python for Data Science, AI & Development</strong> – Apr 11, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/3NS5BZB8WU27">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>What is Data Science?</strong> – Jan 30, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/PBWJLLEUATQD">View Certificate</a>
+    </div>
+
+    <div class="certification coursera">
+      <p><strong>Python Basics</strong> – Jan 6, 2023 – <em>Coursera</em></p>
+      <a href="https://www.coursera.org/account/accomplishments/records/5QWC4FMQQJW5">View Certificate</a>
+    </div>
+
+    <div class="certification infosys">
+      <p><strong>Java Programming Fundamentals</strong> – Oct 14, 2023 – <em>Infosys</em></p>
+      <a href="https://i.ibb.co/gbMGG0NQ/1-20cee75a-54fd-4473-8311-f6ea06b1bea2.jpg">View Certificate</a>
+    </div>
+  </div>
+</div>
+
+<script>
+  function filterCerts(category) {
+    const certs = document.querySelectorAll('.certification');
+    const buttons = document.querySelectorAll('.filter-btns button');
+
+    buttons.forEach(btn => btn.classList.remove('active'));
+    event.target.classList.add('active');
+
+    certs.forEach(cert => {
+      if (category === 'all' || cert.classList.contains(category)) {
+        cert.classList.remove('hidden');
+      } else {
+        cert.classList.add('hidden');
+      }
+    });
+  }
+</script>
+
+</body>
+</html>
+

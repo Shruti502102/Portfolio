@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shruti Srivastava - Portfolio</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet"/>
+
+  <!-- Bootstrap & Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"/>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation Library -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet"/>
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <style>
+    body {
+      font-family: 'Roboto', sans-serif;
+      color: #f8f9fa;
+      background: linear-gradient(270deg, #222831, #393E46, #222831);
+      background-size: 600% 600%;
+      animation: bg-animation 16s ease infinite;
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+
+    @keyframes bg-animation {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .container {
+      max-width: 960px;
+      margin: 40px auto;
+      background: rgba(0, 0, 0, 0.8);
+      border-radius: 16px;
+      padding: 40px;
+      box-shadow: 0 0 25px rgba(187, 134, 252, 0.7);
+      text-align: center;
+      animation: fadeIn 1.5s ease-in-out;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(40px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .profile-img {
+      width: 140px;
+      height: 140px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 4px solid #bb86fc;
+      margin-bottom: 20px;
+      transition: 0.4s ease-in-out;
+      box-shadow: 0 0 12px #bb86fc;
+    }
+
+    .profile-img:hover {
+      transform: scale(1.1) rotate(8deg);
+      border-radius: 30%;
+    }
+
+    h1, h2 {
+      color: #bb86fc;
+      margin-top: 20px;
+      font-weight: bold;
+      text-shadow: 0 0 10px #bb86fc;
+    }
+
+    h2 {
+      border-bottom: 2px solid #bb86fc;
+      padding-bottom: 5px;
+      margin-top: 40px;
+      text-align: left;
+      position: relative;
+      transition: 0.3s;
+    }
+
+    h2:hover::after {
+      content: " ✨";
+      position: absolute;
+      right: -20px;
+      animation: sparkle 1s infinite;
+    }
+
+    @keyframes sparkle {
+      0% { transform: scale(1); opacity: 1; }
+      50% { transform: scale(1.3); opacity: 0.7; }
+      100% { transform: scale(1); opacity: 1; }
+    }
+
+    ul {
+      text-align: left;
+      padding-left: 20px;
+    }
+
+    li {
+      margin-bottom: 10px;
+      transition: all 0.3s;
+      opacity: 0;
+      transform: translateY(10px);
+      animation: fadeInList 0.5s forwards;
+    }
+
+    li:nth-child(1) { animation-delay: 0.1s; }
+    li:nth-child(2) { animation-delay: 0.2s; }
+    li:nth-child(3) { animation-delay: 0.3s; }
+    li:nth-child(4) { animation-delay: 0.4s; }
+
+    @keyframes fadeInList {
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    li:hover {
+      color: #feca57;
+      transform: translateX(5px);
+    }
+
+    a {
+      color: #1dd1a1;
+      text-decoration: none;
+      transition: 0.3s;
+    }
+
+    a:hover {
+      color: #feca57;
+      text-shadow: 0 0 5px #feca57;
+    }
+
+    .contact a {
+      font-size: 1.8rem;
+      margin: 0 12px;
+      transition: transform 0.3s;
+    }
+
+    .contact i:hover {
+      transform: scale(1.3) rotate(8deg);
+      color: #48dbfb;
+    }
+
+    .section {
+      margin-bottom: 40px;
+    }
+
+    .typing {
+      font-size: 1.1rem;
+      color: #feca57;
+      border-right: 2px solid #feca57;
+      white-space: nowrap;
+      overflow: hidden;
+      width: 0;
+      animation: typing 4s steps(50, end) forwards;
+      margin-bottom: 20px;
+    }
+
+    @keyframes typing {
+      to { width: 100%; }
+    }
+
+    [data-aos] {
+      transition: all 0.8s ease;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <img src="image.png" alt="Shruti Srivastava" class="profile-img" data-aos="zoom-in"/>
+    <h1 data-aos="fade-up">Shruti Srivastava</h1>
+    <p class="typing">B.Tech CSE (Data Science) | AIML Minor | Web Developer | AR/VR Explorer</p>
+
+    <div class="section" data-aos="fade-right">
+      <h2>About Me</h2>
+      <p>
+        Passionate tech enthusiast with a strong foundation in software engineering and data science. 
+        I bring hands-on experience in full-stack web development, AI/ML projects, and immersive technologies. 
+        Adept at building interactive, data-driven apps and always eager to learn and innovate.
+        Seeking opportunities in Software Development, Data Science, or related roles where I can make a measurable impact.
+      </p>
+    </div>
+
+    <div class="section" data-aos="fade-left">
+      <h2>Skills</h2>
+      <ul>
+        <li>Web: HTML, CSS, JavaScript, ReactJS</li>
+        <li>Programming: Python, Java, C (Beginner)</li>
+        <li>Data: MongoDB, SQL, Pandas, NumPy</li>
+        <li>ML Tools: TensorFlow, Scikit-learn</li>
+        <li>Visualization: Power BI, Tableau</li>
+        <li>Design/AR: Figma, Unity, Meta Spark Studio</li>
+      </ul>
+    </div>
+
+    <div class="section" data-aos="fade-up">
+      <h2>Education</h2>
+      <ul>
+        <li>B.Tech CSE (Data Science), NIET (2022–2026) – CGPA: 7.9</li>
+        <li>Minor in AIML, NIET (2022–2026)</li>
+        <li>12th ISC – 85.40% | 10th ICSE – 81.50%</li>
+      </ul>
+    </div>
+
+    <div class="section" data-aos="zoom-in-up">
+      <h2>Internships</h2>
+      <ul>
+        <li><strong>Data Science & AI</strong> – YBI Foundation (2 months)</li>
+        <li><strong>AR/VR Metaverse</strong> – Centre of Excellence (40 hours)</li>
+      </ul>
+    </div>
+
+    <div class="section" data-aos="flip-left">
+      <h2>Projects</h2>
+      <ul>
+        <li>News Aggregator with API & animation</li>
+        <li>Pharma Dashboard (Power BI)</li>
+        <li>AR Filters: Face Mask, 3D House (Unity)</li>
+        <li>Responsive Portfolio Website</li>
+      </ul>
+    </div>
+
+    <div class="section" data-aos="flip-up">
+      <h2>Certifications</h2>
+      <ul>
+        <li><strong>Python, Java</strong> – Basics & OOP</li>
+        <li><strong>TensorFlow</strong> – ML Systems (Google)</li>
+        <li><strong>ReactJS</strong> – Component-based Dev</li>
+        <li><strong>Big Data</strong> – Concepts & Analytics</li>
+        <li><strong>Data Analysis</strong> – Using Python & R</li>
+        <li><a href="tr.html" target="_blank">View All on Certification </a></li>
+      </ul>
+    </div>
+
+    <div class="section contact" data-aos="fade-up">
+      <h2>Contact</h2>
+      <a href="mailto:shrutisrivastava502102@gmail.com"><i class="bi bi-envelope-fill"></i></a>
+      <a href="https://www.linkedin.com/in/shruti-srivastava-2b2101269/" target="_blank"><i class="bi bi-linkedin"></i></a>
+      <a href="https://github.com/Shruti502102/" target="_blank"><i class="bi bi-github"></i></a>
+      <a href="https://leetcode.com/u/Shruti502102/" target="_blank"><i class="bi bi-code-slash"></i></a>
+    </div>
+  </div>
+
+  <script>
+    AOS.init();
+  </script>
+</body>
+</html>
+
