@@ -5,218 +5,482 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Shruti's Certification Portfolio</title>
   <style>
-    body {
-      font-family: 'Segoe UI', sans-serif;
-      background: #f9f9f9;
+    * {
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
       color: #333;
+      overflow-x: hidden;
+    }
+
+    /* Animated background particles */
+    .bg-animation {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .particle {
+      position: absolute;
+      background: rgba(255, 255, 255, 0.1);
+      border-radius: 50%;
+      animation: float 6s ease-in-out infinite;
+    }
+
+    .particle:nth-child(odd) {
+      animation-delay: -3s;
+      animation-duration: 8s;
+    }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0px) rotate(0deg); }
+      33% { transform: translateY(-30px) rotate(120deg); }
+      66% { transform: translateY(30px) rotate(240deg); }
     }
 
     header {
-      background: #4b0082;
+      background: linear-gradient(135deg, #4b0082, #8a2be2);
       color: white;
-      padding: 20px;
+      padding: 40px 20px;
       text-align: center;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+      animation: shimmer 3s infinite;
+    }
+
+    @keyframes shimmer {
+      0% { transform: translateX(-100%) translateY(-100%) rotate(45deg); }
+      100% { transform: translateX(100%) translateY(100%) rotate(45deg); }
     }
 
     header h1 {
-      margin: 0;
-      font-size: 2em;
-      animation: fadeIn 2s ease-in-out;
+      font-size: 3.5em;
+      font-weight: 700;
+      position: relative;
+      z-index: 2;
+      animation: titleGlow 2s ease-in-out;
+      text-shadow: 0 0 20px rgba(255,255,255,0.5);
+    }
+
+    @keyframes titleGlow {
+      0% { 
+        opacity: 0; 
+        transform: scale(0.5) rotateY(90deg);
+        filter: blur(20px);
+      }
+      50% {
+        transform: scale(1.1) rotateY(0deg);
+      }
+      100% { 
+        opacity: 1; 
+        transform: scale(1) rotateY(0deg);
+        filter: blur(0px);
+      }
     }
 
     .container {
-      max-width: 1000px;
-      margin: 30px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-      animation: slideUp 1s ease-in-out;
+      max-width: 1200px;
+      margin: 40px auto;
+      padding: 30px;
+      background: rgba(255, 255, 255, 0.95);
+      border-radius: 20px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+      position: relative;
+      z-index: 1;
+      animation: containerRise 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    }
+
+    @keyframes containerRise {
+      0% { 
+        opacity: 0; 
+        transform: translateY(100px) scale(0.9);
+      }
+      100% { 
+        opacity: 1; 
+        transform: translateY(0) scale(1);
+      }
     }
 
     .filter-btns {
       text-align: center;
-      margin-bottom: 20px;
+      margin-bottom: 40px;
+      animation: buttonsSlide 1.5s ease-out 0.3s both;
+    }
+
+    @keyframes buttonsSlide {
+      0% {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     .filter-btns button {
-      margin: 0 10px;
-      padding: 10px 20px;
+      margin: 10px 15px;
+      padding: 15px 30px;
       border: none;
-      border-radius: 20px;
-      background: #eee;
+      border-radius: 50px;
+      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
       cursor: pointer;
-      transition: 0.3s;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
     }
 
-    .filter-btns button:hover,
-    .filter-btns button.active {
-      background: #4b0082;
+    .filter-btns button::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .filter-btns button:hover::before {
+      left: 100%;
+    }
+
+    .filter-btns button:hover {
+      background: linear-gradient(45deg, #4b0082, #8a2be2);
       color: white;
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 10px 25px rgba(75, 0, 130, 0.4);
+    }
+
+    .filter-btns button.active {
+      background: linear-gradient(45deg, #4b0082, #8a2be2);
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 8px 20px rgba(75, 0, 130, 0.3);
     }
 
     .certification {
-      margin: 15px 0;
-      padding: 15px;
-      border-left: 5px solid #4b0082;
-      background: #fafafa;
-      transition: 0.3s;
+      margin: 20px 0;
+      padding: 25px;
+      border-left: 6px solid #4b0082;
+      background: linear-gradient(135deg, #fafafa, #f0f0f0);
+      border-radius: 15px;
+      transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+      position: relative;
+      overflow: hidden;
+      opacity: 0;
+      animation: certSlideIn 0.8s ease-out forwards;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    }
+
+    .certification:nth-child(even) {
+      animation-delay: 0.1s;
+    }
+
+    .certification:nth-child(odd) {
+      animation-delay: 0.2s;
+    }
+
+    @keyframes certSlideIn {
+      0% {
+        opacity: 0;
+        transform: translateX(-100px) rotateY(45deg);
+        filter: blur(5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(0) rotateY(0deg);
+        filter: blur(0px);
+      }
+    }
+
+    .certification::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(75, 0, 130, 0.1), transparent);
+      transition: left 0.6s;
+    }
+
+    .certification:hover::before {
+      left: 100%;
     }
 
     .certification:hover {
-      background: #f0f0ff;
-      transform: translateX(5px);
+      background: linear-gradient(135deg, #f0f0ff, #e8e8ff);
+      transform: translateX(20px) translateY(-10px) scale(1.03);
+      box-shadow: 0 20px 40px rgba(75, 0, 130, 0.2);
+      border-left-width: 8px;
     }
 
     .certification a {
       color: #4b0082;
       font-weight: bold;
       text-decoration: none;
+      display: inline-block;
+      padding: 8px 16px;
+      border-radius: 25px;
+      background: linear-gradient(45deg, rgba(75, 0, 130, 0.1), rgba(138, 43, 226, 0.1));
+      transition: all 0.3s ease;
+      margin-top: 10px;
+    }
+
+    .certification a:hover {
+      background: linear-gradient(45deg, #4b0082, #8a2be2);
+      color: white;
+      transform: scale(1.1);
+      box-shadow: 0 5px 15px rgba(75, 0, 130, 0.4);
     }
 
     .certification p {
-      margin: 5px 0;
+      margin: 8px 0;
+      font-size: 16px;
+      line-height: 1.6;
     }
 
-    @keyframes slideUp {
-      from { opacity: 0; transform: translateY(50px); }
-      to { opacity: 1; transform: translateY(0); }
-    }
-
-    @keyframes fadeIn {
-      from { opacity: 0; }
-      to { opacity: 1; }
+    .certification strong {
+      color: #4b0082;
+      font-size: 18px;
     }
 
     .hidden {
-      display: none;
+      animation: certSlideOut 0.5s ease-in forwards;
+    }
+
+    @keyframes certSlideOut {
+      0% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+        height: auto;
+        margin: 20px 0;
+        padding: 25px;
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(100px) scale(0.8);
+        height: 0;
+        margin: 0;
+        padding: 0;
+      }
+    }
+
+    .show {
+      animation: certSlideIn 0.8s ease-out forwards;
+    }
+
+    /* Floating action button */
+    .fab {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      background: linear-gradient(45deg, #4b0082, #8a2be2);
+      border: none;
+      color: white;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 10px 25px rgba(75, 0, 130, 0.3);
+      transition: all 0.3s ease;
+      z-index: 1000;
+      animation: fabPulse 2s infinite;
+    }
+
+    @keyframes fabPulse {
+      0%, 100% { transform: scale(1); }
+      50% { transform: scale(1.1); }
+    }
+
+    .fab:hover {
+      transform: scale(1.2) rotate(180deg);
+      box-shadow: 0 15px 35px rgba(75, 0, 130, 0.5);
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      header h1 {
+        font-size: 2.5em;
+      }
+      
+      .container {
+        margin: 20px;
+        padding: 20px;
+      }
+      
+      .filter-btns button {
+        margin: 5px;
+        padding: 12px 20px;
+        font-size: 14px;
+      }
+      
+      .certification {
+        padding: 20px;
+      }
     }
   </style>
 </head>
 <body>
 
+<div class="bg-animation">
+  <div class="particle" style="left: 10%; top: 20%; width: 6px; height: 6px;"></div>
+  <div class="particle" style="left: 20%; top: 80%; width: 8px; height: 8px;"></div>
+  <div class="particle" style="left: 60%; top: 30%; width: 4px; height: 4px;"></div>
+  <div class="particle" style="left: 80%; top: 70%; width: 6px; height: 6px;"></div>
+  <div class="particle" style="left: 90%; top: 10%; width: 5px; height: 5px;"></div>
+  <div class="particle" style="left: 30%; top: 60%; width: 7px; height: 7px;"></div>
+</div>
+
 <header>
-  <h1>Shruti's Certifications</h1>
+  <h1>✨ Shruti's Certifications ✨</h1>
 </header>
 
 <div class="container">
   <div class="filter-btns">
-    <button class="active" onclick="filterCerts('all')">All</button>
-    <button onclick="filterCerts('coursera')">Coursera</button>
-    <button onclick="filterCerts('infosys')">Infosys</button>
-    <button onclick="filterCerts('workshop')">Workshops</button>
+    <button class="active" onclick="filterCerts('all')">🌟 All</button>
+    <button onclick="filterCerts('coursera')">📚 Coursera</button>
+    <button onclick="filterCerts('infosys')">💼 Infosys</button>
+    <button onclick="filterCerts('workshop')">🔧 Workshops</button>
   </div>
 
   <div id="certList">
     <!-- All certificates in reverse chronology -->
     <div class="certification workshop">
-      <p><strong>Ai Chatbot</strong> – Feb 24, 2025 – <em>Ai Academia</em></p>
+      <p><strong>🤖 Ai Chatbot</strong> – Feb 24, 2025 – <em>Ai Academia</em></p>
       <a href="https://ibb.co/pvtx15X1">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Big Data - 201</strong> – Mar 20, 2025 – <em>Infosys</em></p>
+      <p><strong>📊 Big Data - 201</strong> – Mar 20, 2025 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/8ghQXjMW/1-ea38229c-a433-428d-9a58-a9df14e4e89a-1.jpg">View Certificate</a>
     </div>
 
     <div class="certification workshop">
-      <p><strong>Basic Training in Data Analytics (BI)</strong> – Mar 14, 2025 – <em>NCET</em></p>
+      <p><strong>📈 Basic Training in Data Analytics (BI)</strong> – Mar 14, 2025 – <em>NCET</em></p>
       <a href="https://ibb.co/jvR91THy">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Data Analysis with Pandas</strong> – Mar 27, 2025 – <em>Infosys</em></p>
+      <p><strong>🐼 Data Analysis with Pandas</strong> – Mar 27, 2025 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/QFrHrc0W/1-7e18552c-d274-4107-92ae-48bf0bfcf2a0-3.jpg">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Introduction to NoSQL Databases</strong> – Mar 28, 2024 – <em>Coursera</em></p>
+      <p><strong>🗄️ Introduction to NoSQL Databases</strong> – Mar 28, 2024 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/VHLSEQYTRE7D">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>ReactJS</strong> – Oct 8, 2024 – <em>Infosys</em></p>
+      <p><strong>⚛️ ReactJS</strong> – Oct 8, 2024 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/LDQF5GMG/1-6f20d441-f3e8-431e-8108-cab33067e147-3.jpg">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>TensorFlow ML Systems</strong> – Sep 24, 2024 – <em>Infosys</em></p>
+      <p><strong>🤖 TensorFlow ML Systems</strong> – Sep 24, 2024 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/zVj0DWjR/1-a36c5328-b99b-4254-b513-a6b845d4dec1-1.jpg">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Data Visualization Using R</strong> – Feb 20, 2024 – <em>Infosys</em></p>
+      <p><strong>📊 Data Visualization Using R</strong> – Feb 20, 2024 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/nML2t2W7/1-f53b25d9-2716-4eba-8a30-6f2e81ef8706.jpg">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Python Project for Data Science</strong> – Feb 20, 2024 – <em>Coursera</em></p>
+      <p><strong>🐍 Python Project for Data Science</strong> – Feb 20, 2024 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/H7ST5LV6B74F">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Data Visualization with Python</strong> – Feb 18, 2024 – <em>Infosys</em></p>
+      <p><strong>📈 Data Visualization with Python</strong> – Feb 18, 2024 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/tpHTM5rr/1-c2e36f32-2da0-48db-aeee-34020b0ee3da.jpg">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Java Programming (Course 2)</strong> – Feb 18, 2024 – <em>Infosys</em></p>
+      <p><strong>☕ Java Programming (Course 2)</strong> – Feb 18, 2024 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/NgYdjBGW/1-497f1496-0a08-4ba9-ba76-1f44d1a7c92e.jpg">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Data Analysis with Python</strong> – Nov 2, 2023 – <em>Coursera</em></p>
+      <p><strong>📊 Data Analysis with Python</strong> – Nov 2, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/verify/4DYVCHTWPE7J">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Basic Data Descriptors...</strong> – Oct 30, 2023 – <em>Coursera</em></p>
+      <p><strong>📋 Basic Data Descriptors...</strong> – Oct 30, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/92XJHVUDJ934">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Python Programming Fundamentals</strong> – Oct 14, 2023 – <em>Infosys</em></p>
+      <p><strong>🐍 Python Programming Fundamentals</strong> – Oct 14, 2023 – <em>Infosys</em></p>
       <a href="https://ibb.co/MD45hp2">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Create Animated Social Media Posts with Canva</strong> – May 20, 2023 – <em>Coursera</em></p>
+      <p><strong>🎨 Create Animated Social Media Posts with Canva</strong> – May 20, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/4YDZZS6456E7">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Build a Free Website with WordPress</strong> – May 12, 2023 – <em>Coursera</em></p>
+      <p><strong>🌐 Build a Free Website with WordPress</strong> – May 12, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/KL4UEK4RUJQN">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Human-Centered Design for Inclusive Innovation</strong> – Apr 10, 2023 – <em>Coursera</em></p>
+      <p><strong>👥 Human-Centered Design for Inclusive Innovation</strong> – Apr 10, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/DSAFV7NPP5F3">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Python for Data Science, AI & Development</strong> – Apr 11, 2023 – <em>Coursera</em></p>
+      <p><strong>🐍 Python for Data Science, AI & Development</strong> – Apr 11, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/3NS5BZB8WU27">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>What is Data Science?</strong> – Jan 30, 2023 – <em>Coursera</em></p>
+      <p><strong>🔬 What is Data Science?</strong> – Jan 30, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/PBWJLLEUATQD">View Certificate</a>
     </div>
 
     <div class="certification coursera">
-      <p><strong>Python Basics</strong> – Jan 6, 2023 – <em>Coursera</em></p>
+      <p><strong>🐍 Python Basics</strong> – Jan 6, 2023 – <em>Coursera</em></p>
       <a href="https://www.coursera.org/account/accomplishments/records/5QWC4FMQQJW5">View Certificate</a>
     </div>
 
     <div class="certification infosys">
-      <p><strong>Java Programming Fundamentals</strong> – Oct 14, 2023 – <em>Infosys</em></p>
+      <p><strong>☕ Java Programming Fundamentals</strong> – Oct 14, 2023 – <em>Infosys</em></p>
       <a href="https://i.ibb.co/gbMGG0NQ/1-20cee75a-54fd-4473-8311-f6ea06b1bea2.jpg">View Certificate</a>
     </div>
   </div>
 </div>
+
+<button class="fab" onclick="scrollToTop()" title="Back to top">↑</button>
 
 <script>
   function filterCerts(category) {
@@ -226,16 +490,45 @@
     buttons.forEach(btn => btn.classList.remove('active'));
     event.target.classList.add('active');
 
-    certs.forEach(cert => {
+    certs.forEach((cert, index) => {
       if (category === 'all' || cert.classList.contains(category)) {
         cert.classList.remove('hidden');
+        cert.classList.add('show');
+        cert.style.animationDelay = (index * 0.1) + 's';
       } else {
         cert.classList.add('hidden');
+        cert.classList.remove('show');
       }
     });
   }
+
+  function scrollToTop() {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  }
+
+  // Add scroll animation for certificates
+  window.addEventListener('scroll', () => {
+    const certs = document.querySelectorAll('.certification');
+    certs.forEach(cert => {
+      const rect = cert.getBoundingClientRect();
+      if (rect.top < window.innerHeight * 0.8) {
+        cert.style.opacity = '1';
+        cert.style.transform = 'translateX(0) rotateY(0deg)';
+      }
+    });
+  });
+
+  // Initialize animations on load
+  window.addEventListener('load', () => {
+    const certs = document.querySelectorAll('.certification');
+    certs.forEach((cert, index) => {
+      cert.style.animationDelay = (index * 0.1) + 's';
+    });
+  });
 </script>
 
 </body>
 </html>
-
