@@ -21,34 +21,74 @@
     body {
       font-family: 'Roboto', sans-serif;
       color: #f8f9fa;
-      background: linear-gradient(270deg, #222831, #393E46, #222831);
-      background-size: 600% 600%;
-      animation: bg-animation 16s ease infinite;
+      background: linear-gradient(270deg, #0f0f23, #1a1a2e, #16213e, #0f3460);
+      background-size: 800% 800%;
+      animation: gradientShift 20s ease infinite;
       margin: 0;
       padding: 0;
       scroll-behavior: smooth;
+      overflow-x: hidden;
+      position: relative;
     }
 
-    @keyframes bg-animation {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: radial-gradient(circle at 20% 80%, rgba(187, 134, 252, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 80% 20%, rgba(29, 209, 161, 0.1) 0%, transparent 50%),
+                  radial-gradient(circle at 40% 40%, rgba(254, 202, 87, 0.08) 0%, transparent 50%);
+      pointer-events: none;
+      z-index: -1;
+      animation: floatingLights 15s ease-in-out infinite;
+    }
+
+    @keyframes gradientShift {
+      0%, 100% { background-position: 0% 50%; }
+      25% { background-position: 100% 50%; }
+      50% { background-position: 100% 100%; }
+      75% { background-position: 0% 100%; }
+    }
+
+    @keyframes floatingLights {
+      0%, 100% { transform: translate(0px, 0px) rotate(0deg); }
+      33% { transform: translate(30px, -30px) rotate(120deg); }
+      66% { transform: translate(-20px, 20px) rotate(240deg); }
     }
 
     .container {
       max-width: 960px;
       margin: 40px auto;
-      background: rgba(0, 0, 0, 0.8);
-      border-radius: 16px;
+      background: rgba(0, 0, 0, 0.85);
+      border-radius: 20px;
       padding: 40px;
-      box-shadow: 0 0 25px rgba(187, 134, 252, 0.7);
+      box-shadow: 
+        0 0 40px rgba(187, 134, 252, 0.4),
+        0 0 80px rgba(29, 209, 161, 0.3),
+        inset 0 0 20px rgba(255, 255, 255, 0.05);
       text-align: center;
-      animation: fadeIn 1.5s ease-in-out;
+      animation: containerPulse 8s ease-in-out infinite;
+      position: relative;
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
     }
 
-    @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(40px); }
-      to { opacity: 1; transform: translateY(0); }
+    @keyframes containerPulse {
+      0%, 100% { 
+        box-shadow: 
+          0 0 40px rgba(187, 134, 252, 0.4),
+          0 0 80px rgba(29, 209, 161, 0.3),
+          inset 0 0 20px rgba(255, 255, 255, 0.05);
+      }
+      50% { 
+        box-shadow: 
+          0 0 60px rgba(187, 134, 252, 0.6),
+          0 0 100px rgba(29, 209, 161, 0.5),
+          inset 0 0 30px rgba(255, 255, 255, 0.08);
+      }
     }
 
     .profile-img {
@@ -58,42 +98,90 @@
       border-radius: 50%;
       border: 4px solid #bb86fc;
       margin-bottom: 20px;
-      transition: 0.4s ease-in-out;
-      box-shadow: 0 0 12px #bb86fc;
+      transition: all 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 
+        0 0 20px rgba(187, 134, 252, 0.8),
+        0 0 40px rgba(187, 134, 252, 0.4);
+      position: relative;
+      animation: profileFloat 6s ease-in-out infinite;
+    }
+
+    @keyframes profileFloat {
+      0%, 100% { transform: translateY(0px) rotateZ(0deg); }
+      50% { transform: translateY(-10px) rotateZ(5deg); }
     }
 
     .profile-img:hover {
-      transform: scale(1.1) rotate(8deg);
-      border-radius: 30%;
+      transform: scale(1.2) rotate(360deg) translateY(-20px);
+      border-radius: 20%;
+      box-shadow: 
+        0 0 40px rgba(187, 134, 252, 1),
+        0 0 80px rgba(29, 209, 161, 0.8),
+        0 20px 40px rgba(0, 0, 0, 0.5);
     }
 
-    h1, h2 {
+    h1 {
       color: #bb86fc;
       margin-top: 20px;
       font-weight: bold;
-      text-shadow: 0 0 10px #bb86fc;
+      text-shadow: 
+        0 0 10px #bb86fc,
+        0 0 20px #bb86fc,
+        0 0 30px #bb86fc;
+      animation: titleGlow 3s ease-in-out infinite alternate;
+      font-size: 2.5rem;
+      position: relative;
+    }
+
+    @keyframes titleGlow {
+      from { 
+        text-shadow: 
+          0 0 10px #bb86fc,
+          0 0 20px #bb86fc,
+          0 0 30px #bb86fc;
+      }
+      to { 
+        text-shadow: 
+          0 0 20px #bb86fc,
+          0 0 30px #bb86fc,
+          0 0 40px #bb86fc,
+          0 0 50px #1dd1a1;
+      }
     }
 
     h2 {
-      border-bottom: 2px solid #bb86fc;
-      padding-bottom: 5px;
+      color: #bb86fc;
+      margin-top: 40px;
+      font-weight: bold;
+      text-shadow: 0 0 15px #bb86fc;
+      border-bottom: 3px solid transparent;
+      background: linear-gradient(90deg, #bb86fc, #1dd1a1) bottom/100% 3px no-repeat;
+      padding-bottom: 8px;
       margin-top: 40px;
       text-align: left;
       position: relative;
-      transition: 0.3s;
+      transition: all 0.4s ease;
+      font-size: 1.8rem;
+    }
+
+    h2:hover {
+      transform: translateX(10px);
+      color: #1dd1a1;
+      text-shadow: 0 0 20px #1dd1a1;
     }
 
     h2:hover::after {
       content: " ✨";
       position: absolute;
-      right: -20px;
-      animation: sparkle 1s infinite;
+      right: -30px;
+      animation: sparkleRotate 1s infinite;
+      font-size: 1.5rem;
     }
 
-    @keyframes sparkle {
-      0% { transform: scale(1); opacity: 1; }
-      50% { transform: scale(1.3); opacity: 0.7; }
-      100% { transform: scale(1); opacity: 1; }
+    @keyframes sparkleRotate {
+      0% { transform: scale(1) rotate(0deg); opacity: 1; }
+      50% { transform: scale(1.5) rotate(180deg); opacity: 0.7; }
+      100% { transform: scale(1) rotate(360deg); opacity: 1; }
     }
 
     ul {
@@ -102,84 +190,213 @@
     }
 
     li {
-      margin-bottom: 10px;
-      transition: all 0.3s;
+      margin-bottom: 15px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       opacity: 0;
-      transform: translateY(10px);
-      animation: fadeInList 0.5s forwards;
+      transform: translateX(-50px) rotateY(-20deg);
+      animation: slideInRotate 0.8s forwards;
+      position: relative;
+      padding: 8px;
+      border-radius: 8px;
+      cursor: pointer;
     }
 
     li:nth-child(1) { animation-delay: 0.1s; }
     li:nth-child(2) { animation-delay: 0.2s; }
     li:nth-child(3) { animation-delay: 0.3s; }
     li:nth-child(4) { animation-delay: 0.4s; }
+    li:nth-child(5) { animation-delay: 0.5s; }
+    li:nth-child(6) { animation-delay: 0.6s; }
 
-    @keyframes fadeInList {
+    @keyframes slideInRotate {
       to {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateX(0) rotateY(0deg);
       }
     }
 
     li:hover {
       color: #feca57;
-      transform: translateX(5px);
+      transform: translateX(15px) scale(1.05);
+      background: rgba(254, 202, 87, 0.1);
+      box-shadow: 
+        0 0 15px rgba(254, 202, 87, 0.3),
+        inset 0 0 10px rgba(254, 202, 87, 0.1);
+      border-left: 4px solid #feca57;
     }
 
     a {
       color: #1dd1a1;
       text-decoration: none;
-      transition: 0.3s;
+      transition: all 0.3s ease;
+      position: relative;
+    }
+
+    a::before {
+      content: '';
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: linear-gradient(90deg, #1dd1a1, #feca57);
+      transition: width 0.3s ease;
+    }
+
+    a:hover::before {
+      width: 100%;
     }
 
     a:hover {
       color: #feca57;
-      text-shadow: 0 0 5px #feca57;
+      text-shadow: 0 0 10px #feca57;
+      transform: translateY(-2px);
     }
 
     .contact a {
-      font-size: 1.8rem;
-      margin: 0 12px;
-      transition: transform 0.3s;
+      font-size: 2rem;
+      margin: 0 15px;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      display: inline-block;
+      position: relative;
+    }
+
+    .contact a::before {
+      display: none;
+    }
+
+    .contact i {
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
     }
 
     .contact i:hover {
-      transform: scale(1.3) rotate(8deg);
+      transform: scale(1.4) rotate(360deg) translateY(-10px);
       color: #48dbfb;
+      filter: drop-shadow(0 0 15px #48dbfb);
     }
 
     .section {
-      margin-bottom: 40px;
+      margin-bottom: 50px;
+      position: relative;
+      padding: 20px;
+      border-radius: 15px;
+      transition: all 0.3s ease;
+    }
+
+    .section:hover {
+      background: rgba(255, 255, 255, 0.02);
+      box-shadow: inset 0 0 20px rgba(187, 134, 252, 0.1);
     }
 
     .typing {
-      font-size: 1.1rem;
+      font-size: 1.2rem;
       color: #feca57;
-      border-right: 2px solid #feca57;
+      border-right: 3px solid #feca57;
       white-space: nowrap;
       overflow: hidden;
       width: 0;
-      animation: typing 4s steps(50, end) forwards;
-      margin-bottom: 20px;
+      animation: typing 4s steps(50, end) forwards, blink 1s infinite;
+      margin-bottom: 30px;
+      font-weight: 500;
     }
 
     @keyframes typing {
       to { width: 100%; }
     }
 
+    @keyframes blink {
+      0%, 50% { border-color: #feca57; }
+      51%, 100% { border-color: transparent; }
+    }
+
+    .section p {
+      line-height: 1.8;
+      font-size: 1.1rem;
+      opacity: 0.9;
+      transition: all 0.3s ease;
+    }
+
+    .section:hover p {
+      opacity: 1;
+      transform: translateY(-2px);
+    }
+
+    /* Floating particles effect */
+    .particles {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: -1;
+    }
+
+    .particle {
+      position: absolute;
+      width: 4px;
+      height: 4px;
+      background: rgba(187, 134, 252, 0.6);
+      border-radius: 50%;
+      animation: float 15s infinite linear;
+    }
+
+    .particle:nth-child(2n) {
+      background: rgba(29, 209, 161, 0.6);
+      animation-duration: 20s;
+    }
+
+    .particle:nth-child(3n) {
+      background: rgba(254, 202, 87, 0.6);
+      animation-duration: 25s;
+    }
+
+    @keyframes float {
+      0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+      }
+      10% {
+        opacity: 1;
+      }
+      90% {
+        opacity: 1;
+      }
+      100% {
+        transform: translateY(-100px) rotate(360deg);
+        opacity: 0;
+      }
+    }
+
+    /* Enhanced AOS animations */
     [data-aos] {
-      transition: all 0.8s ease;
+      transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    /* Scroll progress indicator */
+    .scroll-progress {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 0%;
+      height: 4px;
+      background: linear-gradient(90deg, #bb86fc, #1dd1a1, #feca57);
+      z-index: 1000;
+      transition: width 0.3s ease;
     }
   </style>
 </head>
 
 <body>
+  <div class="scroll-progress"></div>
+  <div class="particles" id="particles"></div>
+  
   <div class="container">
-    <img src="image.png" alt="Shruti Srivastava" class="profile-img" data-aos="zoom-in"/>
-    <h1 data-aos="fade-up">Shruti Srivastava</h1>
+    <img src="image.png" alt="Shruti Srivastava" class="profile-img" data-aos="zoom-in" data-aos-duration="1000"/>
+    <h1 data-aos="fade-up" data-aos-delay="200">Shruti Srivastava</h1>
     <p class="typing">B.Tech CSE (Data Science) | AIML Minor | Web Developer | AR/VR Explorer</p>
 
-    <div class="section" data-aos="fade-right">
+    <div class="section" data-aos="fade-right" data-aos-duration="800">
       <h2>About Me</h2>
       <p>
         Passionate tech enthusiast with a strong foundation in software engineering and data science. 
@@ -189,7 +406,7 @@
       </p>
     </div>
 
-    <div class="section" data-aos="fade-left">
+    <div class="section" data-aos="fade-left" data-aos-duration="800">
       <h2>Skills</h2>
       <ul>
         <li>Web: HTML, CSS, JavaScript, ReactJS</li>
@@ -201,16 +418,16 @@
       </ul>
     </div>
 
-    <div class="section" data-aos="fade-up">
+    <div class="section" data-aos="fade-up" data-aos-duration="800">
       <h2>Education</h2>
       <ul>
-        <li>B.Tech CSE (Data Science), NIET (2022–2026) – CGPA: 7.9</li>
+        <li>B.Tech CSE (Data Science), NIET (2022–2026) – CGPA: 7.97</li>
         <li>Minor in AIML, NIET (2022–2026)</li>
         <li>12th ISC – 85.40% | 10th ICSE – 81.50%</li>
       </ul>
     </div>
 
-    <div class="section" data-aos="zoom-in-up">
+    <div class="section" data-aos="zoom-in-up" data-aos-duration="800">
       <h2>Internships</h2>
       <ul>
         <li><strong>Data Science & AI</strong> – YBI Foundation (2 months)</li>
@@ -218,7 +435,7 @@
       </ul>
     </div>
 
-    <div class="section" data-aos="flip-left">
+    <div class="section" data-aos="flip-left" data-aos-duration="800">
       <h2>Projects</h2>
       <ul>
         <li>News Aggregator with API & animation</li>
@@ -228,7 +445,7 @@
       </ul>
     </div>
 
-    <div class="section" data-aos="flip-up">
+    <div class="section" data-aos="flip-up" data-aos-duration="800">
       <h2>Certifications</h2>
       <ul>
         <li><strong>Python, Java</strong> – Basics & OOP</li>
@@ -240,7 +457,7 @@
       </ul>
     </div>
 
-    <div class="section contact" data-aos="fade-up">
+    <div class="section contact" data-aos="fade-up" data-aos-duration="800">
       <h2>Contact</h2>
       <a href="mailto:shrutisrivastava502102@gmail.com"><i class="bi bi-envelope-fill"></i></a>
       <a href="https://www.linkedin.com/in/shruti-srivastava-2b2101269/" target="_blank"><i class="bi bi-linkedin"></i></a>
@@ -250,8 +467,66 @@
   </div>
 
   <script>
-    AOS.init();
+    // Initialize AOS
+    AOS.init({
+      duration: 800,
+      once: false,
+      mirror: true
+    });
+
+    // Scroll progress indicator
+    window.addEventListener('scroll', () => {
+      const scrollTop = document.documentElement.scrollTop;
+      const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const scrollProgress = (scrollTop / scrollHeight) * 100;
+      document.querySelector('.scroll-progress').style.width = scrollProgress + '%';
+    });
+
+    // Create floating particles
+    function createParticles() {
+      const particlesContainer = document.getElementById('particles');
+      const particleCount = 20;
+
+      for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.classList.add('particle');
+        particle.style.left = Math.random() * 100 + '%';
+        particle.style.animationDelay = Math.random() * 15 + 's';
+        particle.style.animationDuration = (Math.random() * 10 + 15) + 's';
+        particlesContainer.appendChild(particle);
+      }
+    }
+
+    // Initialize particles
+    createParticles();
+
+    // Add mouse trail effect
+    document.addEventListener('mousemove', (e) => {
+      const trail = document.createElement('div');
+      trail.style.position = 'fixed';
+      trail.style.left = e.clientX + 'px';
+      trail.style.top = e.clientY + 'px';
+      trail.style.width = '6px';
+      trail.style.height = '6px';
+      trail.style.background = `rgba(187, 134, 252, ${Math.random() * 0.5 + 0.3})`;
+      trail.style.borderRadius = '50%';
+      trail.style.pointerEvents = 'none';
+      trail.style.zIndex = '1000';
+      trail.style.animation = 'trailFade 1s ease-out forwards';
+      document.body.appendChild(trail);
+
+      setTimeout(() => trail.remove(), 1000);
+    });
+
+    // Add trail fade animation
+    const style = document.createElement('style');
+    style.textContent = `
+      @keyframes trailFade {
+        0% { transform: scale(1); opacity: 1; }
+        100% { transform: scale(0); opacity: 0; }
+      }
+    `;
+    document.head.appendChild(style);
   </script>
 </body>
 </html>
-
