@@ -19,7 +19,7 @@
       overflow-x: hidden;
     }
 
-    /* Animated background particles */
+    /* Enhanced animated background */
     .bg-animation {
       position: fixed;
       top: 0;
@@ -32,7 +32,7 @@
 
     .particle {
       position: absolute;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.2);
       border-radius: 50%;
       animation: float 6s ease-in-out infinite;
     }
@@ -40,22 +40,144 @@
     .particle:nth-child(odd) {
       animation-delay: -3s;
       animation-duration: 8s;
+      background: linear-gradient(45deg, rgba(255,255,255,0.1), rgba(138,43,226,0.2));
+    }
+
+    .particle:nth-child(even) {
+      animation-delay: -1.5s;
+      animation-duration: 10s;
+      background: linear-gradient(135deg, rgba(103,126,234,0.2), rgba(255,255,255,0.1));
     }
 
     @keyframes float {
+      0%, 100% { 
+        transform: translateY(0px) rotate(0deg) scale(1); 
+        opacity: 0.7;
+      }
+      33% { 
+        transform: translateY(-50px) rotate(120deg) scale(1.2); 
+        opacity: 1;
+      }
+      66% { 
+        transform: translateY(30px) rotate(240deg) scale(0.8); 
+        opacity: 0.5;
+      }
+    }
+
+    /* Cute Bot Guide */
+    .bot-guide {
+      position: fixed;
+      bottom: 100px;
+      right: 30px;
+      z-index: 1000;
+      animation: botEntrance 2s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    }
+
+    @keyframes botEntrance {
+      0% {
+        transform: translateX(200px) rotate(180deg) scale(0);
+        opacity: 0;
+      }
+      60% {
+        transform: translateX(-20px) rotate(-10deg) scale(1.2);
+      }
+      100% {
+        transform: translateX(0) rotate(0deg) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .bot {
+      width: 80px;
+      height: 80px;
+      background: linear-gradient(135deg, #ff6b9d, #c44569);
+      border-radius: 50%;
+      position: relative;
+      cursor: pointer;
+      transition: all 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 0 10px 25px rgba(255, 107, 157, 0.3);
+      animation: botFloat 3s ease-in-out infinite;
+    }
+
+    @keyframes botFloat {
       0%, 100% { transform: translateY(0px) rotate(0deg); }
-      33% { transform: translateY(-30px) rotate(120deg); }
-      66% { transform: translateY(30px) rotate(240deg); }
+      50% { transform: translateY(-15px) rotate(5deg); }
+    }
+
+    .bot:hover {
+      transform: scale(1.2) rotate(10deg);
+      box-shadow: 0 15px 40px rgba(255, 107, 157, 0.5);
+    }
+
+    .bot::before {
+      content: '🤖';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      font-size: 35px;
+      animation: botWink 4s infinite;
+    }
+
+    @keyframes botWink {
+      0%, 90%, 100% { content: '🤖'; }
+      95% { content: '😉'; }
+    }
+
+    .bot-speech {
+      position: absolute;
+      bottom: 90px;
+      right: -20px;
+      background: white;
+      padding: 15px 20px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      font-size: 14px;
+      font-weight: 600;
+      color: #4b0082;
+      opacity: 0;
+      transform: scale(0) rotate(10deg);
+      transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      max-width: 200px;
+      animation: speechBubble 8s infinite;
+    }
+
+    @keyframes speechBubble {
+      0%, 70%, 100% { 
+        opacity: 0; 
+        transform: scale(0) rotate(10deg);
+      }
+      75%, 95% { 
+        opacity: 1; 
+        transform: scale(1) rotate(0deg);
+      }
+    }
+
+    .bot-speech::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      right: 30px;
+      width: 0;
+      height: 0;
+      border-left: 10px solid transparent;
+      border-right: 10px solid transparent;
+      border-top: 10px solid white;
+    }
+
+    .bot:hover .bot-speech {
+      opacity: 1;
+      transform: scale(1) rotate(0deg);
     }
 
     header {
       background: linear-gradient(135deg, #4b0082, #8a2be2);
       color: white;
-      padding: 40px 20px;
+      padding: 50px 20px;
       text-align: center;
       position: relative;
       overflow: hidden;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.3);
     }
 
     header::before {
@@ -66,7 +188,7 @@
       width: 200%;
       height: 200%;
       background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
-      animation: shimmer 3s infinite;
+      animation: shimmer 4s infinite;
     }
 
     @keyframes shimmer {
@@ -75,26 +197,31 @@
     }
 
     header h1 {
-      font-size: 3.5em;
+      font-size: 4em;
       font-weight: 700;
       position: relative;
       z-index: 2;
-      animation: titleGlow 2s ease-in-out;
-      text-shadow: 0 0 20px rgba(255,255,255,0.5);
+      animation: titlePowerful 3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      text-shadow: 0 0 30px rgba(255,255,255,0.8);
     }
 
-    @keyframes titleGlow {
+    @keyframes titlePowerful {
       0% { 
         opacity: 0; 
-        transform: scale(0.5) rotateY(90deg);
-        filter: blur(20px);
+        transform: scale(0.3) rotateY(180deg) rotateX(90deg);
+        filter: blur(30px);
       }
-      50% {
-        transform: scale(1.1) rotateY(0deg);
+      30% {
+        transform: scale(1.3) rotateY(0deg) rotateX(-10deg);
+        filter: blur(10px);
+      }
+      60% {
+        transform: scale(0.9) rotateY(10deg) rotateX(5deg);
+        filter: blur(2px);
       }
       100% { 
         opacity: 1; 
-        transform: scale(1) rotateY(0deg);
+        transform: scale(1) rotateY(0deg) rotateX(0deg);
         filter: blur(0px);
       }
     }
@@ -102,57 +229,68 @@
     .container {
       max-width: 1200px;
       margin: 40px auto;
-      padding: 30px;
+      padding: 40px;
       background: rgba(255, 255, 255, 0.95);
-      border-radius: 20px;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.2);
-      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      backdrop-filter: blur(20px);
       position: relative;
       z-index: 1;
-      animation: containerRise 1.2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      animation: containerPowerful 2s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      border: 1px solid rgba(255,255,255,0.2);
     }
 
-    @keyframes containerRise {
+    @keyframes containerPowerful {
       0% { 
         opacity: 0; 
-        transform: translateY(100px) scale(0.9);
+        transform: translateY(150px) scale(0.7) rotateX(45deg);
+        filter: blur(20px);
+      }
+      50% {
+        transform: translateY(-20px) scale(1.05) rotateX(-5deg);
+        filter: blur(5px);
       }
       100% { 
         opacity: 1; 
-        transform: translateY(0) scale(1);
+        transform: translateY(0) scale(1) rotateX(0deg);
+        filter: blur(0px);
       }
     }
 
     .filter-btns {
       text-align: center;
-      margin-bottom: 40px;
-      animation: buttonsSlide 1.5s ease-out 0.3s both;
+      margin-bottom: 50px;
+      animation: buttonsExplosive 2s ease-out 0.5s both;
     }
 
-    @keyframes buttonsSlide {
+    @keyframes buttonsExplosive {
       0% {
         opacity: 0;
-        transform: translateY(-30px);
+        transform: translateY(-60px) scale(0.5);
+      }
+      50% {
+        transform: translateY(10px) scale(1.1);
       }
       100% {
         opacity: 1;
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
       }
     }
 
     .filter-btns button {
-      margin: 10px 15px;
-      padding: 15px 30px;
+      margin: 15px 20px;
+      padding: 20px 35px;
       border: none;
       border-radius: 50px;
-      background: linear-gradient(45deg, #f0f0f0, #e0e0e0);
+      background: linear-gradient(45deg, #f8f9fa, #e9ecef);
       cursor: pointer;
-      font-size: 16px;
-      font-weight: 600;
-      transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      font-size: 18px;
+      font-weight: 700;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       position: relative;
       overflow: hidden;
-      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+      transform: perspective(1000px) rotateX(0deg);
     }
 
     .filter-btns button::before {
@@ -162,59 +300,125 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
-      transition: left 0.5s;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.6), transparent);
+      transition: left 0.6s;
+    }
+
+    .filter-btns button::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0;
+      height: 0;
+      background: radial-gradient(circle, rgba(75,0,130,0.3) 0%, transparent 70%);
+      border-radius: 50%;
+      transform: translate(-50%, -50%);
+      transition: all 0.6s ease;
     }
 
     .filter-btns button:hover::before {
       left: 100%;
     }
 
+    .filter-btns button:hover::after {
+      width: 300px;
+      height: 300px;
+    }
+
     .filter-btns button:hover {
       background: linear-gradient(45deg, #4b0082, #8a2be2);
       color: white;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 0 10px 25px rgba(75, 0, 130, 0.4);
+      transform: translateY(-8px) scale(1.1) perspective(1000px) rotateX(10deg);
+      box-shadow: 0 20px 40px rgba(75, 0, 130, 0.4);
     }
 
     .filter-btns button.active {
       background: linear-gradient(45deg, #4b0082, #8a2be2);
       color: white;
-      transform: scale(1.1);
-      box-shadow: 0 8px 20px rgba(75, 0, 130, 0.3);
+      transform: scale(1.15) perspective(1000px) rotateX(-5deg);
+      box-shadow: 0 15px 35px rgba(75, 0, 130, 0.4);
+    }
+
+    .add-cert-btn {
+      display: block;
+      text-align: center;
+      margin: 30px auto;
+      padding: 20px 40px;
+      background: linear-gradient(45deg, #ff6b9d, #c44569);
+      color: white;
+      border-radius: 50px;
+      text-decoration: none;
+      font-size: 18px;
+      font-weight: 700;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      box-shadow: 0 10px 30px rgba(255, 107, 157, 0.3);
+      position: relative;
+      overflow: hidden;
+      max-width: 300px;
+    }
+
+    .add-cert-btn::before {
+      content: '✨';
+      position: absolute;
+      left: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 20px;
+      transition: all 0.5s ease;
+    }
+
+    .add-cert-btn:hover {
+      transform: translateY(-5px) scale(1.1);
+      box-shadow: 0 20px 50px rgba(255, 107, 157, 0.5);
+    }
+
+    .add-cert-btn:hover::before {
+      left: 15px;
+      animation: sparkle 0.6s ease;
+    }
+
+    @keyframes sparkle {
+      0%, 100% { transform: translateY(-50%) rotate(0deg) scale(1); }
+      50% { transform: translateY(-50%) rotate(180deg) scale(1.2); }
     }
 
     .certification {
-      margin: 20px 0;
-      padding: 25px;
-      border-left: 6px solid #4b0082;
+      margin: 25px 0;
+      padding: 30px;
+      border-left: 8px solid #4b0082;
       background: linear-gradient(135deg, #fafafa, #f0f0f0);
-      border-radius: 15px;
-      transition: all 0.5s cubic-bezier(0.23, 1, 0.320, 1);
+      border-radius: 20px;
+      transition: all 0.8s cubic-bezier(0.23, 1, 0.320, 1);
       position: relative;
       overflow: hidden;
       opacity: 0;
-      animation: certSlideIn 0.8s ease-out forwards;
-      box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+      animation: certPowerfulSlideIn 1.2s ease-out forwards;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+      transform: perspective(1000px) rotateX(0deg);
     }
 
     .certification:nth-child(even) {
-      animation-delay: 0.1s;
+      animation-delay: 0.15s;
     }
 
     .certification:nth-child(odd) {
-      animation-delay: 0.2s;
+      animation-delay: 0.3s;
     }
 
-    @keyframes certSlideIn {
+    @keyframes certPowerfulSlideIn {
       0% {
         opacity: 0;
-        transform: translateX(-100px) rotateY(45deg);
-        filter: blur(5px);
+        transform: translateX(-150px) rotateY(90deg) scale(0.5);
+        filter: blur(10px);
+      }
+      50% {
+        transform: translateX(20px) rotateY(-10deg) scale(1.05);
+        filter: blur(2px);
       }
       100% {
         opacity: 1;
-        transform: translateX(0) rotateY(0deg);
+        transform: translateX(0) rotateY(0deg) scale(1);
         filter: blur(0px);
       }
     }
@@ -226,19 +430,39 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(75, 0, 130, 0.1), transparent);
-      transition: left 0.6s;
+      background: linear-gradient(90deg, transparent, rgba(75, 0, 130, 0.15), transparent);
+      transition: left 0.8s;
+    }
+
+    .certification::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 100px;
+      height: 100px;
+      background: radial-gradient(circle, rgba(138, 43, 226, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      transition: all 0.8s ease;
+      transform: scale(0);
     }
 
     .certification:hover::before {
       left: 100%;
     }
 
+    .certification:hover::after {
+      transform: scale(3);
+      top: -30%;
+      right: -30%;
+    }
+
     .certification:hover {
-      background: linear-gradient(135deg, #f0f0ff, #e8e8ff);
-      transform: translateX(20px) translateY(-10px) scale(1.03);
-      box-shadow: 0 20px 40px rgba(75, 0, 130, 0.2);
-      border-left-width: 8px;
+      background: linear-gradient(135deg, #f8f4ff, #f0e6ff);
+      transform: translateX(30px) translateY(-15px) scale(1.05) perspective(1000px) rotateX(-2deg);
+      box-shadow: 0 30px 60px rgba(75, 0, 130, 0.3);
+      border-left-width: 12px;
+      border-left-color: #8a2be2;
     }
 
     .certification a {
@@ -246,46 +470,66 @@
       font-weight: bold;
       text-decoration: none;
       display: inline-block;
-      padding: 8px 16px;
-      border-radius: 25px;
+      padding: 12px 25px;
+      border-radius: 30px;
       background: linear-gradient(45deg, rgba(75, 0, 130, 0.1), rgba(138, 43, 226, 0.1));
-      transition: all 0.3s ease;
-      margin-top: 10px;
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+      margin-top: 15px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .certification a::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.4), transparent);
+      transition: left 0.5s;
+    }
+
+    .certification a:hover::before {
+      left: 100%;
     }
 
     .certification a:hover {
       background: linear-gradient(45deg, #4b0082, #8a2be2);
       color: white;
-      transform: scale(1.1);
-      box-shadow: 0 5px 15px rgba(75, 0, 130, 0.4);
+      transform: scale(1.15) translateY(-3px);
+      box-shadow: 0 10px 25px rgba(75, 0, 130, 0.4);
     }
 
     .certification p {
-      margin: 8px 0;
-      font-size: 16px;
-      line-height: 1.6;
+      margin: 12px 0;
+      font-size: 17px;
+      line-height: 1.7;
     }
 
     .certification strong {
       color: #4b0082;
-      font-size: 18px;
+      font-size: 20px;
     }
 
     .hidden {
-      animation: certSlideOut 0.5s ease-in forwards;
+      animation: certPowerfulSlideOut 0.8s ease-in forwards;
     }
 
-    @keyframes certSlideOut {
+    @keyframes certPowerfulSlideOut {
       0% {
         opacity: 1;
-        transform: translateX(0) scale(1);
+        transform: translateX(0) scale(1) rotateY(0deg);
         height: auto;
-        margin: 20px 0;
-        padding: 25px;
+        margin: 25px 0;
+        padding: 30px;
+      }
+      50% {
+        transform: translateX(200px) scale(0.8) rotateY(45deg);
       }
       100% {
         opacity: 0;
-        transform: translateX(100px) scale(0.8);
+        transform: translateX(300px) scale(0.5) rotateY(90deg);
         height: 0;
         margin: 0;
         padding: 0;
@@ -293,36 +537,173 @@
     }
 
     .show {
-      animation: certSlideIn 0.8s ease-out forwards;
+      animation: certPowerfulSlideIn 1.2s ease-out forwards;
     }
 
-    /* Floating action button */
+    /* Enhanced floating action button */
     .fab {
       position: fixed;
       bottom: 30px;
-      right: 30px;
-      width: 60px;
-      height: 60px;
+      right: 130px;
+      width: 70px;
+      height: 70px;
       border-radius: 50%;
       background: linear-gradient(45deg, #4b0082, #8a2be2);
       border: none;
       color: white;
-      font-size: 24px;
+      font-size: 28px;
       cursor: pointer;
-      box-shadow: 0 10px 25px rgba(75, 0, 130, 0.3);
-      transition: all 0.3s ease;
+      box-shadow: 0 15px 35px rgba(75, 0, 130, 0.4);
+      transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
       z-index: 1000;
-      animation: fabPulse 2s infinite;
+      animation: fabPowerfulPulse 3s infinite;
     }
 
-    @keyframes fabPulse {
-      0%, 100% { transform: scale(1); }
-      50% { transform: scale(1.1); }
+    @keyframes fabPowerfulPulse {
+      0%, 100% { 
+        transform: scale(1) rotate(0deg); 
+        box-shadow: 0 15px 35px rgba(75, 0, 130, 0.4);
+      }
+      25% { 
+        transform: scale(1.1) rotate(90deg); 
+        box-shadow: 0 20px 40px rgba(138, 43, 226, 0.6);
+      }
+      50% { 
+        transform: scale(1.15) rotate(180deg); 
+        box-shadow: 0 25px 50px rgba(75, 0, 130, 0.5);
+      }
+      75% { 
+        transform: scale(1.1) rotate(270deg); 
+        box-shadow: 0 20px 40px rgba(138, 43, 226, 0.6);
+      }
     }
 
     .fab:hover {
-      transform: scale(1.2) rotate(180deg);
-      box-shadow: 0 15px 35px rgba(75, 0, 130, 0.5);
+      transform: scale(1.3) rotate(360deg);
+      box-shadow: 0 25px 50px rgba(75, 0, 130, 0.6);
+      background: linear-gradient(45deg, #8a2be2, #4b0082);
+    }
+
+    /* Modal for Add Certificate */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 2000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(10px);
+      animation: modalFadeIn 0.5s ease;
+    }
+
+    .modal-content {
+      background: linear-gradient(135deg, #fafafa, #f0f0f0);
+      margin: 5% auto;
+      padding: 40px;
+      border-radius: 30px;
+      width: 90%;
+      max-width: 600px;
+      box-shadow: 0 30px 80px rgba(0,0,0,0.3);
+      animation: modalSlideIn 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      position: relative;
+    }
+
+    @keyframes modalFadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes modalSlideIn {
+      0% {
+        transform: translateY(-100px) scale(0.7);
+        opacity: 0;
+      }
+      100% {
+        transform: translateY(0) scale(1);
+        opacity: 1;
+      }
+    }
+
+    .close {
+      color: #aaa;
+      float: right;
+      font-size: 28px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      position: absolute;
+      top: 20px;
+      right: 30px;
+    }
+
+    .close:hover {
+      color: #4b0082;
+      transform: scale(1.2) rotate(90deg);
+    }
+
+    .form-group {
+      margin-bottom: 25px;
+    }
+
+    .form-group input,
+    .form-group textarea,
+    .form-group select {
+      width: 100%;
+      padding: 15px 20px;
+      border: 2px solid #e9ecef;
+      border-radius: 15px;
+      font-size: 16px;
+      transition: all 0.3s ease;
+      background: rgba(255,255,255,0.9);
+    }
+
+    .form-group input:focus,
+    .form-group textarea:focus,
+    .form-group select:focus {
+      outline: none;
+      border-color: #4b0082;
+      box-shadow: 0 0 20px rgba(75, 0, 130, 0.2);
+      transform: scale(1.02);
+    }
+
+    .submit-btn {
+      background: linear-gradient(45deg, #4b0082, #8a2be2);
+      color: white;
+      border: none;
+      padding: 18px 40px;
+      border-radius: 30px;
+      font-size: 18px;
+      font-weight: 700;
+      cursor: pointer;
+      transition: all 0.5s ease;
+      box-shadow: 0 10px 30px rgba(75, 0, 130, 0.3);
+      width: 100%;
+    }
+
+    .submit-btn:hover {
+      transform: translateY(-3px) scale(1.05);
+      box-shadow: 0 20px 40px rgba(75, 0, 130, 0.5);
+    }
+
+    /* Success animation */
+    .success-animation {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      z-index: 3000;
+      font-size: 100px;
+      opacity: 0;
+      animation: successPop 2s ease-in-out;
+    }
+
+    @keyframes successPop {
+      0% { opacity: 0; transform: translate(-50%, -50%) scale(0); }
+      20% { opacity: 1; transform: translate(-50%, -50%) scale(1.5); }
+      80% { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+      100% { opacity: 0; transform: translate(-50%, -50%) scale(0.5); }
     }
 
     /* Responsive design */
@@ -333,17 +714,38 @@
       
       .container {
         margin: 20px;
-        padding: 20px;
+        padding: 25px;
       }
       
       .filter-btns button {
-        margin: 5px;
-        padding: 12px 20px;
-        font-size: 14px;
+        margin: 8px 10px;
+        padding: 15px 25px;
+        font-size: 16px;
       }
       
       .certification {
-        padding: 20px;
+        padding: 25px;
+      }
+
+      .bot-guide {
+        right: 15px;
+        bottom: 80px;
+      }
+
+      .bot {
+        width: 60px;
+        height: 60px;
+      }
+
+      .bot::before {
+        font-size: 25px;
+      }
+
+      .fab {
+        right: 100px;
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
       }
     }
   </style>
@@ -351,12 +753,23 @@
 <body>
 
 <div class="bg-animation">
-  <div class="particle" style="left: 10%; top: 20%; width: 6px; height: 6px;"></div>
-  <div class="particle" style="left: 20%; top: 80%; width: 8px; height: 8px;"></div>
-  <div class="particle" style="left: 60%; top: 30%; width: 4px; height: 4px;"></div>
-  <div class="particle" style="left: 80%; top: 70%; width: 6px; height: 6px;"></div>
-  <div class="particle" style="left: 90%; top: 10%; width: 5px; height: 5px;"></div>
-  <div class="particle" style="left: 30%; top: 60%; width: 7px; height: 7px;"></div>
+  <div class="particle" style="left: 10%; top: 20%; width: 8px; height: 8px;"></div>
+  <div class="particle" style="left: 20%; top: 80%; width: 12px; height: 12px;"></div>
+  <div class="particle" style="left: 60%; top: 30%; width: 6px; height: 6px;"></div>
+  <div class="particle" style="left: 80%; top: 70%; width: 10px; height: 10px;"></div>
+  <div class="particle" style="left: 90%; top: 10%; width: 7px; height: 7px;"></div>
+  <div class="particle" style="left: 30%; top: 60%; width: 9px; height: 9px;"></div>
+  <div class="particle" style="left: 50%; top: 90%; width: 5px; height: 5px;"></div>
+  <div class="particle" style="left: 70%; top: 15%; width: 11px; height: 11px;"></div>
+</div>
+
+<!-- Cute Bot Guide -->
+<div class="bot-guide">
+  <div class="bot" onclick="showBotTip()">
+    <div class="bot-speech" id="botSpeech">
+      Hi! I'm your certification guide! Click me for tips! ✨
+    </div>
+  </div>
 </div>
 
 <header>
@@ -366,13 +779,41 @@
 <div class="container">
   <div class="filter-btns">
     <button class="active" onclick="filterCerts('all')">🌟 All</button>
+    <button onclick="filterCerts('internship')">🏢 Internships</button>
     <button onclick="filterCerts('coursera')">📚 Coursera</button>
     <button onclick="filterCerts('infosys')">💼 Infosys</button>
     <button onclick="filterCerts('workshop')">🔧 Workshops</button>
   </div>
+  
+  <a href="#" class="add-cert-btn" onclick="openModal()">Add New Certificate</a>
 
   <div id="certList">
-    <!-- All certificates in reverse chronology -->
+    <!-- Internship Certificates -->
+    <div class="certification internship">
+      <p><strong>☁️ Google Cloud Gen AI Internship</strong> – Jun 23 - Aug 11, 2025 – <em>Google Cloud</em></p>
+      <p>Developed advanced AI solutions using Google Cloud's Generative AI platform. Implemented ML models with Vertex AI and BigQuery ML.</p>
+      <a href="https://media.licdn.com/dms/document/media/v2/D561FAQGCtaCTxCkpag/feedshare-document-pdf-analyzed/B56ZjGFh5IHMAc-/0/1755670003228?e=1756944000&v=beta&t=Dmv5TG53b9EjjQ-HD1i1BoAdcyMT7EN13msKLtxrZo4" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="certification internship">
+      <p><strong>🤖 Applied Supervised ML Internship</strong> – Apr 2025 – May 2025 – <em>YBI Foundation</em></p>
+      <p>Built ANN, LSTM, and Transformer models for NLP applications. Improved accuracy through self-attention mechanisms and sequence modeling techniques.</p>
+      <a href="https://media.licdn.com/dms/document/media/v2/D561FAQGJ7N_dEw_HmA/feedshare-document-pdf-analyzed/B56Zbt97wRH0AY-/0/1747749162393?e=1756944000&v=beta&t=U9rZurM845uoa_d0uSWTBMZ9dndEZw58etIFJdQDSzE" target="_blank">View Certificate</a>
+    </div>
+
+    <div class="certification internship">
+      <p><strong>🥽 AR/VR Development Internship</strong> – Jul 2024 (40 hours) – <em>NIET Center of Excellence</em></p>
+      <p>Developed immersive AR/VR scenes using Unity, Meta Spark Studio, and Vuforia Engine. Reduced load time by 30% and ensured stable 60+ FPS performance.</p>
+      <a href="#" onclick="alert('AR/VR Development Internship certificate from NIET Center of Excellence'); return false;">View Certificate</a>
+    </div>
+
+    <div class="certification internship">
+      <p><strong>📊 Data Science & ML Internship</strong> – Aug 2023 – Oct 2023 – <em>YBI Foundation</em></p>
+      <p>Built comprehensive ML models for classification and regression using Python. Managed data pipelines for preprocessing, feature engineering, and version control.</p>
+      <a href="#" onclick="alert('Data Science & ML Internship certificate from YBI Foundation'); return false;">View Certificate</a>
+    </div>
+
+    <!-- All other certificates -->
     <div class="certification workshop">
       <p><strong>🤖 Ai Chatbot</strong> – Feb 24, 2025 – <em>Ai Academia</em></p>
       <a href="https://ibb.co/pvtx15X1">View Certificate</a>
@@ -480,9 +921,84 @@
   </div>
 </div>
 
+<!-- Add Certificate Modal -->
+<div id="addCertModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal()">&times;</span>
+    <h2 style="text-align: center; color: #4b0082; margin-bottom: 30px; font-size: 2.5em;">✨ Add New Certificate ✨</h2>
+    
+    <form id="certificateForm">
+      <div class="form-group">
+        <input type="text" id="title" placeholder="🏆 Certificate Title" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" id="date" placeholder="📅 Date Obtained (e.g., Jan 15, 2025)" required>
+      </div>
+      
+      <div class="form-group">
+        <input type="text" id="issuer" placeholder="🏢 Issuer Organization" required>
+      </div>
+      
+      <div class="form-group">
+        <select id="category" required>
+          <option value="">📂 Select Category</option>
+          <option value="internship">🏢 Internship</option>
+          <option value="coursera">📚 Coursera</option>
+          <option value="infosys">💼 Infosys</option>
+          <option value="workshop">🔧 Workshop</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <textarea id="description" placeholder="📝 Description of what you learned/accomplished" rows="4" required></textarea>
+      </div>
+      
+      <div class="form-group">
+        <input type="url" id="link" placeholder="🔗 Certificate Link (URL)" required>
+      </div>
+      
+      <button type="submit" class="submit-btn">🚀 Add Certificate</button>
+    </form>
+  </div>
+</div>
+
 <button class="fab" onclick="scrollToTop()" title="Back to top">↑</button>
 
 <script>
+  // Bot tips array
+  const botTips = [
+    "Hi! I'm your certification guide! Click me for tips! ✨",
+    "💡 Tip: Use filters to organize your certificates!",
+    "🌟 Pro tip: Add descriptions to showcase your skills!",
+    "📚 Did you know? You can add certificates from any platform!",
+    "🎯 Keep your portfolio updated for better opportunities!",
+    "🚀 Impressive collection! Keep learning and growing!",
+    "💪 Your certificates show your dedication to learning!"
+  ];
+
+  let currentTipIndex = 0;
+
+  function showBotTip() {
+    const botSpeech = document.getElementById('botSpeech');
+    currentTipIndex = (currentTipIndex + 1) % botTips.length;
+    botSpeech.textContent = botTips[currentTipIndex];
+    
+    // Add a little bounce animation to the bot
+    const bot = document.querySelector('.bot');
+    bot.style.transform = 'scale(1.3) rotate(360deg)';
+    setTimeout(() => {
+      bot.style.transform = 'scale(1) rotate(0deg)';
+    }, 500);
+  }
+
+  // Auto-cycle bot tips
+  setInterval(() => {
+    const botSpeech = document.getElementById('botSpeech');
+    currentTipIndex = (currentTipIndex + 1) % botTips.length;
+    botSpeech.textContent = botTips[currentTipIndex];
+  }, 8000);
+
   function filterCerts(category) {
     const certs = document.querySelectorAll('.certification');
     const buttons = document.querySelectorAll('.filter-btns button');
@@ -494,12 +1010,23 @@
       if (category === 'all' || cert.classList.contains(category)) {
         cert.classList.remove('hidden');
         cert.classList.add('show');
-        cert.style.animationDelay = (index * 0.1) + 's';
+        cert.style.animationDelay = (index * 0.15) + 's';
       } else {
         cert.classList.add('hidden');
         cert.classList.remove('show');
       }
     });
+
+    // Update bot tip based on filter
+    const botSpeech = document.getElementById('botSpeech');
+    const categoryTips = {
+      'all': "🌟 Showing all your amazing certificates!",
+      'internship': "🏢 Great internship experiences!",
+      'coursera': "📚 Excellent online learning journey!",
+      'infosys': "💼 Strong technical foundation!",
+      'workshop': "🔧 Hands-on learning approach!"
+    };
+    botSpeech.textContent = categoryTips[category] || "Great filter choice!";
   }
 
   function scrollToTop() {
@@ -507,6 +1034,79 @@
       top: 0,
       behavior: 'smooth'
     });
+  }
+
+  // Modal functions
+  function openModal() {
+    document.getElementById('addCertModal').style.display = 'block';
+    document.body.style.overflow = 'hidden';
+  }
+
+  function closeModal() {
+    document.getElementById('addCertModal').style.display = 'none';
+    document.body.style.overflow = 'auto';
+  }
+
+  // Close modal when clicking outside
+  window.onclick = function(event) {
+    const modal = document.getElementById('addCertModal');
+    if (event.target === modal) {
+      closeModal();
+    }
+  }
+
+  // Form submission
+  document.getElementById('certificateForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    const title = document.getElementById('title').value;
+    const date = document.getElementById('date').value;
+    const issuer = document.getElementById('issuer').value;
+    const category = document.getElementById('category').value;
+    const description = document.getElementById('description').value;
+    const link = document.getElementById('link').value;
+
+    // Get appropriate emoji based on category
+    const categoryEmojis = {
+      'internship': '🏢',
+      'coursera': '📚',
+      'infosys': '💼',
+      'workshop': '🔧'
+    };
+
+    // Create new certificate element
+    const newCert = document.createElement('div');
+    newCert.className = `certification ${category}`;
+    newCert.innerHTML = `
+      <p><strong>${categoryEmojis[category]} ${title}</strong> – ${date} – <em>${issuer}</em></p>
+      <p>${description}</p>
+      <a href="${link}" target="_blank">View Certificate</a>
+    `;
+
+    // Add to the certificate list
+    document.getElementById('certList').appendChild(newCert);
+
+    // Show success animation
+    showSuccessAnimation();
+
+    // Close modal and reset form
+    closeModal();
+    this.reset();
+
+    // Update bot message
+    const botSpeech = document.getElementById('botSpeech');
+    botSpeech.textContent = "🎉 New certificate added! Amazing work!";
+  });
+
+  function showSuccessAnimation() {
+    const successDiv = document.createElement('div');
+    successDiv.className = 'success-animation';
+    successDiv.textContent = '🎉';
+    document.body.appendChild(successDiv);
+
+    setTimeout(() => {
+      document.body.removeChild(successDiv);
+    }, 2000);
   }
 
   // Add scroll animation for certificates
@@ -525,10 +1125,39 @@
   window.addEventListener('load', () => {
     const certs = document.querySelectorAll('.certification');
     certs.forEach((cert, index) => {
-      cert.style.animationDelay = (index * 0.1) + 's';
+      cert.style.animationDelay = (index * 0.15) + 's';
+    });
+  });
+
+  // Add some particle interactions
+  document.addEventListener('mousemove', (e) => {
+    const particles = document.querySelectorAll('.particle');
+    const mouseX = e.clientX;
+    const mouseY = e.clientY;
+
+    particles.forEach((particle, index) => {
+      const rect = particle.getBoundingClientRect();
+      const particleX = rect.left + rect.width / 2;
+      const particleY = rect.top + rect.height / 2;
+      
+      const distance = Math.sqrt(
+        Math.pow(mouseX - particleX, 2) + Math.pow(mouseY - particleY, 2)
+      );
+
+      if (distance < 100) {
+        const angle = Math.atan2(mouseY - particleY, mouseX - particleX);
+        const force = (100 - distance) / 100;
+        const moveX = Math.cos(angle) * force * 20;
+        const moveY = Math.sin(angle) * force * 20;
+        
+        particle.style.transform = `translate(${moveX}px, ${moveY}px) scale(${1 + force * 0.5})`;
+      } else {
+        particle.style.transform = 'translate(0px, 0px) scale(1)';
+      }
     });
   });
 </script>
 
 </body>
 </html>
+
