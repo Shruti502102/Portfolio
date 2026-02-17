@@ -1093,43 +1093,13 @@
       <button class="helper-btn" onclick="showSkills()">Skills</button>
       <button class="helper-btn" onclick="showProjects()">Projects</button>
       <button class="helper-btn" onclick="showContact()">Contact</button>
-      <button class="helper-btn" onclick="showCertificates()">Certificates</button>
+      <a href="tr.html" class="helper-btn">Certificates</a>
+
     </div>
   </div>
 
   <!-- Certificate Modal -->
-  <div id="certificateModal" class="modal">
-    <div class="modal-content">
-      <span class="close" onclick="closeCertificateModal()">&times;</span>
-      <h2 class="text-center mb-4" style="color: var(--primary);">Internship Certificates</h2>
-      <div class="certificate-grid">
-        <div class="certificate-item">
-          <i class="bi bi-cloud-fill" style="font-size: 3rem; color: var(--secondary); margin-bottom: 10px;"></i>
-          <h5>Google Cloud Gen AI</h5>
-          <p class="small">Jun 23 - Aug 11, 2025</p>
-          <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('google-cloud')">View Certificate</button>
-        </div>
-        <div class="certificate-item">
-          <i class="bi bi-robot" style="font-size: 3rem; color: var(--accent); margin-bottom: 10px;"></i>
-          <h5>Applied Supervised ML</h5>
-          <p class="small">YBI Foundation</p>
-          <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('ybi-ml')">View Certificate</button>
-        </div>
-        <div class="certificate-item">
-          <i class="bi bi-headset-vr" style="font-size: 3rem; color: var(--pink); margin-bottom: 10px;"></i>
-          <h5>AR/VR Development</h5>
-          <p class="small">NIET Center of Excellence</p>
-          <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('ar-vr')">View Certificate</button>
-        </div>
-        <div class="certificate-item">
-          <i class="bi bi-graph-up" style="font-size: 3rem; color: var(--cyan); margin-bottom: 10px;"></i>
-          <h5>Data Science & ML</h5>
-          <p class="small">YBI Foundation</p>
-          <button class="btn btn-sm btn-outline-primary" onclick="viewCertificate('data-science')">View Certificate</button>
-        </div>
-      </div>
-    </div>
-  </div>
+
 
   <!-- Navigation -->
   <nav class="navbar">
@@ -1488,7 +1458,7 @@
         <a href="#" class="btn btn-outline-secondary btn-lg me-3" onclick="downloadResume()">
           <i class="bi bi-download me-2"></i>Download Resume
         </a>
-        <a href="#" class="btn btn-outline-info btn-lg" onclick="showCertificates()">
+        <a href="tr.html" class="btn btn-outline-info btn-lg">
           <i class="bi bi-award me-2"></i>View Certificates
         </a>
       </div>
@@ -1662,11 +1632,7 @@
       setTimeout(() => helperChat.classList.remove('show'), 3000);
     }
 
-    function showCertificates() {
-      document.getElementById('certificateModal').style.display = 'block';
-      helperMessage.textContent = "Check out these impressive internship certificates! 🏆";
-      setTimeout(() => helperChat.classList.remove('show'), 2000);
-    }
+
 
     // Certificate Modal functions
     function closeCertificateModal() {
@@ -1927,5 +1893,6 @@ CERTIFICATIONS
   </script>
 </body>
 </html>
+
 
 
