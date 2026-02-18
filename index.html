@@ -1061,6 +1061,54 @@
         opacity: 0;
       }
     }
+    /* ======================= */
+    /* CHIBI AI ASSISTANT */
+    /* ======================= */
+    
+    .chibi-wrapper {
+      position: fixed;
+      bottom: 40px;
+      left: 30px;
+      width: 130px;
+      z-index: 1200;
+      cursor: grab;
+      animation: chibiFloat 4s ease-in-out infinite;
+      transition: transform 0.3s ease;
+    }
+    
+    .chibi-img {
+      width: 100%;
+      filter: drop-shadow(0 0 20px rgba(187,134,252,0.6));
+    }
+    
+    @keyframes chibiFloat {
+      0%,100% { transform: translateY(0px); }
+      50% { transform: translateY(-15px); }
+    }
+    
+    .chibi-bubble {
+      position: absolute;
+      bottom: 150px;
+      left: 0;
+      background: rgba(255,255,255,0.95);
+      color: #333;
+      padding: 10px 14px;
+      border-radius: 20px;
+      font-size: 0.8rem;
+      max-width: 220px;
+      display: none;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+    
+    .chibi-glow {
+      filter: drop-shadow(0 0 25px #ff6b9d);
+    }
+    
+    .chibi-sleep {
+      opacity: 0.7;
+      filter: grayscale(40%);
+    }
+
   </style>
 </head>
 
@@ -1086,7 +1134,12 @@
   <div class="orb orb4"></div>
 
   <!-- AI Helper -->
-  <div class="ai-helper" id="aiHelper">🤖</div>
+  <!-- CHIBI AI ASSISTANT -->
+  <div class="chibi-wrapper" id="chibi">
+    <img src="chibi-ai.png" class="chibi-img" id="chibiImg">
+    <div class="chibi-bubble" id="chibiBubble"></div>
+  </div>
+
   <div class="helper-chat" id="helperChat">
     <p id="helperMessage">Hi! I'm your AI assistant. How can I help you explore Shruti's portfolio?</p>
     <div class="helper-buttons">
@@ -1989,9 +2042,130 @@ CERTIFICATIONS
       }
     `;
     document.head.appendChild(rainbowStyle);
+    /* ======================= */
+    /* CHIBI AI BRAIN SYSTEM */
+    /* ======================= */
+    
+    const chibi = document.getElementById("chibi");
+    const chibiBubble = document.getElementById("chibiBubble");
+    const chibiImg = document.getElementById("chibiImg");
+    
+    let chibiMemory = [];
+    let chibiEnergy = 100;
+    let chibiLastIntent = null;
+    
+    const chibiBrain = {
+      decisionTree: `
+    Decision Tree is used for Job Screening.
+    It splits candidates based on rules like:
+    Experience > 2 years?
+    Required skill present?
+    Final output: Selected / Rejected.
+    It is interpretable and rule-based.
+    `,
+    
+      logistic: `
+    Logistic Regression is used for Loan Approval.
+    It predicts probability using sigmoid function:
+    P(Y=1)=1/(1+e^-z)
+    Output:
+    1 → Approve
+    0 → Reject
+    Best for binary classification problems.
+    `,
+    
+      skills: `
+    Shruti has strong skills in:
+    Python, Machine Learning, DevOps, Cloud, React, Power BI.
+    She builds and deploys full ML pipelines.
+    `
+    };
+    
+    function chibiIntent(text){
+      text = text.toLowerCase();
+      if(text.includes("decision") || text.includes("job"))
+        return "decisionTree";
+      if(text.includes("loan") || text.includes("logistic"))
+        return "logistic";
+      if(text.includes("skill"))
+        return "skills";
+      return "general";
+    }
+    
+    function chibiReply(userText){
+      const intent = chibiIntent(userText);
+      chibiLastIntent = intent;
+      chibiMemory.push(userText);
+    
+      if(intent === "decisionTree")
+        return chibiBrain.decisionTree;
+    
+      if(intent === "logistic")
+        return chibiBrain.logistic;
+    
+      if(intent === "skills")
+        return chibiBrain.skills;
+    
+      return "Ask me about job screening, loan models, or Shruti's skills.";
+    }
+    
+    function chibiSpeak(text){
+      chibiBubble.style.display = "block";
+      chibiBubble.innerText = "";
+      let i = 0;
+    
+      const typing = setInterval(()=>{
+        chibiBubble.innerText += text[i];
+        i++;
+        if(i >= text.length){
+          clearInterval(typing);
+          setTimeout(()=>{
+            chibiBubble.style.display = "none";
+          },4000);
+        }
+      },15);
+    }
+    
+    /* Click Interaction */
+    chibi.addEventListener("click", ()=>{
+      chibiEnergy -= 10;
+      chibiImg.classList.add("chibi-glow");
+    
+      setTimeout(()=>{
+        chibiImg.classList.remove("chibi-glow");
+      },800);
+    
+      if(chibiEnergy <= 0){
+        chibiImg.classList.add("chibi-sleep");
+        chibiSpeak("I'm tired 😴 Give me a second...");
+        setTimeout(()=>{
+          chibiEnergy = 100;
+          chibiImg.classList.remove("chibi-sleep");
+          chibiSpeak("I'm back! ⚡");
+        },5000);
+      } else {
+        chibiSpeak("Ask me about ML models or Shruti's experience!");
+      }
+    });
+    
+    /* Drag Feature */
+    let isDragging = false;
+    
+    chibi.addEventListener("mousedown", ()=>{ isDragging = true; chibi.style.cursor="grabbing"; });
+    document.addEventListener("mouseup", ()=>{ isDragging=false; chibi.style.cursor="grab"; });
+    
+    document.addEventListener("mousemove",(e)=>{
+      if(isDragging){
+        chibi.style.left = e.clientX - 60 + "px";
+        chibi.style.top = e.clientY - 60 + "px";
+        chibi.style.bottom="auto";
+      }
+    });
+
   </script>
 </body>
 </html>
+
 
 
 
