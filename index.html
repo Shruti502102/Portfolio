@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=1200">
+
   <title>Shruti Srivastava - Portfolio</title>
 
   <!-- Google Fonts -->
@@ -350,9 +351,9 @@
       margin-bottom: 30px;
       animation: typewriter 4s steps(60) forwards, subtitleGlow 2s ease-in-out infinite alternate;
       border-right: 3px solid var(--accent);
-      white-space: nowrap;
-      overflow: hidden;
-      width: 0;
+      white-space: normal;
+      width: 100%;
+
       font-family: 'Poppins', sans-serif;
     }
 
@@ -993,11 +994,27 @@
       .navbar { padding: 8px 20px; }
       .nav-link { margin: 0 8px; }
       .skills-grid, .project-grid { grid-template-columns: 1fr; }
-      .timeline::before { left: 20px; }
-      .timeline-item { width: calc(100% - 40px); left: 40px !important; }
-      .timeline-marker { left: -30px !important; right: auto !important; }
+      .timeline::before{
+        left:15px;
+      }
+
+      .timeline-item{
+        width:100%;
+        left:0 !important;
+        padding-left:40px;
+      }
+
+      .timeline-marker{
+        left:0 !important;
+      }
+
       .ai-helper { width: 60px; height: 60px; bottom: 20px; right: 20px; }
       .helper-chat { max-width: 200px; right: 20px; }
+      .orb,
+      .cursor-particle{
+        display:none;
+      }
+
     }
 
     /* Additional animations */
@@ -2169,6 +2186,7 @@ CERTIFICATIONS
   </script>
 </body>
 </html>
+
 
 
 
