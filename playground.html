@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=device-width,initial-scale=1.0"/>
+<title>Shruti Srivastava — 3D Playground</title>
+<meta name="description" content="Interactive 3D playground — meet Shru-AI, a fully rigged character built with SVG and JavaScript."/>
+<meta name="author" content="Shruti Srivastava"/>
+<meta name="keywords" content="Shruti Srivastava, Data Scientist, AI ML Engineer, Full Stack Developer, Machine Learning, Generative AI, Portfolio, NIET"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#04040e"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Shruti Srivastava — 3D Playground"/>
+<meta property="og:description" content="Interactive 3D playground — meet Shru-AI, a fully rigged character built with SVG and JavaScript."/>
+<meta property="og:url" content="https://shruti502102.github.io/Portfolio/playground.html"/>
+<meta property="og:site_name" content="Shruti Srivastava Portfolio"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Shruti Srivastava — 3D Playground"/>
+<meta name="twitter:description" content="Interactive 3D playground — meet Shru-AI, a fully rigged character built with SVG and JavaScript."/>
+<link rel="canonical" href="https://shruti502102.github.io/Portfolio/playground.html"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236d28d9'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E"/>
+<link rel="manifest" href="manifest.json"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Shruti SS"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Cabinet+Grotesk:wght@300;400;500;700&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<style>
+:root{--bg:#04040e;--s1:#07071a;--v:#6d28d9;--v2:#8b5cf6;--v3:#c4b5fd;--m:#06d6a0;--g:#f59e0b;--r:#ef4444;--pk:#ec4899;--w:#eeeeff;--mu:rgba(238,238,255,.42);--fd:'Clash Display',sans-serif;--fb:'Cabinet Grotesk',sans-serif;--fm:'JetBrains Mono',monospace;}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--bg);color:var(--w);min-height:100vh;overflow-x:hidden;cursor:none;opacity:0;transition:opacity .45s ease;}
+body.page-in{opacity:1;}
+body{animation:failsafeReveal 0s linear 1.2s forwards;}
+@keyframes failsafeReveal{to{opacity:1;}}
+body.page-out{opacity:0;}
+@media(hover:none),(pointer:coarse){body{cursor:auto;}#cd,#cr{display:none;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;}}
+#cd{position:fixed;width:7px;height:7px;background:var(--v3);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:screen;}
+#cr{position:fixed;width:34px;height:34px;border:1.5px solid rgba(196,181,253,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .18s,height .18s;mix-blend-mode:screen;}
+#cr.mag{width:56px;height:56px;border-color:var(--m);}
+#prog{position:fixed;top:0;left:0;height:2px;width:0%;background:linear-gradient(90deg,var(--v),var(--m),var(--g));z-index:9999;}
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:linear-gradient(var(--v),var(--m));border-radius:3px;}
+
+nav{position:sticky;top:0;z-index:500;padding:0 40px;height:60px;display:flex;align-items:center;justify-content:space-between;background:rgba(4,4,14,.9);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);border-bottom:1px solid rgba(255,255,255,.06);}
+.nb{display:flex;align-items:center;gap:7px;color:var(--mu);text-decoration:none;font-size:.82rem;transition:color .2s;}
+.nb:hover{color:var(--w);}
+.logo{font-family:var(--fd);font-size:1rem;font-weight:700;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.nav-r{display:flex;gap:7px;align-items:center;}
+.npill{display:inline-flex;align-items:center;gap:5px;color:var(--mu);text-decoration:none;font-size:.75rem;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.07);transition:all .2s;}
+.npill:hover{border-color:rgba(139,92,246,.4);color:var(--v3);}
+
+.hero{max-width:900px;margin:0 auto;padding:44px 40px 20px;text-align:center;position:relative;z-index:1;}
+.hlbl{font-family:var(--fm);font-size:.68rem;color:var(--v3);letter-spacing:.16em;text-transform:uppercase;margin-bottom:12px;}
+.htit{font-family:var(--fd);font-size:clamp(2rem,4vw,3.2rem);font-weight:700;letter-spacing:-.03em;margin-bottom:14px;line-height:1.05;}
+.htit em{font-style:normal;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.hsub{font-size:.95rem;color:var(--mu);max-width:540px;margin:0 auto;line-height:1.75;}
+
+.stage-wrap{max-width:760px;margin:0 auto;padding:10px 20px 70px;position:relative;z-index:1;}
+
+/* ── SCENE ── */
+.scene{width:100%;background:var(--s1);border:1px solid rgba(139,92,246,.15);border-radius:20px;overflow:hidden;position:relative;min-height:400px;user-select:none;box-shadow:0 30px 80px rgba(0,0,0,.4);}
+.scene-bg{width:100%;height:400px;position:relative;overflow:hidden;}
+.bg-grad{position:absolute;inset:0;background:radial-gradient(ellipse 80% 60% at 50% 0%,#1a0a3d,transparent 70%),linear-gradient(180deg,#08081a 0%,#0d0d20 60%,#14142a 100%);}
+.grid-floor{position:absolute;bottom:0;left:0;right:0;height:160px;overflow:hidden;}
+.amb{position:absolute;border-radius:50%;filter:blur(70px);pointer-events:none;}
+.amb1{width:280px;height:140px;background:#7c3aed;opacity:.14;top:0;left:10%;}
+.amb2{width:200px;height:100px;background:#06d6a0;opacity:.1;top:20px;right:15%;}
+
+.char-stage{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:200px;height:320px;}
+.char-pivot{position:absolute;bottom:20px;left:50%;transform:translateX(-50%);transform-origin:bottom center;perspective:600px;}
+.char-shadow{position:absolute;bottom:16px;left:50%;transform:translateX(-50%);background:radial-gradient(ellipse,rgba(109,40,217,.5),transparent 65%);width:120px;height:18px;border-radius:50%;animation:shadowPulse 1.2s ease-in-out infinite;}
+@keyframes shadowPulse{0%,100%{transform:translateX(-50%) scaleX(1);opacity:.6;}50%{transform:translateX(-50%) scaleX(.85);opacity:.35;}}
+
+#charSvg{display:block;overflow:visible;transition:transform .3s ease;}
+
+.trail-dot{position:absolute;width:6px;height:3px;border-radius:50%;background:rgba(109,40,217,.4);bottom:26px;animation:trailFade .9s ease-out forwards;}
+@keyframes trailFade{0%{opacity:.6;transform:scaleX(1);}100%{opacity:0;transform:scaleX(.3);}}
+
+.speech{position:absolute;top:16px;right:-8px;background:rgba(15,15,40,.96);border:1px solid rgba(109,40,217,.45);border-radius:14px 14px 14px 4px;padding:11px 14px;width:180px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);z-index:20;display:none;}
+.speech.on{display:block;animation:bubPop .35s cubic-bezier(.34,1.56,.64,1);}
+@keyframes bubPop{from{opacity:0;transform:scale(.7)translateY(8px);}to{opacity:1;transform:scale(1)translateY(0);}}
+.speech p{font-size:12px;color:rgba(238,238,255,.85);line-height:1.5;margin-bottom:7px;}
+.speech-tag{font-size:10px;font-family:var(--fm);color:var(--m);background:rgba(6,214,160,.1);border:1px solid rgba(6,214,160,.25);padding:2px 8px;border-radius:20px;display:inline-block;}
+
+/* ── CONTROLS ── */
+.ctrl{padding:20px 24px 8px;display:flex;flex-direction:column;gap:14px;}
+.slabel{font-size:10px;color:rgba(238,238,255,.35);letter-spacing:.12em;text-transform:uppercase;margin-bottom:7px;}
+.dpad-row{display:flex;align-items:flex-start;gap:20px;flex-wrap:wrap;}
+.dpad{position:relative;width:100px;height:100px;flex-shrink:0;}
+.dp-btn{position:absolute;width:32px;height:32px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);border-radius:7px;display:flex;align-items:center;justify-content:center;cursor:pointer;transition:all .15s;color:rgba(238,238,255,.6);font-size:.85rem;}
+.dp-btn:hover,.dp-btn.pressed{background:rgba(109,40,217,.35);border-color:rgba(109,40,217,.7);color:#c4b5fd;}
+.dp-up{top:0;left:34px;}.dp-down{bottom:0;left:34px;}.dp-left{top:34px;left:0;}.dp-right{top:34px;right:0;}
+.dp-center{top:34px;left:34px;border-radius:50%;font-size:.6rem;color:rgba(238,238,255,.4);}
+.pose-strip{display:flex;gap:6px;flex-wrap:wrap;flex:1;}
+.pob{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);color:rgba(238,238,255,.55);border-radius:20px;padding:6px 12px;font-size:.72rem;cursor:pointer;transition:all .2s;white-space:nowrap;font-family:var(--fb);}
+.pob:hover,.pob.active{background:rgba(109,40,217,.22);border-color:rgba(109,40,217,.55);color:#c4b5fd;}
+
+.status-bar{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;padding:0 24px 20px;}
+.sitem{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:9px 10px;text-align:center;}
+.sit-l{font-size:9px;color:rgba(238,238,255,.35);display:block;margin-bottom:3px;letter-spacing:.05em;text-transform:uppercase;}
+.sit-v{font-size:.82rem;font-weight:500;}
+.v-p{color:#a78bfa;}.v-m{color:var(--m);}.v-g{color:var(--g);}.v-pk{color:var(--pk);}
+
+.hint-text{font-size:.7rem;color:rgba(238,238,255,.28);text-align:center;padding:6px 0 2px;}
+
+.info-cards{max-width:760px;margin:24px auto 0;padding:0 20px;display:grid;grid-template-columns:repeat(3,1fr);gap:12px;position:relative;z-index:1;}
+.ic{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:18px;text-align:center;transition:all .3s;}
+.ic:hover{border-color:rgba(139,92,246,.28);transform:translateY(-4px);}
+.ic i{font-size:1.5rem;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.ic h5{font-family:var(--fd);font-size:.85rem;margin:8px 0 4px;}
+.ic p{font-size:.75rem;color:var(--mu);line-height:1.5;}
+
+@media(max-width:680px){.hero,.stage-wrap{padding-left:14px;padding-right:14px;}.info-cards{grid-template-columns:1fr;}.status-bar{grid-template-columns:1fr 1fr;}}
+</style>
+</head>
+<body>
+<noscript><div style="position:fixed;inset:0;z-index:99999;background:#04040e;color:#eee;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;font-family:sans-serif;"><div><h1 style="color:#8b5cf6;margin-bottom:12px;">Shruti Srivastava</h1><p style="margin-bottom:8px;">Data Scientist &amp; AI/ML Engineer · B.Tech CSE (Data Science), First Division with Honours.</p><p style="color:#aaa;font-size:.9rem;">This portfolio uses JavaScript for its interactive features. Please enable JavaScript for the full experience.</p><p style="margin-top:14px;font-size:.9rem;">📧 shrutisrivastava502102@gmail.com · 📱 +91 9910367552</p></div></div></noscript>
+<div id="cd"></div><div id="cr"></div>
+<div id="prog"></div>
+
+<nav>
+  <a href="index.html" class="nb"><i class="bi bi-arrow-left"></i> Portfolio</a>
+  <div class="logo">SS.</div>
+  <div class="nav-r">
+    <a href="tr.html" class="npill"><i class="bi bi-award"></i> Certs</a>
+    <a href="blog.html" class="npill"><i class="bi bi-journal-code"></i> Blog</a>
+    <a href="showcase.html" class="npill"><i class="bi bi-images"></i> Showcase</a>
+    <a href="skills-match.html" class="npill"><i class="bi bi-cpu"></i> AI Match</a>
+  </div>
+</nav>
+
+<div class="hero">
+  <p class="hlbl">Interactive Experience</p>
+  <h1 class="htit">3D <em>Playground</em></h1>
+  <p class="hsub">Meet Shru-AI — a fully rigged 3D character. Walk her around with arrow keys, trigger poses, and watch every hand, foot, and limb animate. Built entirely with SVG + JavaScript.</p>
+</div>
+
+<div class="stage-wrap">
+  <div class="scene">
+    <div class="scene-bg">
+      <div class="bg-grad"></div>
+      <div class="amb amb1"></div><div class="amb amb2"></div>
+      <div class="grid-floor"><canvas class="grid-canvas" id="gridCv"></canvas></div>
+      <div class="char-stage" id="charStage">
+        <div class="char-shadow"></div>
+        <div class="char-pivot" id="charPivot">
+          <svg id="charSvg" viewBox="-60 -280 120 300" width="160" height="300" style="overflow:visible;">
+            <defs>
+              <linearGradient id="gSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#fde8c8"/><stop offset="100%" stop-color="#f5c890"/></linearGradient>
+              <linearGradient id="gHair" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#4a2c10"/><stop offset="100%" stop-color="#1a0a06"/></linearGradient>
+              <linearGradient id="gJacket" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#2563eb"/><stop offset="100%" stop-color="#1e3a8a"/></linearGradient>
+            </defs>
+            <g id="backHair"><ellipse cx="0" cy="-220" rx="38" ry="45" fill="url(#gHair)"/></g>
+            <g id="bodyGroup">
+              <!-- LEGS -->
+              <g id="thighL"><rect x="-22" y="-78" width="20" height="44" rx="8" fill="#1e3a8a"/><ellipse cx="-12" cy="-36" rx="9" ry="9" fill="#1d4ed8"/>
+                <g id="shinL"><rect x="-20" y="-34" width="16" height="40" rx="7" fill="#1e3a8a"/><rect x="-20" y="0" width="16" height="10" rx="4" fill="#e2e8f0"/>
+                  <g id="footL"><ellipse cx="-12" cy="10" rx="14" ry="7" fill="#1f2937"/><ellipse cx="-8" cy="9" rx="7" ry="4" fill="#374151"/></g></g></g>
+              <g id="thighR"><rect x="2" y="-78" width="20" height="44" rx="8" fill="#1e3a8a"/><ellipse cx="12" cy="-36" rx="9" ry="9" fill="#1d4ed8"/>
+                <g id="shinR"><rect x="4" y="-34" width="16" height="40" rx="7" fill="#1e3a8a"/><rect x="4" y="0" width="16" height="10" rx="4" fill="#e2e8f0"/>
+                  <g id="footR"><ellipse cx="12" cy="10" rx="14" ry="7" fill="#1f2937"/><ellipse cx="8" cy="9" rx="7" ry="4" fill="#374151"/></g></g></g>
+              <!-- TORSO -->
+              <g id="torso">
+                <path d="M-32,-140 Q-36,-90 -32,-78 Q0,-68 32,-78 Q36,-90 32,-140 Z" fill="url(#gJacket)"/>
+                <path d="M-10,-140 L-14,-115 L0,-108 L14,-115 L10,-140 Z" fill="#f1f5f9"/>
+                <path d="M-10,-140 L-22,-120 L-12,-110 L-14,-115 Z" fill="#1d4ed8"/>
+                <path d="M10,-140 L22,-120 L12,-110 L14,-115 Z" fill="#1d4ed8"/>
+                <circle cx="0" cy="-102" r="2.5" fill="#f1f5f9" opacity=".8"/><circle cx="0" cy="-90" r="2.5" fill="#f1f5f9" opacity=".8"/>
+                <rect x="-12" y="-96" width="18" height="10" rx="3" fill="#7c3aed"/>
+                <text x="-3" y="-89" text-anchor="middle" font-size="6" fill="white" font-weight="bold" font-family="monospace">AI</text>
+              </g>
+              <!-- ARMS -->
+              <g id="upperArmL"><rect x="-42" y="-140" width="16" height="36" rx="7" fill="#1d4ed8"/><ellipse cx="-34" cy="-106" rx="7" ry="7" fill="#2563eb"/>
+                <g id="forearmL"><rect x="-40" y="-105" width="13" height="32" rx="6" fill="#1d4ed8"/><ellipse cx="-34" cy="-75" rx="7" ry="5" fill="url(#gSkin)"/>
+                  <g id="handL"><ellipse cx="-34" cy="-68" rx="9" ry="8" fill="url(#gSkin)"/><rect x="-41" y="-75" width="5" height="10" rx="2.5" fill="url(#gSkin)"/><rect x="-35" y="-78" width="5" height="12" rx="2.5" fill="url(#gSkin)"/><rect x="-29" y="-77" width="5" height="11" rx="2.5" fill="url(#gSkin)"/><rect x="-23" y="-75" width="5" height="9" rx="2.5" fill="url(#gSkin)"/><ellipse cx="-42" cy="-68" rx="4" ry="5" fill="url(#gSkin)" transform="rotate(-20,-42,-68)"/></g></g></g>
+              <g id="upperArmR"><rect x="26" y="-140" width="16" height="36" rx="7" fill="#1d4ed8"/><ellipse cx="34" cy="-106" rx="7" ry="7" fill="#2563eb"/>
+                <g id="forearmR"><rect x="27" y="-105" width="13" height="32" rx="6" fill="#1d4ed8"/><ellipse cx="34" cy="-75" rx="7" ry="5" fill="url(#gSkin)"/>
+                  <g id="handR"><ellipse cx="34" cy="-68" rx="9" ry="8" fill="url(#gSkin)"/><rect x="31" y="-75" width="5" height="10" rx="2.5" fill="url(#gSkin)"/><rect x="29" y="-78" width="5" height="12" rx="2.5" fill="url(#gSkin)"/><rect x="24" y="-77" width="5" height="11" rx="2.5" fill="url(#gSkin)"/><rect x="19" y="-75" width="5" height="9" rx="2.5" fill="url(#gSkin)"/><ellipse cx="42" cy="-68" rx="4" ry="5" fill="url(#gSkin)" transform="rotate(20,42,-68)"/></g></g></g>
+              <!-- NECK + HEAD -->
+              <rect x="-9" y="-155" width="18" height="20" rx="6" fill="url(#gSkin)"/>
+              <ellipse cx="0" cy="-190" rx="40" ry="44" fill="url(#gSkin)"/>
+              <ellipse cx="-22" cy="-178" rx="9" ry="5" fill="#ff8fa3" opacity=".3"/><ellipse cx="22" cy="-178" rx="9" ry="5" fill="#ff8fa3" opacity=".3"/>
+              <ellipse cx="0" cy="-210" rx="41" ry="26" fill="url(#gHair)"/>
+              <path d="M-40,-200 Q-44,-190 -42,-175 Q-38,-165 -34,-168 Q-36,-180 -36,-195 Z" fill="url(#gHair)"/>
+              <path d="M40,-200 Q44,-190 42,-175 Q38,-165 34,-168 Q36,-180 36,-195 Z" fill="url(#gHair)"/>
+              <path d="M-38,-210 Q-32,-228 0,-230 Q32,-228 38,-210 Q26,-218 0,-220 Q-26,-218 -38,-210 Z" fill="#1a0a06"/>
+              <!-- headphones -->
+              <path d="M-38,-195 Q-40,-228 0,-234 Q40,-228 38,-195" fill="none" stroke="#6d28d9" stroke-width="6" stroke-linecap="round"/>
+              <ellipse cx="-38" cy="-192" rx="13" ry="15" fill="#5b21b6"/><ellipse cx="-38" cy="-192" rx="8" ry="10" fill="#4c1d95"/>
+              <circle cx="-38" cy="-192" r="4" fill="#7c3aed"><animate attributeName="opacity" values=".5;1;.5" dur="1.5s" repeatCount="indefinite"/></circle>
+              <ellipse cx="38" cy="-192" rx="13" ry="15" fill="#5b21b6"/><ellipse cx="38" cy="-192" rx="8" ry="10" fill="#4c1d95"/>
+              <circle cx="38" cy="-192" r="4" fill="#7c3aed"><animate attributeName="opacity" values=".5;1;.5" dur="1.5s" begin=".5s" repeatCount="indefinite"/></circle>
+              <path d="M-44,-180 Q-50,-168 -46,-156" fill="none" stroke="#4c1d95" stroke-width="2.5" stroke-linecap="round"/><circle cx="-46" cy="-154" r="3.5" fill="#7c3aed"/>
+              <!-- face -->
+              <ellipse cx="-13" cy="-190" rx="11" ry="12" fill="white"/><ellipse cx="13" cy="-190" rx="11" ry="12" fill="white"/>
+              <ellipse cx="-12" cy="-189" rx="7" ry="8" fill="#3b1f6e"/><ellipse cx="14" cy="-189" rx="7" ry="8" fill="#3b1f6e"/>
+              <circle cx="-12" cy="-189" r="4.5" fill="#0f0520"/><circle cx="14" cy="-189" r="4.5" fill="#0f0520"/>
+              <circle cx="-9" cy="-192" r="2.5" fill="white"/><circle cx="17" cy="-192" r="2.5" fill="white"/>
+              <path d="M-22,-203 Q-12,-208 -2,-203" fill="none" stroke="#2d1a0e" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M2,-203 Q12,-208 22,-203" fill="none" stroke="#2d1a0e" stroke-width="2.5" stroke-linecap="round"/>
+              <path d="M-3,-173 Q0,-169 3,-173" fill="none" stroke="#dba870" stroke-width="1.5" stroke-linecap="round"/>
+              <path d="M-11,-162 Q0,-155 11,-162" fill="none" stroke="#c0826a" stroke-width="2.2" stroke-linecap="round"/>
+            </g>
+          </svg>
+          <div class="speech" id="speechBubble"><p id="speechText">Hi!</p><span class="speech-tag" id="speechTag">ready</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="ctrl">
+      <div class="dpad-row">
+        <div>
+          <div class="slabel">Walk</div>
+          <div class="dpad">
+            <div class="dp-btn dp-up" id="dpUp">▲</div>
+            <div class="dp-btn dp-down" id="dpDown">▼</div>
+            <div class="dp-btn dp-left" id="dpLeft">◀</div>
+            <div class="dp-btn dp-right" id="dpRight">▶</div>
+            <div class="dp-btn dp-center" id="dpStop">●</div>
+          </div>
+        </div>
+        <div style="flex:1;">
+          <div class="slabel">Poses & Actions</div>
+          <div class="pose-strip">
+            <button class="pob active" data-pose="idle">😊 Idle</button>
+            <button class="pob" data-pose="wave">👋 Wave</button>
+            <button class="pob" data-pose="dance">💃 Dance</button>
+            <button class="pob" data-pose="think">🤔 Think</button>
+            <button class="pob" data-pose="excited">🤩 Hype</button>
+            <button class="pob" data-pose="sit">💻 Sit</button>
+            <button class="pob" data-pose="jump">⬆ Jump</button>
+            <button class="pob" data-pose="bow">🙇 Bow</button>
+            <button class="pob" data-view="back">🔄 Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="status-bar">
+      <div class="sitem"><span class="sit-l">Facing</span><span class="sit-v v-p" id="svDir">Front</span></div>
+      <div class="sitem"><span class="sit-l">Pose</span><span class="sit-v v-m" id="svPose">Idle</span></div>
+      <div class="sitem"><span class="sit-l">Speed</span><span class="sit-v v-g" id="svSpeed">0</span></div>
+      <div class="sitem"><span class="sit-l">Steps</span><span class="sit-v v-pk" id="svSteps">0</span></div>
+    </div>
+    <div class="hint-text">↑↓←→ / WASD to walk · Click character to wave · Hover for 3D tilt</div>
+  </div>
+
+  <div class="info-cards">
+    <div class="ic"><i class="bi bi-person-arms-up"></i><h5>Full Skeletal Rig</h5><p>Hands, feet, arms, legs all animate with real bone rotations</p></div>
+    <div class="ic"><i class="bi bi-arrows-move"></i><h5>4-Way Walk</h5><p>Front, back, left & right facing with a smooth walk cycle</p></div>
+    <div class="ic"><i class="bi bi-stars"></i><h5>9 Poses</h5><p>Wave, dance, think, jump, bow, sit & more</p></div>
+  </div>
+</div>
+
+<script src="images.js"></script>
+<script>
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mmx=0,mmy=0,rrx=0,rry=0;
+document.addEventListener('mousemove',e=>{mmx=e.clientX;mmy=e.clientY;cd.style.left=mmx+'px';cd.style.top=mmy+'px';});
+(function lr(){rrx+=(mmx-rrx)*.1;rry+=(mmy-rry)*.1;cr.style.left=rrx+'px';cr.style.top=rry+'px';requestAnimationFrame(lr);})();
+document.querySelectorAll('a,button,.dp-btn,.pob').forEach(el=>{el.addEventListener('mouseenter',()=>cr.classList.add('mag'));el.addEventListener('mouseleave',()=>cr.classList.remove('mag'));});
+window.addEventListener('scroll',()=>{const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;document.getElementById('prog').style.width=(s/h*100)+'%';});
+
+const charPivot=document.getElementById('charPivot'),charSvg=document.getElementById('charSvg'),charStage=document.getElementById('charStage');
+const speechBubble=document.getElementById('speechBubble'),speechText=document.getElementById('speechText'),speechTag=document.getElementById('speechTag');
+const svDir=document.getElementById('svDir'),svPose=document.getElementById('svPose'),svSpeed=document.getElementById('svSpeed'),svSteps=document.getElementById('svSteps');
+const G=id=>charSvg.getElementById(id);
+
+// GRID
+const gCv=document.getElementById('gridCv'),gCtx=gCv.getContext('2d');
+function drawGrid(){const W=gCv.width=gCv.parentElement.offsetWidth,H=gCv.height=gCv.parentElement.offsetHeight;gCtx.clearRect(0,0,W,H);const step=40;gCtx.strokeStyle='rgba(109,40,217,.18)';gCtx.lineWidth=.7;for(let x=-10;x<=10;x++){const bx1=W/2+x*step,bx2=W/2+(bx1-W/2)*6;gCtx.beginPath();gCtx.moveTo(bx1,0);gCtx.lineTo(bx2,H);gCtx.stroke();}for(let y=0;y<H;y+=16){const opa=(y/H)*.4;gCtx.strokeStyle=`rgba(109,40,217,${opa})`;gCtx.beginPath();gCtx.moveTo(0,y);gCtx.lineTo(W,y);gCtx.stroke();}}
+drawGrid();window.addEventListener('resize',drawGrid);
+
+let px=0,py=0,facing='front',moving=null,currentPose='idle',steps=0;
+let moveInterval=null,wTimer=null,wFrame=0,autoRestoreTimer=null,bubbleTimer=null,idleT=0,rafId;
+const BOUNDS={minX:-230,maxX:230,minY:-24,maxY:24};
+
+const walkFrames=[[25,-15,-25,15,-20,20,2,0],[35,-30,-10,8,-28,28,4,-4],[20,-20,-5,5,-15,15,1,-2],[5,-5,5,-5,0,0,0,0],[-25,15,25,-15,20,-20,-2,0],[-35,30,10,-8,28,-28,-4,-4],[-20,20,5,-5,15,-15,-1,-2],[-5,5,-5,5,0,0,0,0]];
+
+function applyBoneFrame(f,t=1){
+  const [llt,lls,lrt,lrs,alu,aru,bt,bb]=f;
+  G('thighL')?.setAttribute('transform',`rotate(${llt*t},-12,-78)`);
+  G('thighR')?.setAttribute('transform',`rotate(${lrt*t},12,-78)`);
+  G('shinL')?.setAttribute('transform',`rotate(${lls*t},-12,-34)`);
+  G('shinR')?.setAttribute('transform',`rotate(${lrs*t},12,-34)`);
+  G('upperArmL')?.setAttribute('transform',`rotate(${alu*t},-34,-135)`);
+  G('upperArmR')?.setAttribute('transform',`rotate(${aru*t},34,-135)`);
+  G('forearmL')?.setAttribute('transform',`rotate(${Math.max(0,lls*t*.5)},-34,-106)`);
+  G('forearmR')?.setAttribute('transform',`rotate(${Math.max(0,-lrs*t*.5)},34,-106)`);
+  G('torso')?.setAttribute('transform',`translate(${bt*t*.5},${bb*t})`);
+}
+function resetBones(){['thighL','thighR','shinL','shinR','upperArmL','upperArmR','forearmL','forearmR','torso'].forEach(id=>G(id)?.removeAttribute('transform'));}
+
+function animateIdle(){if(currentPose!=='idle'||moving)return;idleT+=.04;const br=Math.sin(idleT)*2,sw=Math.sin(idleT*.5)*.8;G('torso')?.setAttribute('transform',`translate(${sw},${br})`);G('upperArmL')?.setAttribute('transform',`rotate(${5+Math.sin(idleT)*4},-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(${-5-Math.sin(idleT)*4},34,-135)`);}
+function mainLoop(){if(currentPose==='idle'&&!moving)animateIdle();rafId=requestAnimationFrame(mainLoop);}
+mainLoop();
+
+function startWalkAnim(){if(wTimer)clearInterval(wTimer);wTimer=setInterval(()=>{wFrame=(wFrame+1)%walkFrames.length;applyBoneFrame(walkFrames[wFrame]);steps++;svSteps.textContent=steps;if(wFrame%2===0)dropTrail();},110);}
+function stopWalkAnim(){if(wTimer)clearInterval(wTimer);wTimer=null;resetBones();}
+function dropTrail(){const d=document.createElement('div');d.className='trail-dot';d.style.left=`calc(50% + ${(Math.random()-.5)*30}px)`;charStage.appendChild(d);setTimeout(()=>d.remove(),850);}
+
+const viewData={front:{sx:1},back:{sx:1},left:{sx:1},right:{sx:-1}};
+function applyView(){const v=viewData[facing]||viewData.front;charSvg.style.transform=`scaleX(${v.sx})`;const bh=G('backHair'),bg=G('bodyGroup');if(facing==='back'){if(bh)bh.style.opacity='1';if(bg)bg.style.opacity='.25';}else{if(bh)bh.style.opacity='0';if(bg)bg.style.opacity='1';}}
+
+function startMove(dir){stopMove();moving=dir;svSpeed.textContent='60';updateFacing(dir);startWalkAnim();moveInterval=setInterval(()=>{if(dir==='up')py=Math.max(BOUNDS.minY,py-1);if(dir==='down')py=Math.min(BOUNDS.maxY,py+1);if(dir==='left')px=Math.max(BOUNDS.minX,px-2.5);if(dir==='right')px=Math.min(BOUNDS.maxX,px+2.5);charPivot.style.transform=`translateX(${px}px) translateY(${py}px)`;},16);}
+function stopMove(){moving=null;clearInterval(moveInterval);moveInterval=null;stopWalkAnim();svSpeed.textContent='0';document.querySelectorAll('.dp-btn').forEach(b=>b.classList.remove('pressed'));}
+function updateFacing(dir){const map={up:'back',down:'front',left:'left',right:'right'};facing=map[dir]||facing;svDir.textContent=facing.charAt(0).toUpperCase()+facing.slice(1);applyView();const dm={up:'dpUp',down:'dpDown',left:'dpLeft',right:'dpRight'};document.querySelectorAll('.dp-btn').forEach(b=>b.classList.remove('pressed'));document.getElementById(dm[dir])?.classList.add('pressed');}
+
+const poseData={
+  idle:{msg:"Just chilling and coding 💜",tag:"idle",label:"Idle"},
+  wave:{msg:"Heyyy! Nice to meet you! 👋✨",tag:"waving!",label:"Wave"},
+  dance:{msg:"Just shipped a PR! Let's go 💃",tag:"partying!",label:"Dance"},
+  think:{msg:"Hmm, this bug is interesting 🤔",tag:"debugging",label:"Think"},
+  excited:{msg:"97% accuracy!! 🤩🔥",tag:"hyped!",label:"Excited"},
+  sit:{msg:"Deep focus mode activated 💻☕",tag:"coding...",label:"Sit"},
+  jump:{msg:"Wheee! YOLO deploy! 🚀",tag:"jumping!",label:"Jump"},
+  bow:{msg:"Thanks for visiting! 🙇‍♀️💜",tag:"graceful",label:"Bow"},
+};
+
+function showSpeech(msg,tag){speechBubble.classList.add('on');speechText.textContent=msg;speechTag.textContent=tag;speechBubble.style.animation='none';void speechBubble.offsetWidth;speechBubble.style.animation='bubPop .35s cubic-bezier(.34,1.56,.64,1)';if(bubbleTimer)clearTimeout(bubbleTimer);bubbleTimer=setTimeout(()=>speechBubble.classList.remove('on'),4000);}
+
+function triggerPose(name){
+  currentPose=name;const pd=poseData[name];svPose.textContent=pd?pd.label:name;
+  if(pd)showSpeech(pd.msg,pd.tag);
+  document.querySelectorAll('.pob').forEach(b=>b.classList.remove('active'));
+  document.querySelector(`.pob[data-pose="${name}"]`)?.classList.add('active');
+  if(autoRestoreTimer)clearTimeout(autoRestoreTimer);
+  if(name==='idle'){resetBones();return;}
+  poseFns[name]?.();
+  if(name!=='sit')autoRestoreTimer=setTimeout(()=>{currentPose='idle';svPose.textContent='Idle';resetBones();document.querySelectorAll('.pob').forEach(b=>b.classList.remove('active'));document.querySelector('.pob[data-pose="idle"]')?.classList.add('active');},3500);
+}
+
+const poseFns={
+  wave(){resetBones();let t=0;const iv=setInterval(()=>{const a=Math.sin(t)*35;G('upperArmR')?.setAttribute('transform',`rotate(${-60+a},34,-135)`);G('forearmR')?.setAttribute('transform',`rotate(${30+a*.5},34,-106)`);t+=.18;},30);setTimeout(()=>clearInterval(iv),3500);},
+  dance(){resetBones();let t=0;const iv=setInterval(()=>{const s=Math.sin(t),c=Math.cos(t);G('upperArmL')?.setAttribute('transform',`rotate(${-30+s*40},-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(${30-s*40},34,-135)`);G('thighL')?.setAttribute('transform',`rotate(${s*20},-12,-78)`);G('thighR')?.setAttribute('transform',`rotate(${-s*20},12,-78)`);G('shinL')?.setAttribute('transform',`rotate(${Math.max(0,s)*25},-12,-34)`);G('torso')?.setAttribute('transform',`translate(${c*3},${Math.abs(s)*-6})`);t+=.14;},30);setTimeout(()=>clearInterval(iv),3500);},
+  think(){resetBones();G('upperArmR')?.setAttribute('transform',`rotate(-50,34,-135)`);G('forearmR')?.setAttribute('transform',`rotate(70,34,-106)`);let t=0;const iv=setInterval(()=>{G('torso')?.setAttribute('transform',`translate(${Math.sin(t)},${Math.sin(t*.5)*1.5})`);t+=.04;},30);setTimeout(()=>clearInterval(iv),3500);},
+  excited(){let t=0;const iv=setInterval(()=>{const s=Math.sin(t*3);G('upperArmL')?.setAttribute('transform',`rotate(${-50+s*20},-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(${50-s*20},34,-135)`);G('torso')?.setAttribute('transform',`translate(${s*3},${Math.abs(s)*-8})`);G('thighL')?.setAttribute('transform',`rotate(${s*15},-12,-78)`);G('thighR')?.setAttribute('transform',`rotate(${-s*15},12,-78)`);t+=.12;},25);setTimeout(()=>clearInterval(iv),3500);},
+  sit(){resetBones();G('thighL')?.setAttribute('transform',`rotate(80,-12,-78)`);G('thighR')?.setAttribute('transform',`rotate(-80,12,-78)`);G('shinL')?.setAttribute('transform',`rotate(-90,-12,-34)`);G('shinR')?.setAttribute('transform',`rotate(90,12,-34)`);G('upperArmL')?.setAttribute('transform',`rotate(-15,-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(15,34,-135)`);G('forearmL')?.setAttribute('transform',`rotate(50,-34,-106)`);G('forearmR')?.setAttribute('transform',`rotate(-50,34,-106)`);G('torso')?.setAttribute('transform',`translate(0,10)`);let t=0;const iv=setInterval(()=>{if(currentPose!=='sit'){clearInterval(iv);return;}const s=Math.sin(t*4);G('upperArmL')?.setAttribute('transform',`rotate(${-15+s*3},-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(${15-s*3},34,-135)`);t+=.08;},30);},
+  jump(){let jy=0,dir=1;const iv=setInterval(()=>{jy+=dir*4;if(jy>60)dir=-1;if(jy<=0){dir=1;jy=0;}charPivot.style.transform=`translateX(${px}px) translateY(${py-jy}px)`;const h=jy/60;G('upperArmL')?.setAttribute('transform',`rotate(${-50*h},-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(${50*h},34,-135)`);G('thighL')?.setAttribute('transform',`rotate(${-30*h},-12,-78)`);G('thighR')?.setAttribute('transform',`rotate(${30*h},12,-78)`);G('shinL')?.setAttribute('transform',`rotate(${30*h},-12,-34)`);G('shinR')?.setAttribute('transform',`rotate(${-30*h},12,-34)`);},20);setTimeout(()=>{clearInterval(iv);charPivot.style.transform=`translateX(${px}px) translateY(${py}px)`;},3500);},
+  bow(){resetBones();let t=0,dir=1;const iv=setInterval(()=>{t+=dir*.04;if(t>=1)dir=-1;if(t<=0)dir=1;G('torso')?.setAttribute('transform',`translate(0,${t*15}) rotate(${t*30},0,-110)`);G('upperArmL')?.setAttribute('transform',`rotate(${t*60},-34,-135)`);G('upperArmR')?.setAttribute('transform',`rotate(${-t*60},34,-135)`);},20);setTimeout(()=>clearInterval(iv),3500);},
+};
+
+function setBackView(){facing='back';svDir.textContent='Back';applyView();showSpeech("Here's my back view! 🔄","360°");document.querySelectorAll('.pob').forEach(b=>b.classList.remove('active'));document.querySelector('.pob[data-view="back"]')?.classList.add('active');setTimeout(()=>{facing='front';svDir.textContent='Front';applyView();document.querySelector('.pob[data-view="back"]')?.classList.remove('active');document.querySelector('.pob[data-pose="idle"]')?.classList.add('active');},3000);}
+
+// wire pose buttons
+document.querySelectorAll('.pob').forEach(b=>{b.addEventListener('click',()=>{if(b.dataset.view==='back')setBackView();else triggerPose(b.dataset.pose);});});
+// wire dpad
+[['dpUp','up'],['dpDown','down'],['dpLeft','left'],['dpRight','right']].forEach(([id,dir])=>{const el=document.getElementById(id);el.addEventListener('mousedown',()=>startMove(dir));el.addEventListener('mouseup',stopMove);el.addEventListener('mouseleave',()=>{if(moving===dir)stopMove();});el.addEventListener('touchstart',e=>{e.preventDefault();startMove(dir);});el.addEventListener('touchend',stopMove);});
+document.getElementById('dpStop').addEventListener('click',stopMove);
+
+// keyboard
+const keyMap={ArrowUp:'up',ArrowDown:'down',ArrowLeft:'left',ArrowRight:'right',KeyW:'up',KeyS:'down',KeyA:'left',KeyD:'right'};
+document.addEventListener('keydown',e=>{if(keyMap[e.code]&&!moving){e.preventDefault();startMove(keyMap[e.code]);}});
+document.addEventListener('keyup',e=>{if(keyMap[e.code])stopMove();});
+
+// 3D tilt
+charStage.addEventListener('mousemove',e=>{const r=charStage.getBoundingClientRect();const x=((e.clientX-r.left)/r.width-.5)*24,y=((e.clientY-r.top)/r.height-.5)*-14;charSvg.style.transform=`scaleX(${viewData[facing]?.sx||1}) rotateY(${x}deg) rotateX(${y}deg)`;});
+charStage.addEventListener('mouseleave',()=>{charSvg.style.transform=`scaleX(${viewData[facing]?.sx||1})`;});
+charSvg.addEventListener('click',()=>triggerPose('wave'));
+
+applyView();
+showSpeech("Use arrow keys or the D-pad to walk me around! 🤖💜","ready!");
+const idleMsgs=[{m:"Building an ML model rn 💜",t:"training..."},{m:"I interned at Google Cloud! ☁️",t:"fun fact!"},{m:"Try the Bow pose 🙇",t:"psst!"},{m:"Click me to wave! 👋",t:"try it!"}];
+let ami=0;setInterval(()=>{if(!moving&&currentPose==='idle'&&!speechBubble.classList.contains('on')){const m=idleMsgs[ami++%idleMsgs.length];showSpeech(m.m,m.t);}},7000);
+
+document.body.classList.add('page-in');
+document.querySelectorAll('a[href$=".html"]').forEach(a=>{a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href&&!href.startsWith('http')){e.preventDefault();document.body.classList.add('page-out');setTimeout(()=>location.href=href,320);}});});
+</script>
+</body>
+</html>

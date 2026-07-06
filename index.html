@@ -1,0 +1,2282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/><meta name="viewport" content="width=1200"/>
+<title>Shruti Srivastava — AI Engineer & Data Scientist</title>
+<meta name="description" content="Shruti Srivastava — Data Scientist, AI/ML Engineer & Full-Stack Developer. B.Tech CSE (Data Science), First Division with Honours. 6 internships, 2 published papers, production AI systems."/>
+<meta name="author" content="Shruti Srivastava"/>
+<meta name="keywords" content="Shruti Srivastava, Data Scientist, AI ML Engineer, Full Stack Developer, Machine Learning, Generative AI, Portfolio, NIET"/>
+<meta name="robots" content="index, follow"/>
+<meta name="theme-color" content="#04040e"/>
+<meta property="og:type" content="website"/>
+<meta property="og:title" content="Shruti Srivastava — Data Scientist & AI/ML Engineer"/>
+<meta property="og:description" content="Shruti Srivastava — Data Scientist, AI/ML Engineer & Full-Stack Developer. B.Tech CSE (Data Science), First Division with Honours. 6 internships, 2 published papers, production AI systems."/>
+<meta property="og:url" content="https://shruti502102.github.io/Portfolio/"/>
+<meta property="og:site_name" content="Shruti Srivastava Portfolio"/>
+<meta name="twitter:card" content="summary_large_image"/>
+<meta name="twitter:title" content="Shruti Srivastava — Data Scientist & AI/ML Engineer"/>
+<meta name="twitter:description" content="Shruti Srivastava — Data Scientist, AI/ML Engineer & Full-Stack Developer. B.Tech CSE (Data Science), First Division with Honours. 6 internships, 2 published papers, production AI systems."/>
+<link rel="canonical" href="https://shruti502102.github.io/Portfolio/"/>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='22' fill='%236d28d9'/%3E%3Ctext x='50' y='68' font-size='58' font-family='Arial,sans-serif' font-weight='bold' fill='white' text-anchor='middle'%3ES%3C/text%3E%3C/svg%3E"/>
+<link rel="manifest" href="manifest.json"/>
+<meta name="apple-mobile-web-app-capable" content="yes"/>
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"/>
+<meta name="apple-mobile-web-app-title" content="Shruti SS"/>
+
+
+<link href="https://fonts.googleapis.com/css2?family=Clash+Display:wght@400;600;700&family=Cabinet+Grotesk:wght@300;400;500;700;800&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet"/>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet"/>
+<style>
+:root{
+  --bg:#04040e;--s1:#07071a;--s2:#0b0b24;
+  --v:#6d28d9;--v2:#8b5cf6;--v3:#c4b5fd;
+  --m:#06d6a0;--g:#f59e0b;--r:#ef4444;--c:#22d3ee;
+  --w:#eeeeff;--mu:rgba(238,238,255,.42);--cst-rgb:139,92,246;
+  --fd:'Clash Display',sans-serif;--fb:'Cabinet Grotesk',sans-serif;--fm:'JetBrains Mono',monospace;
+}
+*,*::before,*::after{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{font-family:var(--fb);background:var(--bg);color:var(--w);overflow-x:hidden;cursor:none;}
+
+/* ── CURSOR ── */
+#cd{position:fixed;width:7px;height:7px;background:var(--v3);border-radius:50%;pointer-events:none;z-index:99999;transform:translate(-50%,-50%);mix-blend-mode:screen;transition:background .3s;}
+#cr{position:fixed;width:34px;height:34px;border:1.5px solid rgba(196,181,253,.4);border-radius:50%;pointer-events:none;z-index:99998;transform:translate(-50%,-50%);transition:width .18s,height .18s,border-color .2s;mix-blend-mode:screen;}
+#cr.mag{width:60px;height:60px;border-color:var(--m);background:rgba(6,214,160,.04);}
+
+/* ── CANVAS AURORA ── */
+#aurora{position:fixed;inset:0;z-index:-3;}
+
+/* ── NOISE + SCAN ── */
+.noise{position:fixed;inset:0;z-index:-1;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");}
+.scan{position:fixed;inset:0;z-index:0;pointer-events:none;background:repeating-linear-gradient(0deg,transparent,transparent 3px,rgba(4,4,20,.04) 3px,rgba(4,4,20,.04) 4px);animation:scan 8s linear infinite;}
+@keyframes scan{to{background-position:0 200px;}}
+
+/* ── SHAPES ── */
+.shape{position:fixed;pointer-events:none;z-index:-2;opacity:.13;}
+.sh1{top:8%;right:6%;width:200px;height:200px;border:1px solid var(--v2);border-radius:40px;animation:shspin 30s linear infinite;}
+.sh2{bottom:14%;left:3%;width:120px;height:120px;border:1px solid var(--m);border-radius:50%;animation:shbob 10s ease-in-out infinite;}
+.sh3{top:52%;right:2%;width:55px;height:55px;background:rgba(109,40,217,.25);clip-path:polygon(50% 0%,100% 100%,0% 100%);animation:shfloat 7s ease-in-out infinite;}
+@keyframes shspin{to{transform:rotate(360deg);}}
+@keyframes shbob{0%,100%{transform:scale(1)translateY(0);}50%{transform:scale(1.12)translateY(-18px);}}
+@keyframes shfloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-22px);}}
+
+/* ── PROGRESS ── */
+#progress{position:fixed;top:0;left:0;height:2px;width:0%;z-index:9000;background:linear-gradient(90deg,var(--v),var(--m),var(--g));box-shadow:0 0 12px rgba(109,40,217,.8);}
+
+/* ── LOADER ── */
+#loader{position:fixed;inset:0;background:var(--bg);z-index:99999;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:18px;transition:opacity .8s ease;}
+#lbar{width:220px;height:5px;background:rgba(255,255,255,.08);border-radius:4px;overflow:hidden;box-shadow:0 0 14px rgba(109,40,217,.3);}
+#lfill{height:100%;width:0;background:linear-gradient(90deg,var(--v),var(--m),var(--g));border-radius:4px;transition:width .12s ease-out;box-shadow:0 0 12px rgba(139,92,246,.8);}
+.ldots{display:inline-block;animation:dotPulse 1.4s infinite;}
+@keyframes dotPulse{0%{opacity:1;}50%{opacity:.3;}100%{opacity:1;}}
+.lbl{font-family:var(--fm);font-size:.78rem;color:var(--mu);letter-spacing:.1em;}
+.lr-wrap{position:relative;width:82px;height:82px;}
+.lr{position:absolute;inset:0;border-radius:50%;border:2px solid transparent;animation:lrspin 1.5s linear infinite;}
+.lr1{border-top-color:var(--v2);}
+.lr2{inset:10px;border-top-color:var(--m);animation-duration:1.8s;animation-direction:reverse;}
+.lr3{inset:20px;border-top-color:var(--g);animation-duration:2.2s;}
+@keyframes lrspin{to{transform:rotate(360deg);}}
+#lpct{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);font-family:var(--fm);font-size:1rem;font-weight:500;}
+.lbl{font-family:var(--fm);font-size:.66rem;color:var(--mu);letter-spacing:.25em;text-transform:uppercase;animation:blink 1s ease-in-out infinite;}
+@keyframes blink{0%,100%{opacity:.2;}50%{opacity:1;}}
+
+/* ── NAV ── */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;height:62px;padding:0 52px;display:flex;align-items:center;justify-content:space-between;transition:all .3s;}
+nav.sc{background:rgba(4,4,14,.93);-webkit-backdrop-filter:blur(28px);backdrop-filter:blur(28px);border-bottom:1px solid rgba(255,255,255,.06);}
+.logo{font-family:var(--fd);font-size:1.25rem;font-weight:700;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;letter-spacing:-.02em;}
+.nl{display:flex;gap:2px;}
+.nl a{color:var(--mu);text-decoration:none;font-size:.8rem;font-weight:500;padding:7px 14px;border-radius:9px;transition:all .2s;letter-spacing:.04em;}
+.nl a:hover{color:var(--w);background:rgba(139,92,246,.1);}
+.nr{display:flex;align-items:center;gap:7px;}
+.npill{display:inline-flex;align-items:center;gap:5px;color:var(--mu);text-decoration:none;font-size:.75rem;padding:5px 12px;border-radius:20px;border:1px solid rgba(255,255,255,.07);transition:all .2s;cursor:pointer;background:none;font-family:var(--fb);}
+.npill:hover{border-color:rgba(139,92,246,.4);color:var(--v3);}
+.npill.apill{border-color:rgba(245,158,11,.25);color:rgba(245,158,11,.7);}
+.npill.apill:hover{border-color:var(--g);color:var(--g);}
+.btn-hire{background:linear-gradient(135deg,var(--v),#4c1d95);color:#fff;text-decoration:none;padding:9px 22px;border-radius:10px;font-size:.8rem;font-weight:700;box-shadow:0 4px 20px rgba(109,40,217,.4);transition:all .25s;border:none;cursor:pointer;}
+.btn-hire:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(109,40,217,.6);color:#fff;}
+
+/* ── HERO ── */
+.hero{min-height:100vh;display:grid;place-items:center;padding:80px 52px;position:relative;}
+.hgrid{max-width:1060px;width:100%;display:grid;grid-template-columns:1fr 400px;gap:90px;align-items:center;}
+.hl{display:flex;flex-direction:column;gap:20px;}
+
+.badge{display:inline-flex;align-items:center;gap:7px;background:rgba(109,40,217,.1);border:1px solid rgba(139,92,246,.28);border-radius:100px;padding:7px 17px;font-family:var(--fm);font-size:.68rem;color:var(--v3);letter-spacing:.09em;width:fit-content;position:relative;overflow:hidden;}
+.badge::after{content:'';position:absolute;inset:0;background:linear-gradient(90deg,transparent,rgba(196,181,253,.12),transparent);animation:bshim 3s ease-in-out infinite;}
+@keyframes bshim{0%{transform:translateX(-200%);}100%{transform:translateX(200%);}}
+.pdot{width:5px;height:5px;border-radius:50%;background:var(--m);animation:pdot 2s ease-in-out infinite;}
+@keyframes pdot{0%,100%{opacity:1;transform:scale(1);}50%{opacity:.3;transform:scale(.5);}}
+
+.hname{font-family:var(--fd);font-size:clamp(2.8rem,5.5vw,4.8rem);font-weight:700;line-height:.95;letter-spacing:-.04em;}
+.hname .nm2{display:block;background:linear-gradient(120deg,var(--v3) 0%,var(--m) 40%,var(--g) 80%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;background-size:300%;animation:ngrad 5s ease-in-out infinite;}
+@keyframes ngrad{0%{background-position:0%;}50%{background-position:100%;}100%{background-position:0%;}}
+
+.hrole{font-family:var(--fm);font-size:.87rem;color:var(--mu);letter-spacing:.06em;min-height:1.3em;}
+#typed{color:var(--m);}
+.tcursor{display:inline-block;width:2px;height:.9em;background:var(--m);vertical-align:middle;margin-left:2px;animation:blink .9s step-end infinite;}
+
+.hdesc{font-size:.97rem;line-height:1.84;color:rgba(238,238,255,.64);max-width:450px;}
+.hdesc strong{color:var(--w);font-weight:500;}
+
+.hacts{display:flex;gap:11px;flex-wrap:wrap;}
+.btnp{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--v),#4c1d95);color:#fff;text-decoration:none;padding:13px 26px;border-radius:11px;font-size:.87rem;font-weight:700;transition:all .25s;box-shadow:0 4px 24px rgba(109,40,217,.4);border:none;cursor:pointer;font-family:var(--fb);}
+.btnp:hover{transform:translateY(-3px);box-shadow:0 10px 40px rgba(109,40,217,.6);color:#fff;}
+.btno{display:inline-flex;align-items:center;gap:7px;background:transparent;border:1px solid rgba(255,255,255,.1);color:var(--w);text-decoration:none;padding:13px 26px;border-radius:11px;font-size:.87rem;font-weight:500;transition:all .25s;cursor:pointer;font-family:var(--fb);}
+.btno:hover{border-color:rgba(139,92,246,.4);background:rgba(139,92,246,.08);transform:translateY(-3px);color:var(--w);}
+
+.hstats{display:flex;gap:28px;}
+.st-n{font-family:var(--fd);font-size:2rem;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--w),var(--v3));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.st-l{font-family:var(--fm);font-size:.61rem;color:var(--mu);letter-spacing:.1em;text-transform:uppercase;}
+
+/* ── HERO RIGHT / PROFILE HOLO ── */
+.hright{display:flex;align-items:center;justify-content:center;}
+.holo{position:relative;width:360px;height:360px;}
+.hring{position:absolute;inset:0;border-radius:50%;pointer-events:none;}
+.hr1{inset:-22px;border:1px dashed rgba(196,181,253,.18);animation:hrspin 40s linear infinite;}
+.hr2{inset:-12px;border:2px solid transparent;border-top-color:var(--v2);border-right-color:var(--m);animation:hrspin 7s linear infinite;}
+.hr3{inset:-4px;border:2px solid transparent;border-bottom-color:var(--g);border-left-color:var(--r);animation:hrspin 4.5s linear infinite reverse;}
+@keyframes hrspin{to{transform:rotate(360deg);}}
+.hglow{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 25%,rgba(109,40,217,.28),transparent 55%),radial-gradient(circle at 70% 75%,rgba(6,214,160,.2),transparent 55%);animation:hglow 5s ease-in-out infinite;}
+@keyframes hglow{0%,100%{opacity:.8;}50%{opacity:1;transform:scale(1.04);}}
+.pframe{position:absolute;inset:0;border-radius:50%;overflow:hidden;border:3px solid rgba(109,40,217,.45);box-shadow:0 0 0 8px rgba(109,40,217,.06),0 0 60px rgba(109,40,217,.33),0 0 110px rgba(6,214,160,.1);}
+.pframe img{width:100%;height:100%;object-fit:cover;object-position:top center;transition:transform .5s;}
+.pframe img:hover{transform:scale(1.06);}
+.hfoil{position:absolute;inset:0;border-radius:50%;background:conic-gradient(from 0deg,transparent,rgba(196,181,253,.05) 60deg,rgba(6,214,160,.07) 120deg,rgba(245,158,11,.05) 180deg,rgba(239,68,68,.05) 240deg,rgba(34,211,238,.05) 300deg,transparent);animation:hrspin 8s linear infinite;pointer-events:none;}
+.op{position:absolute;width:8px;height:8px;border-radius:50%;top:50%;left:50%;animation:opspin linear infinite;}
+.op1{background:var(--v3);animation-duration:6s;}
+.op2{background:var(--m);animation-duration:9s;animation-delay:-3s;}
+.op3{background:var(--g);animation-duration:13s;animation-delay:-6s;}
+@keyframes opspin{0%{transform:translate(-50%,-50%) rotate(0deg) translateX(200px);}100%{transform:translate(-50%,-50%) rotate(360deg) translateX(200px);}}
+.ftag{position:absolute;-webkit-backdrop-filter:blur(14px);backdrop-filter:blur(14px);background:rgba(4,4,14,.9);border:1px solid rgba(255,255,255,.08);border-radius:10px;padding:8px 14px;font-family:var(--fm);font-size:.64rem;color:var(--mu);white-space:nowrap;animation:ftfloat 6s ease-in-out infinite;}
+.ftag i{margin-right:5px;}
+.fta{top:2%;right:-35px;border-color:rgba(139,92,246,.33);}.fta i{color:var(--v2);}
+.ftb{bottom:12%;left:-55px;border-color:rgba(6,214,160,.3);animation-delay:-2s;}.ftb i{color:var(--m);}
+.ftc{top:44%;right:-50px;border-color:rgba(245,158,11,.28);animation-delay:-4s;}.ftc i{color:var(--g);}
+@keyframes ftfloat{0%,100%{transform:translateY(0);}50%{transform:translateY(-11px);}}
+
+/* ── SECTIONS ── */
+section{position:relative;z-index:1;}
+.wrap{max-width:1060px;margin:0 auto;padding:100px 52px;}
+.sh{display:flex;flex-direction:column;gap:8px;margin-bottom:58px;}
+.stag{font-family:var(--fm);font-size:.68rem;color:var(--v3);letter-spacing:.16em;text-transform:uppercase;}
+.stit{font-family:var(--fd);font-size:clamp(2rem,3vw,2.8rem);font-weight:700;letter-spacing:-.03em;line-height:1.05;}
+.sline{width:36px;height:2px;background:linear-gradient(90deg,var(--v),var(--m));border-radius:2px;margin-top:6px;}
+.div{max-width:1060px;margin:0 auto;height:1px;background:rgba(255,255,255,.06);}
+
+/* ── ABOUT ── */
+.ag{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.ac{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:24px;transition:all .3s;}
+.ac:hover{border-color:rgba(139,92,246,.28);background:rgba(109,40,217,.06);transform:translateY(-4px);}
+.aw{grid-column:1/-1;background:linear-gradient(135deg,rgba(109,40,217,.08),rgba(6,214,160,.04));border-color:rgba(139,92,246,.2);}
+.aw p{font-size:1rem;line-height:1.88;color:rgba(238,238,255,.68);}
+.aw strong{color:var(--w);font-weight:500;}
+.ac h5{font-family:var(--fd);font-size:.8rem;font-weight:700;color:var(--v3);letter-spacing:.07em;text-transform:uppercase;margin-bottom:12px;}
+.ac li{font-size:.85rem;color:var(--mu);line-height:1.8;}
+.ac ul{list-style:none;}.ac li::before{content:'→ ';color:var(--m);}
+
+/* ── SKILLS ── */
+.skg{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.skc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:24px;transition:all .3s;position:relative;overflow:hidden;}
+.skc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--v),var(--m));transform:scaleX(0);transform-origin:left;transition:transform .4s;}
+.skc:hover::before{transform:scaleX(1);}
+.skc:hover{border-color:rgba(139,92,246,.28);transform:translateY(-5px);box-shadow:0 20px 56px rgba(0,0,0,.35);}
+.skt{display:flex;align-items:center;gap:8px;font-family:var(--fd);font-size:.86rem;font-weight:700;color:var(--w);margin-bottom:18px;}
+.skt i{font-size:1rem;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.skrs{display:flex;flex-direction:column;gap:10px;}
+.skr{display:flex;flex-direction:column;gap:4px;}
+.skm{display:flex;justify-content:space-between;align-items:center;}
+.skn{font-size:.79rem;color:var(--mu);}
+.skp{font-family:var(--fm);font-size:.67rem;color:var(--v3);}
+.skt2{height:3px;background:rgba(255,255,255,.06);border-radius:2px;}
+.skf{height:100%;border-radius:2px;background:linear-gradient(90deg,var(--v),var(--m));width:0;transition:width 1.2s cubic-bezier(.25,.46,.45,.94);box-shadow:0 0 10px rgba(109,40,217,.5);}
+
+/* ── PROJECTS ── */
+.pg{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.pc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:24px;display:flex;flex-direction:column;gap:13px;transition:all .35s;position:relative;overflow:hidden;}
+.pc::after{content:'';position:absolute;inset:0;background:radial-gradient(ellipse 90% 80% at 50% -10%,rgba(109,40,217,.1),transparent);opacity:0;transition:opacity .35s;}
+.pc:hover::after{opacity:1;}
+.pc:hover{border-color:rgba(139,92,246,.45);transform:translateY(-10px);box-shadow:0 28px 70px rgba(0,0,0,.5);}
+.pnum{font-family:var(--fm);font-size:.62rem;color:rgba(255,255,255,.14);letter-spacing:.1em;}
+.ptit{font-family:var(--fd);font-size:.97rem;font-weight:700;color:var(--w);line-height:1.25;}
+.pdesc{font-size:.84rem;color:var(--mu);line-height:1.72;flex:1;}
+.ptags{display:flex;flex-wrap:wrap;gap:4px;}
+.ptag{font-family:var(--fm);font-size:.62rem;background:rgba(109,40,217,.1);border:1px solid rgba(139,92,246,.22);color:var(--v3);padding:2px 9px;border-radius:5px;}
+.plink{display:inline-flex;align-items:center;gap:4px;font-size:.77rem;color:var(--m);font-weight:600;text-decoration:none;transition:color .2s;margin-top:2px;}
+.plink:hover{color:var(--w);}
+.admin-del{position:absolute;top:10px;right:10px;background:rgba(239,68,68,.15);border:1px solid rgba(239,68,68,.3);color:var(--r);width:26px;height:26px;border-radius:6px;font-size:.75rem;cursor:pointer;display:none;align-items:center;justify-content:center;transition:all .2s;z-index:10;}
+.admin-mode .pc:hover .admin-del{display:flex;}
+
+/* ── EXPERIENCE ── */
+.el{display:flex;flex-direction:column;}
+.ei{display:grid;grid-template-columns:160px 1fr;gap:30px;padding:26px 0;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s;position:relative;}
+.ei:hover{background:rgba(109,40,217,.03);border-radius:12px;padding-left:10px;padding-right:10px;}
+.ep{font-family:var(--fm);font-size:.67rem;color:var(--mu);line-height:1.6;letter-spacing:.04em;padding-top:2px;}
+.er{font-family:var(--fd);font-size:.97rem;font-weight:700;color:var(--w);margin-bottom:3px;}
+.eo{font-size:.8rem;color:var(--v3);margin-bottom:9px;}
+.eul{list-style:none;display:flex;flex-direction:column;gap:4px;}
+.eul li{font-size:.84rem;color:var(--mu);padding-left:14px;position:relative;line-height:1.6;}
+.eul li::before{content:'';position:absolute;left:0;top:.56em;width:4px;height:4px;border-radius:50%;background:var(--m);}
+
+/* ── ACHIEVEMENTS ── */
+.achiev-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;}
+.pub-grid{display:flex;flex-direction:column;gap:16px;}
+.pub-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-left:3px solid var(--v2);border-radius:14px;padding:22px 24px;transition:all .3s;position:relative;overflow:hidden;}
+.pub-card::before{content:'';position:absolute;top:0;right:0;width:120px;height:120px;background:radial-gradient(circle at top right,rgba(109,40,217,.14),transparent 70%);pointer-events:none;}
+.pub-card:hover{border-left-color:var(--m);transform:translateX(4px);background:rgba(255,255,255,.05);}
+.pub-badge{display:inline-flex;align-items:center;gap:6px;font-family:var(--fm);font-size:.64rem;letter-spacing:.08em;text-transform:uppercase;color:var(--v3);background:rgba(109,40,217,.14);border:1px solid rgba(139,92,246,.28);padding:3px 10px;border-radius:20px;margin-bottom:10px;}
+.pub-title{font-family:var(--fd);font-size:1rem;font-weight:600;line-height:1.35;margin-bottom:8px;color:var(--w);}
+.pub-authors{font-size:.82rem;color:var(--v3);margin-bottom:4px;}
+.pub-venue{font-size:.8rem;color:var(--mu);line-height:1.5;margin-bottom:10px;}
+.pub-venue em{color:rgba(238,238,255,.7);font-style:normal;font-weight:500;}
+.pub-link{display:inline-flex;align-items:center;gap:6px;font-size:.78rem;color:var(--m);text-decoration:none;transition:gap .2s;}
+.pub-link:hover{gap:10px;}
+.ach-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:24px;display:flex;gap:14px;align-items:flex-start;transition:all .3s;}
+.ach-card:hover{border-color:rgba(245,158,11,.3);background:rgba(245,158,11,.05);transform:translateY(-4px);}
+.ach-icon{font-size:2rem;line-height:1;}
+.ach-info h4{font-family:var(--fd);font-size:.9rem;font-weight:700;color:var(--w);margin-bottom:4px;}
+.ach-info p{font-size:.8rem;color:var(--mu);}
+.ach-year{font-family:var(--fm);font-size:.65rem;color:var(--g);margin-top:4px;}
+
+/* ── RESUMES ── */
+.resume-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;}
+.resume-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:22px 18px;text-align:center;display:flex;flex-direction:column;align-items:center;gap:10px;transition:all .3s;}
+.resume-card:hover{border-color:rgba(139,92,246,.3);background:rgba(109,40,217,.07);transform:translateY(-5px);}
+.resume-card i{font-size:2rem;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.resume-card h5{font-family:var(--fd);font-size:.85rem;font-weight:700;color:var(--w);}
+.resume-card span{font-size:.73rem;color:var(--mu);}
+.dl-btn{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--v),#4c1d95);color:#fff;border:none;border-radius:8px;padding:7px 16px;font-size:.76rem;font-weight:600;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.dl-btn:hover{transform:scale(1.04);color:#fff;}
+
+/* ── CONTACT ── */
+.cg{display:grid;grid-template-columns:repeat(4,1fr);gap:13px;margin-bottom:36px;}
+.cc{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:13px;padding:24px 16px;text-align:center;text-decoration:none;color:inherit;transition:all .3s;display:flex;flex-direction:column;align-items:center;gap:10px;}
+.cc:hover{border-color:rgba(139,92,246,.4);background:rgba(109,40,217,.08);transform:translateY(-7px);box-shadow:0 18px 48px rgba(0,0,0,.38);color:var(--w);}
+.cc i{font-size:1.55rem;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.cc h5{font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--w);}
+.cc span{font-size:.73rem;color:var(--mu);word-break:break-all;}
+.ccta{display:flex;gap:11px;justify-content:center;flex-wrap:wrap;}
+
+footer{position:relative;z-index:1;border-top:1px solid rgba(255,255,255,.06);padding:28px 52px;text-align:center;font-size:.8rem;color:var(--mu);}
+footer em{color:var(--v3);font-style:normal;}
+
+/* ── REVEAL ── */
+.rev{opacity:0;transform:translateY(28px);transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1);}
+.rev.in{opacity:1;transform:translateY(0);}
+
+/* ══════════════════════════════════════
+   3D CHIBI AI COMPANION
+══════════════════════════════════════ */
+.chibi-station{position:fixed;bottom:0;left:20px;z-index:6000;user-select:none;width:200px;}
+
+/* Stage / 3D scene */
+.chibi-stage{position:relative;width:200px;height:220px;perspective:600px;cursor:pointer;}
+.chibi-scene{width:100%;height:100%;transform-style:preserve-3d;transition:transform .6s cubic-bezier(.34,1.56,.64,1);}
+
+/* Shadow under chibi */
+.chibi-shadow{position:absolute;bottom:4px;left:50%;transform:translateX(-50%);width:90px;height:16px;background:radial-gradient(ellipse,rgba(109,40,217,.45),transparent 70%);border-radius:50%;animation:shadow-pulse 2s ease-in-out infinite;z-index:0;}
+@keyframes shadow-pulse{0%,100%{transform:translateX(-50%) scaleX(1);opacity:.7;}50%{transform:translateX(-50%) scaleX(.8);opacity:.4;}}
+
+/* The chibi body container */
+.chibi-body{position:relative;width:100%;height:100%;display:flex;align-items:flex-end;justify-content:center;z-index:1;}
+.chibi-body img{width:150px;height:150px;object-fit:contain;filter:drop-shadow(0 8px 24px rgba(109,40,217,.6));transition:all .5s cubic-bezier(.34,1.56,.64,1);}
+
+/* Particle ring around chibi */
+.chibi-particles{position:absolute;inset:0;pointer-events:none;}
+.cpt{position:absolute;border-radius:50%;animation:cpt-anim linear infinite;opacity:0;}
+@keyframes cpt-anim{
+  0%{opacity:0;transform:translate(-50%,-50%) rotate(0deg) translateX(var(--r)) scale(0);}
+  10%{opacity:1;}
+  90%{opacity:1;}
+  100%{opacity:0;transform:translate(-50%,-50%) rotate(360deg) translateX(var(--r)) scale(1);}
+}
+
+/* Glow aura */
+.chibi-aura{position:absolute;bottom:10px;left:50%;transform:translateX(-50%);width:130px;height:130px;border-radius:50%;background:radial-gradient(circle,rgba(109,40,217,.18),transparent 70%);animation:aura-pulse 3s ease-in-out infinite;pointer-events:none;}
+@keyframes aura-pulse{0%,100%{transform:translateX(-50%) scale(1);opacity:.7;}50%{transform:translateX(-50%) scale(1.25);opacity:.3;}}
+
+/* Mood ring */
+.chibi-mood-ring{position:absolute;bottom:22px;left:50%;transform:translateX(-50%);width:100px;height:100px;border-radius:50%;border:1.5px solid rgba(109,40,217,.25);animation:mring 4s linear infinite;pointer-events:none;}
+.chibi-mood-ring::after{content:'';position:absolute;inset:-6px;border-radius:50%;border:1px dashed rgba(6,214,160,.15);animation:mring 6s linear infinite reverse;}
+@keyframes mring{to{transform:translateX(-50%) rotate(360deg);}}
+
+/* Bubble speech */
+.chibi-bubble{position:absolute;bottom:195px;left:10px;background:rgba(7,7,26,.97);border:1px solid rgba(109,40,217,.45);border-radius:14px 14px 14px 4px;padding:14px 16px;min-width:210px;max-width:280px;box-shadow:0 14px 44px rgba(0,0,0,.6);-webkit-backdrop-filter:blur(20px);backdrop-filter:blur(20px);display:none;z-index:10;}
+.chibi-bubble.on{display:block;animation:bpop .35s cubic-bezier(.34,1.56,.64,1);}
+@keyframes bpop{from{opacity:0;transform:scale(.75) translateY(14px);}to{opacity:1;transform:scale(1) translateY(0);}}
+.cb-online{position:absolute;top:8px;right:9px;width:7px;height:7px;border-radius:50%;background:var(--m);animation:pdot 2s ease-in-out infinite;}
+.cb-text{font-size:.81rem;color:rgba(238,238,255,.7);line-height:1.62;margin-bottom:11px;}
+.cb-btns{display:flex;flex-wrap:wrap;gap:4px;margin-bottom:8px;}
+.cb-btn{background:rgba(109,40,217,.2);border:1px solid rgba(139,92,246,.3);color:var(--v3);padding:4px 10px;border-radius:20px;font-size:.68rem;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.cb-btn:hover{background:rgba(109,40,217,.38);color:#fff;}
+.pose-strip{display:flex;gap:4px;border-top:1px solid rgba(255,255,255,.06);padding-top:8px;margin-top:2px;flex-wrap:wrap;}
+.pose-btn{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);color:var(--mu);padding:3px 9px;border-radius:16px;font-size:.66rem;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.pose-btn:hover,.pose-btn.active{background:rgba(6,214,160,.15);border-color:rgba(6,214,160,.35);color:var(--m);}
+
+/* ── POSE ANIMATIONS ── */
+/* idle */
+@keyframes pose-idle{0%,100%{transform:translateY(0) rotate(0deg);}30%{transform:translateY(-14px) rotate(2deg);}70%{transform:translateY(-7px) rotate(-1.5deg);}}
+/* wave */
+@keyframes pose-wave{0%,100%{transform:rotate(0deg) translateY(-8px);}25%{transform:rotate(-12deg) translateY(-14px);}75%{transform:rotate(8deg) translateY(-12px);}}
+/* dance */
+@keyframes pose-dance{0%{transform:translateY(0) rotate(0deg) scale(1);}20%{transform:translateY(-18px) rotate(6deg) scale(1.05);}40%{transform:translateY(-8px) rotate(-6deg) scale(.97);}60%{transform:translateY(-20px) rotate(4deg) scale(1.04);}80%{transform:translateY(-10px) rotate(-3deg) scale(.98);}100%{transform:translateY(0) rotate(0deg) scale(1);}}
+/* think */
+@keyframes pose-think{0%,100%{transform:translateY(0) rotate(0deg);}50%{transform:translateY(-6px) rotate(4deg);}}
+/* spin */
+@keyframes pose-spin{0%{transform:rotateY(0deg) translateY(-8px);}100%{transform:rotateY(360deg) translateY(-8px);}}
+/* bounce */
+@keyframes pose-bounce{0%,100%{transform:translateY(0) scale(1);}30%{transform:translateY(-24px) scale(1.06);}60%{transform:translateY(-10px) scale(.97);}}
+/* excited */
+@keyframes pose-excited{0%,100%{transform:scale(1) rotate(0deg);}20%{transform:scale(1.15) rotate(-8deg);}40%{transform:scale(1.12) rotate(8deg);}60%{transform:scale(1.1) rotate(-5deg);}80%{transform:scale(1.08) rotate(5deg);}}
+
+.chibi-body img.pose-idle{animation:pose-idle 4s ease-in-out infinite;}
+.chibi-body img.pose-wave{animation:pose-wave .6s ease-in-out infinite;}
+.chibi-body img.pose-dance{animation:pose-dance .8s ease-in-out infinite;}
+.chibi-body img.pose-think{animation:pose-think 2s ease-in-out infinite;}
+.chibi-body img.pose-spin{animation:pose-spin 1s linear infinite;}
+.chibi-body img.pose-bounce{animation:pose-bounce .7s cubic-bezier(.36,.07,.19,.97) infinite;}
+.chibi-body img.pose-excited{animation:pose-excited .4s ease-in-out infinite;}
+
+/* 3D tilt on hover */
+.chibi-stage:hover .chibi-scene{transform:rotateX(-8deg) rotateY(10deg);}
+
+/* ── AI CHAT ── */
+#chatfab{position:fixed;bottom:26px;right:26px;width:54px;height:54px;background:linear-gradient(135deg,var(--v),#4c1d95);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.4rem;cursor:pointer;z-index:999;box-shadow:0 8px 32px rgba(109,40,217,.5);transition:all .3s cubic-bezier(.34,1.56,.64,1);border:1px solid rgba(196,181,253,.25);}
+#chatfab:hover{transform:scale(1.18) rotate(15deg);}
+.fab-dot{position:absolute;top:3px;right:3px;width:9px;height:9px;border-radius:50%;background:var(--r);border:2px solid var(--bg);animation:pdot 2s ease-in-out infinite;}
+#chatbox{position:fixed;bottom:94px;right:26px;width:310px;background:rgba(7,7,26,.97);border:1px solid rgba(109,40,217,.35);border-radius:18px 18px 4px 18px;box-shadow:0 22px 65px rgba(0,0,0,.65);-webkit-backdrop-filter:blur(22px);backdrop-filter:blur(22px);z-index:998;transform:scale(0)translateY(20px);opacity:0;transform-origin:bottom right;transition:all .32s cubic-bezier(.34,1.56,.64,1);overflow:hidden;}
+#chatbox.open{transform:scale(1)translateY(0);opacity:1;}
+.ch-head{padding:13px 15px;background:rgba(109,40,217,.12);border-bottom:1px solid rgba(109,40,217,.2);display:flex;align-items:center;gap:9px;}
+.ch-head img{width:32px;height:32px;border-radius:50%;object-fit:contain;filter:drop-shadow(0 0 7px rgba(109,40,217,.5));}
+.ch-hinfo h5{font-family:var(--fd);font-size:.82rem;font-weight:700;color:var(--w);}
+.ch-hinfo span{font-size:.68rem;color:var(--m);}
+.ch-msgs{max-height:230px;overflow-y:auto;padding:12px;display:flex;flex-direction:column;gap:7px;}
+.ch-msgs::-webkit-scrollbar{width:3px;}
+.ch-msgs::-webkit-scrollbar-thumb{background:var(--v);border-radius:2px;}
+.msg{max-width:84%;padding:9px 12px;border-radius:11px;font-size:.79rem;line-height:1.55;animation:msgin .3s ease;white-space:pre-line;}
+@keyframes msgin{from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);}}
+.msg.bot{background:rgba(109,40,217,.14);border:1px solid rgba(109,40,217,.2);color:var(--mu);align-self:flex-start;border-radius:4px 11px 11px 11px;}
+.msg.user{background:rgba(109,40,217,.3);color:var(--w);align-self:flex-end;border-radius:11px 11px 4px 11px;}
+.ch-quick{padding:7px 10px;display:flex;flex-wrap:wrap;gap:4px;border-top:1px solid rgba(255,255,255,.06);}
+.qb{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);color:var(--mu);padding:3px 9px;border-radius:18px;font-size:.68rem;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.qb:hover{border-color:rgba(139,92,246,.38);color:var(--v3);}
+.ch-in{padding:9px 11px;display:flex;gap:7px;border-top:1px solid rgba(255,255,255,.06);}
+.ch-in input{flex:1;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.07);border-radius:7px;padding:7px 11px;color:var(--w);font-size:.78rem;font-family:var(--fb);outline:none;transition:border-color .2s;}
+.ch-in input:focus{border-color:rgba(139,92,246,.4);}
+.ch-in input::placeholder{color:var(--mu);}
+.ch-send{background:var(--v);border:none;border-radius:7px;width:32px;height:32px;color:#fff;cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:.85rem;transition:background .2s;}
+.ch-send:hover{background:#4c1d95;}
+
+/* ── ADMIN ── */
+#admin-overlay{position:fixed;inset:0;background:rgba(0,0,0,.8);-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);z-index:8000;display:none;align-items:center;justify-content:center;}
+#admin-overlay.open{display:flex;}
+.admin-modal{background:var(--s1);border:1px solid rgba(109,40,217,.4);border-radius:20px;width:96%;max-width:880px;max-height:90vh;overflow:hidden;display:flex;flex-direction:column;animation:mslide .4s cubic-bezier(.34,1.56,.64,1);}
+@keyframes mslide{from{opacity:0;transform:scale(.9)translateY(30px);}to{opacity:1;transform:scale(1)translateY(0);}}
+.admin-head{padding:18px 24px;background:rgba(109,40,217,.12);border-bottom:1px solid rgba(109,40,217,.2);display:flex;align-items:center;justify-content:space-between;}
+.admin-head h2{font-family:var(--fd);font-size:1.1rem;font-weight:700;color:var(--w);display:flex;align-items:center;gap:9px;}
+.admin-head h2 i{color:var(--g);}
+.admin-close{background:none;border:none;color:var(--mu);font-size:1.2rem;cursor:pointer;}
+.admin-body{display:flex;flex:1;overflow:hidden;}
+.admin-nav{width:180px;padding:16px 12px;border-right:1px solid rgba(255,255,255,.06);display:flex;flex-direction:column;gap:4px;background:rgba(4,4,14,.5);flex-shrink:0;}
+.anav-btn{display:flex;align-items:center;gap:8px;background:none;border:none;color:var(--mu);font-size:.82rem;font-family:var(--fb);padding:9px 12px;border-radius:9px;cursor:pointer;transition:all .2s;width:100%;text-align:left;}
+.anav-btn:hover,.anav-btn.active{background:rgba(109,40,217,.2);color:var(--v3);}
+.anav-btn i{font-size:.95rem;}
+.admin-panels{flex:1;overflow-y:auto;padding:22px 24px;}
+.admin-panels::-webkit-scrollbar{width:4px;}
+.admin-panels::-webkit-scrollbar-thumb{background:var(--v);border-radius:2px;}
+.apanel{display:none;}
+.apanel.active{display:block;}
+.apanel h3{font-family:var(--fd);font-size:1rem;font-weight:700;color:var(--w);margin-bottom:18px;display:flex;align-items:center;gap:8px;}
+.apanel h3 i{color:var(--v2);}
+.fg{margin-bottom:14px;}
+.fg label{display:block;font-family:var(--fm);font-size:.68rem;color:var(--mu);letter-spacing:.08em;text-transform:uppercase;margin-bottom:6px;}
+.fg input,.fg textarea,.fg select{width:100%;padding:10px 13px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:9px;color:var(--w);font-family:var(--fb);font-size:.86rem;outline:none;transition:border-color .2s;}
+.fg input:focus,.fg textarea:focus,.fg select:focus{border-color:rgba(139,92,246,.42);}
+.fg input::placeholder,.fg textarea::placeholder{color:var(--mu);}
+.fg select option{background:var(--s2);}
+.fg textarea{resize:vertical;min-height:80px;}
+.fg-row{display:grid;grid-template-columns:1fr 1fr;gap:12px;}
+.btn-add{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--v),#4c1d95);color:#fff;border:none;border-radius:9px;padding:10px 22px;font-size:.84rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.btn-add:hover{transform:translateY(-2px);}
+.btn-del{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.28);color:var(--r);border-radius:7px;padding:6px 13px;font-size:.76rem;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.btn-edit{display:inline-flex;align-items:center;gap:6px;background:rgba(139,92,246,.12);border:1px solid rgba(139,92,246,.3);color:var(--v3);border-radius:7px;padding:6px 13px;font-size:.76rem;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-right:6px;}
+.btn-edit:hover{background:rgba(139,92,246,.24);}
+.btn-upload{display:inline-flex;align-items:center;gap:6px;background:rgba(6,214,160,.12);border:1px solid rgba(6,214,160,.32);color:var(--m);border-radius:7px;padding:6px 13px;font-size:.76rem;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-right:6px;}
+.btn-upload:hover{background:rgba(6,214,160,.24);}
+.quick-upload-box{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(109,40,217,.12),rgba(6,214,160,.06));border:1px solid rgba(139,92,246,.28);border-radius:14px;padding:18px 20px;margin-bottom:20px;}
+.quick-upload-box .qu-left{display:flex;align-items:center;gap:14px;}
+.quick-upload-box i{font-size:1.8rem;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.qu-title{font-family:var(--fd);font-size:.95rem;font-weight:700;color:var(--w);}
+.qu-sub{font-size:.78rem;color:var(--mu);margin-top:2px;}
+#edit-modal{position:fixed;inset:0;background:rgba(2,2,8,.86);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);z-index:12000;display:none;align-items:center;justify-content:center;padding:20px;}
+#edit-modal.open{display:flex;animation:fadeIn .3s ease;}
+.edit-modal-card{background:#0a0a1c;border:1px solid rgba(139,92,246,.28);border-radius:18px;padding:26px;max-width:480px;width:100%;max-height:88vh;overflow-y:auto;}
+.edit-modal-card h3{font-family:var(--fd);font-size:1.12rem;margin-bottom:18px;display:flex;align-items:center;gap:9px;color:var(--w);}
+.edit-modal-card h3 i{color:var(--v2);}
+.edit-modal-btns{display:flex;gap:10px;margin-top:18px;}
+.edit-modal-btns .btn-save{flex:1;}
+.btn-del:hover{background:rgba(239,68,68,.24);}
+.btn-save{display:inline-flex;align-items:center;gap:7px;background:linear-gradient(135deg,var(--m),#059669);color:#fff;border:none;border-radius:9px;padding:10px 22px;font-size:.84rem;font-weight:700;cursor:pointer;transition:all .2s;font-family:var(--fb);}
+.admin-list{display:flex;flex-direction:column;gap:10px;margin-bottom:24px;}
+.ali{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.07);border-radius:10px;padding:14px 16px;display:flex;align-items:center;justify-content:space-between;gap:12px;}
+.ali-info{flex:1;min-width:0;}
+.ali-info h4{font-family:var(--fd);font-size:.88rem;font-weight:700;color:var(--w);margin-bottom:3px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;}
+.ali-info p{font-size:.78rem;color:var(--mu);}
+.ali-actions{display:flex;gap:6px;flex-shrink:0;}
+.photo-upload{border:2px dashed rgba(139,92,246,.3);border-radius:12px;padding:24px;text-align:center;cursor:pointer;transition:all .3s;}
+.photo-upload:hover{border-color:rgba(139,92,246,.6);background:rgba(109,40,217,.06);}
+.photo-preview{width:120px;height:120px;border-radius:50%;object-fit:cover;border:3px solid rgba(109,40,217,.4);margin:0 auto 12px;display:block;}
+.upload-hint{font-family:var(--fm);font-size:.72rem;color:var(--mu);}
+.resume-upload-area{border:2px dashed rgba(6,214,160,.25);border-radius:10px;padding:18px;text-align:center;cursor:pointer;transition:all .3s;}
+.resume-upload-area:hover{border-color:rgba(6,214,160,.5);background:rgba(6,214,160,.04);}
+.resume-upload-area i{font-size:1.8rem;color:var(--m);display:block;margin-bottom:6px;}
+.resume-upload-area p{font-size:.8rem;color:var(--mu);}
+.rs-ok{font-family:var(--fm);font-size:.7rem;color:var(--m);margin-top:6px;}
+.rs-no{font-family:var(--fm);font-size:.7rem;color:var(--r);margin-top:6px;}
+.ali-badge{font-family:var(--fm);font-size:.62rem;padding:3px 9px;border-radius:5px;background:rgba(139,92,246,.14);border:1px solid rgba(139,92,246,.25);color:var(--v3);}
+
+#login-overlay{position:fixed;inset:0;background:rgba(0,0,0,.88);-webkit-backdrop-filter:blur(18px);backdrop-filter:blur(18px);z-index:9000;display:none;align-items:center;justify-content:center;}
+#login-overlay.open{display:flex;}
+.login-box{background:var(--s1);border:1px solid rgba(109,40,217,.4);border-radius:20px;padding:36px;width:340px;text-align:center;}
+.login-box h2{font-family:var(--fd);font-size:1.2rem;font-weight:700;color:var(--w);margin-bottom:6px;}
+.login-box p{font-size:.84rem;color:var(--mu);margin-bottom:24px;}
+.login-box input{width:100%;padding:12px 16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:10px;color:var(--w);font-family:var(--fb);font-size:.9rem;outline:none;margin-bottom:14px;transition:border-color .2s;}
+.login-box input:focus{border-color:rgba(139,92,246,.5);}
+.login-box input::placeholder{color:var(--mu);}
+.login-err{font-size:.78rem;color:var(--r);margin-bottom:10px;display:none;}
+
+.toast{position:fixed;bottom:90px;left:50%;transform:translateX(-50%)translateY(20px);background:rgba(6,214,160,.14);border:1px solid rgba(6,214,160,.38);color:var(--m);padding:10px 22px;border-radius:10px;font-size:.82rem;z-index:9999;opacity:0;pointer-events:none;transition:all .35s;white-space:nowrap;}
+.toast.show{opacity:1;transform:translateX(-50%)translateY(0);}
+
+::-webkit-scrollbar{width:5px;}::-webkit-scrollbar-track{background:var(--bg);}::-webkit-scrollbar-thumb{background:linear-gradient(var(--v),var(--m));border-radius:3px;}
+
+@media(max-width:900px){
+  .hgrid{grid-template-columns:1fr;}.hright{display:none;}nav{padding:0 20px;}.nl{display:none;}
+  .ag,.skg,.pg,.cg,.achiev-grid,.resume-grid{grid-template-columns:1fr;}.aw{grid-column:auto;}.ei{grid-template-columns:1fr;gap:6px;}
+  .wrap{padding:70px 22px;}.admin-body{flex-direction:column;}.admin-nav{width:100%;flex-direction:row;flex-wrap:wrap;border-right:none;border-bottom:1px solid rgba(255,255,255,.06);}
+  .chibi-station{left:10px;}
+}
+
+@media(hover:none),(pointer:coarse){body{cursor:auto;}#cd,#cr{display:none;}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important;}}
+body{opacity:0;transition:opacity .5s ease;}
+body.page-in{opacity:1;}
+body{animation:failsafeReveal 0s linear 1.2s forwards;}
+@keyframes failsafeReveal{to{opacity:1;}}
+
+body.page-out{opacity:0;}
+#scrollTop{position:fixed;bottom:90px;right:90px;width:42px;height:42px;background:rgba(109,40,217,.18);border:1px solid rgba(139,92,246,.4);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#c4b5fd;cursor:pointer;z-index:900;opacity:0;pointer-events:none;transition:all .3s;font-size:1rem;}
+#scrollTop.show{opacity:1;pointer-events:auto;}
+#scrollTop:hover{background:rgba(109,40,217,.35);transform:translateY(-3px);}
+.admin-logout-btn{display:inline-flex;align-items:center;gap:6px;background:rgba(239,68,68,.12);border:1px solid rgba(239,68,68,.3);color:var(--r);border-radius:8px;padding:7px 14px;font-size:.78rem;cursor:pointer;transition:all .2s;font-family:var(--fb);margin-left:8px;}
+.admin-logout-btn:hover{background:rgba(239,68,68,.24);}
+
+/* ═══════ CONSTELLATION CANVAS ═══════ */
+#constellation{position:fixed;inset:0;z-index:-2;pointer-events:none;opacity:.55;}
+
+/* ═══════ COMMAND PALETTE ═══════ */
+#cmdk{position:fixed;inset:0;z-index:13000;display:none;align-items:flex-start;justify-content:center;padding-top:14vh;background:rgba(2,2,8,.72);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);}
+#cmdk.open{display:flex;animation:cmdkIn .2s ease;}
+@keyframes cmdkIn{from{opacity:0;}to{opacity:1;}}
+.cmdk-box{width:min(600px,92vw);background:#0b0b1e;border:1px solid rgba(139,92,246,.3);border-radius:16px;overflow:hidden;box-shadow:0 30px 90px rgba(0,0,0,.6);animation:cmdkPop .25s cubic-bezier(.34,1.56,.64,1);}
+@keyframes cmdkPop{from{transform:translateY(-16px) scale(.98);}to{transform:translateY(0) scale(1);}}
+.cmdk-input-row{display:flex;align-items:center;gap:12px;padding:16px 20px;border-bottom:1px solid rgba(255,255,255,.07);}
+.cmdk-input-row i{color:var(--v3);font-size:1.1rem;}
+#cmdk-input{flex:1;background:none;border:none;outline:none;color:var(--w);font-family:var(--fb);font-size:1rem;}
+#cmdk-input::placeholder{color:var(--mu);}
+.cmdk-hint{font-family:var(--fm);font-size:.62rem;color:var(--mu);border:1px solid rgba(255,255,255,.12);border-radius:5px;padding:2px 7px;}
+.cmdk-results{max-height:52vh;overflow-y:auto;padding:8px;}
+.cmdk-item{display:flex;align-items:center;gap:13px;padding:11px 14px;border-radius:10px;cursor:pointer;transition:background .12s;}
+.cmdk-item.sel,.cmdk-item:hover{background:rgba(109,40,217,.22);}
+.cmdk-item i{width:34px;height:34px;display:flex;align-items:center;justify-content:center;background:rgba(139,92,246,.14);border-radius:9px;color:var(--v3);font-size:1rem;flex-shrink:0;}
+.cmdk-item .ci-txt{flex:1;}
+.cmdk-item .ci-title{font-size:.9rem;font-weight:500;color:var(--w);}
+.cmdk-item .ci-sub{font-size:.72rem;color:var(--mu);}
+.cmdk-item .ci-tag{font-family:var(--fm);font-size:.6rem;color:var(--v3);text-transform:uppercase;letter-spacing:.06em;}
+.cmdk-empty{padding:30px;text-align:center;color:var(--mu);font-size:.85rem;}
+.cmdk-foot{display:flex;gap:16px;padding:10px 18px;border-top:1px solid rgba(255,255,255,.07);font-size:.68rem;color:var(--mu);}
+.cmdk-foot span{display:flex;align-items:center;gap:5px;}
+.cmdk-foot kbd{font-family:var(--fm);background:rgba(255,255,255,.08);border-radius:4px;padding:1px 5px;font-size:.62rem;}
+
+/* ═══════ THEME SWITCHER ═══════ */
+#theme-fab{position:fixed;bottom:90px;left:26px;width:46px;height:46px;border-radius:50%;background:rgba(11,11,30,.9);border:1px solid rgba(139,92,246,.35);color:var(--v3);display:flex;align-items:center;justify-content:center;cursor:pointer;z-index:850;transition:all .3s;font-size:1.1rem;-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+#theme-fab:hover{transform:rotate(45deg) scale(1.1);border-color:var(--v2);}
+#theme-menu{position:fixed;bottom:146px;left:26px;background:rgba(11,11,30,.97);border:1px solid rgba(139,92,246,.3);border-radius:14px;padding:10px;z-index:851;display:none;flex-direction:column;gap:5px;-webkit-backdrop-filter:blur(16px);backdrop-filter:blur(16px);min-width:172px;box-shadow:0 16px 44px rgba(0,0,0,.5);}
+#theme-menu.open{display:flex;animation:cmdkPop .25s ease;}
+.theme-opt{display:flex;align-items:center;gap:10px;padding:9px 12px;border-radius:9px;cursor:pointer;transition:background .15s;font-size:.82rem;color:var(--w);}
+.theme-opt:hover{background:rgba(109,40,217,.2);}
+.theme-dots{display:flex;gap:3px;}
+.theme-dot{width:11px;height:11px;border-radius:50%;}
+.theme-opt.active{background:rgba(109,40,217,.28);}
+.theme-opt.active::after{content:'✓';margin-left:auto;color:var(--m);}
+
+/* ═══════ XP / ACHIEVEMENT SYSTEM ═══════ */
+#xp-bar{position:fixed;top:0;left:0;height:3px;background:linear-gradient(90deg,var(--v),var(--m),var(--g));z-index:9998;width:0;transition:width .6s cubic-bezier(.22,.61,.36,1);box-shadow:0 0 10px rgba(139,92,246,.6);}
+#xp-badge{position:fixed;top:14px;right:200px;display:flex;align-items:center;gap:7px;background:rgba(11,11,30,.9);border:1px solid rgba(139,92,246,.3);border-radius:20px;padding:5px 13px;z-index:502;font-size:.72rem;color:var(--v3);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);cursor:pointer;transition:all .3s;opacity:0;transform:translateY(-8px);pointer-events:none;}
+#xp-badge.show{opacity:1;transform:translateY(0);pointer-events:auto;}
+#xp-badge i{color:var(--g);}
+.xp-toast{position:fixed;bottom:100px;right:26px;background:linear-gradient(135deg,rgba(109,40,217,.95),rgba(76,29,149,.95));border:1px solid rgba(139,92,246,.5);border-radius:13px;padding:13px 18px;z-index:9997;display:flex;align-items:center;gap:12px;transform:translateX(140%);transition:transform .5s cubic-bezier(.34,1.56,.64,1);box-shadow:0 12px 40px rgba(109,40,217,.5);max-width:280px;}
+.xp-toast.show{transform:translateX(0);}
+.xp-toast .xpt-icon{font-size:1.6rem;}
+.xp-toast .xpt-title{font-family:var(--fd);font-size:.85rem;font-weight:700;color:#fff;}
+.xp-toast .xpt-sub{font-size:.72rem;color:rgba(255,255,255,.8);}
+
+/* ═══════ ACHIEVEMENTS MODAL ═══════ */
+#ach-modal{position:fixed;inset:0;z-index:13000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,2,8,.8);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+#ach-modal.open{display:flex;animation:cmdkIn .25s ease;}
+.ach-modal-card{background:#0b0b1e;border:1px solid rgba(139,92,246,.28);border-radius:18px;padding:26px;max-width:440px;width:100%;}
+.ach-modal-card h3{font-family:var(--fd);font-size:1.15rem;margin-bottom:6px;display:flex;align-items:center;gap:9px;}
+.ach-modal-card .amc-sub{font-size:.8rem;color:var(--mu);margin-bottom:18px;}
+.ach-list-item{display:flex;align-items:center;gap:13px;padding:11px;border-radius:11px;margin-bottom:8px;background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.06);transition:all .3s;}
+.ach-list-item.unlocked{border-color:rgba(6,214,160,.3);background:rgba(6,214,160,.06);}
+.ach-list-item .ali-ic{font-size:1.5rem;filter:grayscale(1);opacity:.4;transition:all .3s;}
+.ach-list-item.unlocked .ali-ic{filter:none;opacity:1;}
+.ach-list-item .ali-t{font-size:.86rem;font-weight:600;color:var(--w);}
+.ach-list-item .ali-d{font-size:.72rem;color:var(--mu);}
+.ach-list-item .ali-check{margin-left:auto;color:var(--m);opacity:0;}
+.ach-list-item.unlocked .ali-check{opacity:1;}
+
+.radar-wrap{display:grid;grid-template-columns:1fr auto;gap:40px;align-items:center;margin-top:44px;padding:32px;background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.07);border-radius:20px;}
+.radar-title{font-family:var(--fd);font-size:1.3rem;font-weight:700;margin-bottom:10px;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.radar-sub{font-size:.88rem;color:var(--mu);line-height:1.7;margin-bottom:20px;max-width:340px;}
+.radar-legend{display:flex;flex-direction:column;gap:9px;}
+.radar-leg-item{display:flex;align-items:center;gap:10px;font-size:.85rem;color:var(--w);}
+.radar-leg-item .rl-dot{width:10px;height:10px;border-radius:2px;flex-shrink:0;}
+.radar-leg-item .rl-val{margin-left:auto;font-family:var(--fm);font-size:.78rem;color:var(--v3);}
+#radar{filter:drop-shadow(0 0 20px rgba(109,40,217,.2));}
+@media(max-width:760px){.radar-wrap{grid-template-columns:1fr;justify-items:center;text-align:center;}.radar-sub{margin-left:auto;margin-right:auto;}.radar-legend{align-items:center;}}
+
+/* ═══ MOBILE RESPONSIVENESS FIXES ═══ */
+@media(max-width:640px){
+  nav{padding:0 14px;flex-wrap:nowrap;}
+  .nr{gap:5px;overflow-x:auto;-webkit-overflow-scrolling:touch;scrollbar-width:none;max-width:62vw;}
+  .nr::-webkit-scrollbar{display:none;}
+  .npill{flex-shrink:0;font-size:.68rem;padding:5px 9px;}
+  #radar{width:100%;max-width:300px;height:auto;}
+  .radar-side,.radar-title,.radar-sub{max-width:100%!important;}
+  .radar-wrap{padding:20px;}
+  #xp-badge{right:auto;left:14px;top:auto;bottom:150px;}
+  #theme-fab{bottom:150px;}
+  .shape{max-width:60vw;overflow:hidden;}
+  #cmdk{padding-top:8vh;}
+}
+@media(max-width:400px){
+  .npill span{display:none;}
+  .btn-hire{font-size:.72rem;padding:7px 12px;}
+}
+
+
+/* ═══ PRINT STYLESHEET ═══ */
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact;}
+  body{background:#fff!important;color:#111!important;cursor:auto!important;opacity:1!important;}
+  #aurora,#constellation,.noise,.scan,.shape,#cd,#cr,#progress,#xp-bar,#xp-badge,#theme-fab,#theme-menu,.chibi-station,#chatbot,#scrollTop,nav,footer,.ccta,#loader,#cmdk,#ach-modal,.xp-toast{display:none!important;}
+  section{page-break-inside:avoid;padding:12px 0!important;}
+  .stit,.htit,.st-n,.ptit,.er,.radar-title{color:#111!important;-webkit-text-fill-color:#111!important;background:none!important;}
+  .stag,.hlbl{color:#6d28d9!important;}
+  .pc,.skc,.ei,.pub-card,.achiev-card{border:1px solid #ccc!important;background:#fff!important;break-inside:avoid;}
+  a{color:#6d28d9!important;text-decoration:none;}
+  .div{display:none;}
+}
+
+
+/* ═══ CONTACT FORM ═══ */
+.contact-form-wrap{max-width:620px;margin:0 auto 40px;}
+.contact-form{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:30px;}
+.cf-row{display:grid;grid-template-columns:1fr 1fr;gap:14px;}
+.cf-field{margin-bottom:14px;}
+.cf-field input,.cf-field textarea{width:100%;padding:13px 16px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);border-radius:11px;color:var(--w);font-family:var(--fb);font-size:.9rem;outline:none;transition:border-color .2s;resize:vertical;}
+.cf-field input:focus,.cf-field textarea:focus{border-color:rgba(139,92,246,.5);}
+.cf-field input::placeholder,.cf-field textarea::placeholder{color:var(--mu);}
+.cf-submit{width:100%;background:linear-gradient(135deg,var(--v),#4c1d95);color:#fff;border:none;border-radius:11px;padding:14px;font-size:.92rem;font-weight:700;cursor:pointer;font-family:var(--fb);transition:all .25s;display:flex;align-items:center;justify-content:center;gap:8px;box-shadow:0 4px 22px rgba(109,40,217,.4);}
+.cf-submit:hover{transform:translateY(-2px);box-shadow:0 8px 32px rgba(109,40,217,.6);}
+.cf-submit:disabled{opacity:.6;cursor:wait;transform:none;}
+.cf-note{text-align:center;font-size:.82rem;margin-top:12px;min-height:20px;}
+.cf-note.ok{color:var(--m);}
+.cf-note.err{color:var(--r);}
+@media(max-width:540px){.cf-row{grid-template-columns:1fr;}.contact-form{padding:22px;}}
+
+
+/* ═══ IMPACT METRICS STRIP ═══ */
+.impact-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:44px;}
+.impact-item{background:linear-gradient(145deg,rgba(109,40,217,.08),rgba(255,255,255,.02));border:1px solid rgba(139,92,246,.16);border-radius:16px;padding:24px 18px;text-align:center;position:relative;overflow:hidden;transition:all .35s;}
+.impact-item:hover{border-color:rgba(139,92,246,.4);transform:translateY(-5px);box-shadow:0 16px 40px rgba(109,40,217,.18);}
+.impact-item::after{content:'';position:absolute;top:-40%;right:-40%;width:120px;height:120px;background:radial-gradient(circle,rgba(6,214,160,.14),transparent 70%);pointer-events:none;}
+.impact-num{display:inline-block;font-family:var(--fd);font-size:2.6rem;font-weight:700;line-height:1;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.impact-suffix{display:inline-block;font-family:var(--fd);font-size:1.6rem;font-weight:700;color:var(--m);vertical-align:top;margin-top:4px;}
+.impact-lbl{font-size:.82rem;color:var(--w);margin-top:10px;line-height:1.4;font-weight:500;}
+.impact-lbl span{font-size:.7rem;color:var(--mu);font-weight:400;}
+@media(max-width:760px){.impact-strip{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.impact-strip{grid-template-columns:1fr;}}
+
+.skip-link{position:absolute;left:-999px;top:0;z-index:100000;background:var(--v);color:#fff;padding:12px 20px;border-radius:0 0 10px 0;font-family:var(--fb);text-decoration:none;transition:left .2s;}
+.skip-link:focus{left:0;}
+/* visible focus states for keyboard users (a11y) */
+a:focus-visible,button:focus-visible,input:focus-visible,textarea:focus-visible,select:focus-visible{outline:2px solid var(--v2);outline-offset:2px;}
+#install-fab{position:fixed;bottom:150px;left:26px;background:linear-gradient(135deg,var(--v),#4c1d95);color:#fff;border:none;border-radius:24px;padding:11px 18px;font-size:.8rem;font-weight:700;cursor:pointer;z-index:852;display:none;align-items:center;gap:7px;box-shadow:0 8px 28px rgba(109,40,217,.5);font-family:var(--fb);transition:all .3s;}
+#install-fab.show{display:inline-flex;animation:cmdkPop .4s ease;}
+#install-fab:hover{transform:translateY(-3px);}
+@media(max-width:640px){#install-fab{bottom:210px;}}
+
+/* ═══ PROJECT LINK ROW ═══ */
+.plink-row{display:flex;gap:9px;flex-wrap:wrap;margin-top:auto;}
+.pcase{background:rgba(6,214,160,.1)!important;border-color:rgba(6,214,160,.3)!important;color:var(--m)!important;cursor:pointer;}
+.pcase:hover{background:rgba(6,214,160,.2)!important;}
+/* ═══ CASE STUDY MODAL ═══ */
+#case-modal{position:fixed;inset:0;z-index:13000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,2,8,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+#case-modal.open{display:flex;animation:fadeIn .25s ease;}
+.case-card{background:#0b0b1e;border:1px solid rgba(139,92,246,.3);border-radius:20px;padding:34px;max-width:600px;width:100%;max-height:88vh;overflow-y:auto;}
+.case-card h2{font-family:var(--fd);font-size:1.4rem;margin-bottom:6px;background:linear-gradient(135deg,var(--v3),var(--m));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;}
+.case-tags{display:flex;flex-wrap:wrap;gap:6px;margin:14px 0 22px;}
+.case-tags span{font-family:var(--fm);font-size:.68rem;color:var(--v3);background:rgba(109,40,217,.14);border:1px solid rgba(139,92,246,.24);padding:3px 10px;border-radius:14px;}
+.case-block{margin-bottom:18px;padding-left:16px;border-left:2px solid rgba(139,92,246,.3);}
+.case-block h4{font-family:var(--fm);font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;margin-bottom:6px;}
+.case-block.problem h4{color:var(--r);}
+.case-block.solution h4{color:var(--c);}
+.case-block.impact h4{color:var(--m);}
+.case-block p{font-size:.92rem;color:rgba(238,238,255,.8);line-height:1.7;}
+.case-close{width:100%;margin-top:8px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);color:var(--w);border-radius:11px;padding:12px;cursor:pointer;font-family:var(--fb);font-size:.88rem;}
+.case-close:hover{background:rgba(255,255,255,.1);}
+/* ═══ TESTIMONIALS ═══ */
+.testi-wrap{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+.testi-card{background:rgba(255,255,255,.03);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:26px;position:relative;transition:all .35s;}
+.testi-card:hover{border-color:rgba(139,92,246,.3);transform:translateY(-5px);}
+.testi-card .quote-mark{font-family:Georgia,serif;font-size:3rem;line-height:.6;color:var(--v2);opacity:.4;}
+.testi-text{font-size:.9rem;color:rgba(238,238,255,.82);line-height:1.7;margin:8px 0 18px;font-style:italic;}
+.testi-author{display:flex;align-items:center;gap:12px;}
+.testi-avatar{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--v),var(--m));display:flex;align-items:center;justify-content:center;font-size:1.3rem;flex-shrink:0;}
+.testi-name{font-family:var(--fd);font-size:.9rem;font-weight:600;color:var(--w);}
+.testi-role{font-size:.74rem;color:var(--mu);}
+@media(max-width:760px){.testi-wrap{grid-template-columns:1fr;}}
+/* ═══ NOW / STATUS SECTION ═══ */
+.now-wrap{display:flex;align-items:flex-start;gap:30px;flex-wrap:wrap;background:linear-gradient(135deg,rgba(6,214,160,.06),rgba(109,40,217,.05));border:1px solid rgba(6,214,160,.16);border-radius:20px;padding:30px;}
+.now-status{display:flex;align-items:center;gap:10px;font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--m);white-space:nowrap;}
+.now-pulse{width:11px;height:11px;border-radius:50%;background:var(--m);box-shadow:0 0 0 0 rgba(6,214,160,.6);animation:nowPulse 2s infinite;}
+@keyframes nowPulse{0%{box-shadow:0 0 0 0 rgba(6,214,160,.6);}70%{box-shadow:0 0 0 12px rgba(6,214,160,0);}100%{box-shadow:0 0 0 0 rgba(6,214,160,0);}}
+.now-list{flex:1;min-width:260px;display:flex;flex-direction:column;gap:10px;}
+.now-item{font-size:.92rem;color:rgba(238,238,255,.85);line-height:1.5;}
+/* ═══ KEYBOARD SHORTCUTS MODAL ═══ */
+#kbd-modal{position:fixed;inset:0;z-index:13000;display:none;align-items:center;justify-content:center;padding:20px;background:rgba(2,2,8,.82);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);}
+#kbd-modal.open{display:flex;animation:fadeIn .25s ease;}
+.kbd-card{background:#0b0b1e;border:1px solid rgba(139,92,246,.3);border-radius:18px;padding:28px;max-width:420px;width:100%;}
+.kbd-card h3{font-family:var(--fd);font-size:1.15rem;margin-bottom:18px;display:flex;align-items:center;gap:9px;}
+.kbd-row{display:flex;align-items:center;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(255,255,255,.06);}
+.kbd-row:last-child{border-bottom:none;}
+.kbd-row span{font-size:.88rem;color:rgba(238,238,255,.8);}
+.kbd-keys{display:flex;gap:5px;}
+.kbd-keys kbd{font-family:var(--fm);background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.14);border-radius:6px;padding:3px 9px;font-size:.72rem;color:var(--v3);}
+
+.code-stats{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:44px;}
+.cs-card{background:rgba(255,255,255,.02);border:1px solid rgba(255,255,255,.08);border-radius:16px;padding:20px;overflow:hidden;}
+.cs-head{font-family:var(--fd);font-size:.92rem;font-weight:600;margin-bottom:14px;display:flex;align-items:center;gap:8px;color:var(--w);}
+.cs-head i{color:var(--v2);}
+.cs-card img{width:100%;height:auto;border-radius:8px;display:block;}
+.cs-fallback{display:none;padding:20px;text-align:center;}
+.cs-fallback a{color:var(--v3);text-decoration:none;font-size:.88rem;display:inline-flex;align-items:center;gap:7px;}
+.cs-fallback a:hover{color:var(--m);}
+@media(max-width:760px){.code-stats{grid-template-columns:1fr;}}
+
+/* ═══════ NEW ANIMATIONS ═══════ */
+/* 1. Infinite tech-stack marquee */
+.marquee{overflow:hidden;position:relative;padding:18px 0;margin-top:20px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);mask-image:linear-gradient(90deg,transparent,#000 8%,#000 92%,transparent);}
+.marquee-track{display:flex;gap:44px;width:max-content;animation:marqueeScroll 32s linear infinite;}
+.marquee:hover .marquee-track{animation-play-state:paused;}
+.marquee-item{display:flex;align-items:center;gap:9px;font-family:var(--fm);font-size:.95rem;color:rgba(238,238,255,.55);white-space:nowrap;transition:color .3s;}
+.marquee-item:hover{color:var(--v3);}
+.marquee-item i{font-size:1.3rem;color:var(--v2);}
+@keyframes marqueeScroll{to{transform:translateX(-50%);}}
+
+/* 2. 3D tilt cards */
+.tilt3d{transform-style:preserve-3d;transition:transform .18s cubic-bezier(.22,.61,.36,1);will-change:transform;}
+
+/* 3. Confetti */
+.confetti-piece{position:fixed;width:9px;height:9px;top:-14px;z-index:14000;pointer-events:none;border-radius:2px;animation:confettiFall linear forwards;}
+@keyframes confettiFall{to{transform:translateY(105vh) rotate(720deg);opacity:.2;}}
+
+/* 4. Section-title shimmer sweep */
+.stit{position:relative;overflow:hidden;}
+.stit::after{content:'';position:absolute;top:0;left:-120%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.14),transparent);transform:skewX(-20deg);animation:titleShimmer 4.5s ease-in-out infinite;pointer-events:none;}
+@keyframes titleShimmer{0%,100%{left:-120%;}45%,55%{left:160%;}}
+
+/* 5. Floating gradient glow orbs (parallax) */
+.glow-orb{position:fixed;border-radius:50%;filter:blur(60px);z-index:-2;pointer-events:none;opacity:.5;will-change:transform;}
+.glow-orb.go1{width:340px;height:340px;background:radial-gradient(circle,rgba(109,40,217,.5),transparent 70%);top:8%;left:-6%;}
+.glow-orb.go2{width:280px;height:280px;background:radial-gradient(circle,rgba(6,214,160,.35),transparent 70%);bottom:12%;right:-4%;}
+
+/* 6. Ripple on click */
+.ripple{position:absolute;border-radius:50%;background:rgba(255,255,255,.35);transform:scale(0);animation:rippleGo .6s ease-out;pointer-events:none;}
+@keyframes rippleGo{to{transform:scale(3.2);opacity:0;}}
+
+/* 7. Animated gradient border on hover for project cards */
+.pc{position:relative;}
+.pc::before{content:'';position:absolute;inset:0;border-radius:inherit;padding:1px;background:linear-gradient(130deg,transparent,transparent);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity .4s;pointer-events:none;}
+.pc:hover::before{opacity:1;background:linear-gradient(130deg,var(--v2),var(--m),var(--c),var(--v2));background-size:300% 300%;animation:borderFlow 3s linear infinite;}
+@keyframes borderFlow{to{background-position:300% 0;}}
+
+/* 8. Bounce-in for the scroll-top and floating buttons */
+@keyframes floatY{0%,100%{transform:translateY(0);}50%{transform:translateY(-6px);}}
+
+@keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
+</style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Shruti Srivastava",
+  "jobTitle": "Data Scientist & AI/ML Engineer",
+  "description": "B.Tech CSE (Data Science) graduate, First Division with Honours. Specializes in machine learning, generative AI, and full-stack development.",
+  "url": "https://shruti502102.github.io/Portfolio/",
+  "email": "shrutisrivastava502102@gmail.com",
+  "telephone": "+91-9910367552",
+  "address": {"@type": "PostalAddress", "addressLocality": "Greater Noida", "addressRegion": "Uttar Pradesh", "addressCountry": "IN"},
+  "alumniOf": {"@type": "CollegeOrUniversity", "name": "Noida Institute of Engineering and Technology (NIET)"},
+  "knowsAbout": ["Machine Learning", "Generative AI", "Python", "Data Science", "React.js", "Cloud Computing", "Deep Learning", "NLP"],
+  "sameAs": [
+    "https://www.linkedin.com/in/shruti-srivastava-2b2101269/",
+    "https://github.com/Shruti502102/",
+    "https://leetcode.com/u/Shruti502102/"
+  ]
+}
+</script>
+</head>
+<body>
+<a href="#about" class="skip-link">Skip to content</a>
+<noscript><div style="position:fixed;inset:0;z-index:99999;background:#04040e;color:#eee;display:flex;align-items:center;justify-content:center;text-align:center;padding:30px;font-family:sans-serif;"><div><h1 style="color:#8b5cf6;margin-bottom:12px;">Shruti Srivastava</h1><p style="margin-bottom:8px;">Data Scientist &amp; AI/ML Engineer · B.Tech CSE (Data Science), First Division with Honours.</p><p style="color:#aaa;font-size:.9rem;">This portfolio uses JavaScript for its interactive features. Please enable JavaScript for the full experience.</p><p style="margin-top:14px;font-size:.9rem;">📧 shrutisrivastava502102@gmail.com · 📱 +91 9910367552</p></div></div></noscript>
+<canvas id="aurora"></canvas>
+<canvas id="constellation"></canvas>
+<div class="glow-orb go1"></div><div class="glow-orb go2"></div>
+<div id="cd"></div><div id="cr"></div>
+<div class="noise"></div><div class="scan"></div>
+<div class="shape sh1"></div><div class="shape sh2"></div><div class="shape sh3"></div>
+<div id="progress"></div>
+<div id="xp-bar"></div>
+<div id="xp-badge" onclick="openAchModal()"><i class="bi bi-trophy-fill"></i> <span id="xp-text">Explorer · 0%</span></div>
+
+<!-- LOADER -->
+<div id="loader">
+  <div class="lr-wrap">
+    <div class="lr lr1"></div><div class="lr lr2"></div><div class="lr lr3"></div>
+    <span id="lpct">0%</span>
+  </div>
+  <div class="lbl" id="lbl">Initialising Portfolio.OS<span class="ldots"></span></div>
+  <div id="lbar"><div id="lfill"></div></div>
+</div>
+
+<!-- NAV -->
+<nav id="nav">
+  <div class="logo">SS.</div>
+  <div class="nl">
+    <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a>
+    <a href="#experience">Experience</a><a href="#research">Research</a><a href="#testimonials">Reviews</a><a href="#achievements">Awards</a><a href="#contact">Contact</a>
+  </div>
+  <div class="nr">
+    <a href="tr.html" class="npill"><i class="bi bi-award"></i> Certs</a>
+    <a href="blog.html" class="npill"><i class="bi bi-journal-code"></i> Blog</a>
+    <button class="npill" onclick="openCmdk()" title="Search (Ctrl/Cmd+K)"><i class="bi bi-search"></i> <span style="font-family:var(--fm);font-size:.62rem;opacity:.7;">⌘K</span></button>
+    <a href="showcase.html" class="npill"><i class="bi bi-images"></i> Showcase</a>
+    <a href="playground.html" class="npill"><i class="bi bi-controller"></i> 3D</a>
+    <a href="skills-match.html" class="npill"><i class="bi bi-cpu"></i> AI Match</a>
+    <button class="npill apill" onclick="openLogin()"><i class="bi bi-shield-lock"></i> Admin</button>
+    <a href="#contact" class="btn-hire">Hire Me</a>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section id="home" class="hero">
+  <div class="hgrid">
+    <div class="hl">
+      <div class="badge"><span class="pdot"></span>Open to Opportunities · Greater Noida, IN</div>
+      <h1 class="hname">Shruti<span class="nm2">Srivastava</span></h1>
+      <p class="hrole"><span id="typed"></span><span class="tcursor"></span></p>
+      <p class="hdesc">B.Tech CSE (Data Science), <strong>First Division with Honours</strong> — building <strong>production AI systems</strong>, generative-AI pipelines (LLMs, RAG) &amp; full-stack apps. 2 published papers, 6 internships, one 91%-accuracy multimodal AI system.</p>
+      <div class="hacts">
+        <a href="#contact" class="btnp"><i class="bi bi-send-fill"></i> Get in Touch</a>
+        <a href="#projects" class="btno"><i class="bi bi-grid-1x2-fill"></i> View Work</a>
+        <button class="btno" onclick="dlResume()"><i class="bi bi-download"></i> Resume</button>
+      </div>
+      <div class="hstats">
+        <div><span class="st-n" data-to="6">0</span><br/><span class="st-l">Internships</span></div>
+        <div><span class="st-n" data-to="6">0</span><br/><span class="st-l">Projects</span></div>
+        <div><span class="st-n" id="cert-stat" data-to="24">0</span><br/><span class="st-l">Certs</span></div>
+        <div><span class="st-n" data-to="2">0</span><br/><span class="st-l">Papers</span></div>
+      </div>
+    </div>
+    <div class="hright">
+      <div class="holo">
+        <div class="hring hr1"></div><div class="hring hr2"></div><div class="hring hr3"></div>
+        <div class="hglow"></div>
+        <div class="pframe"><img id="profile-img" src="image.png" alt="Shruti Srivastava" onerror="this.src=window.PROFILE_IMG||this.src"/></div>
+        <div class="hfoil"></div>
+        <div class="op op1"></div><div class="op op2"></div><div class="op op3"></div>
+        <div class="ftag fta"><i class="bi bi-cloud-fill"></i>Gen AI @ Google Cloud</div>
+        <div class="ftag ftb"><i class="bi bi-cpu-fill"></i>ML · NLP · CV</div>
+        <div class="ftag ftc"><i class="bi bi-headset-vr"></i>AR/VR Builder</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about"><div class="wrap">
+  <div class="sh rev"><span class="stag">01 — About</span><h2 class="stit">Who I Am</h2><div class="sline"></div></div>
+  <div class="ag">
+    <div class="ac aw rev"><p id="about-text">B.Tech CSE (Data Science) graduate from NIET, Greater Noida — <strong>CGPA 8.07/10, First Division with Honours</strong> (Sem 8 SGPA 9.67), Minor in AI &amp; ML. I specialize in machine learning, generative AI (<strong>LLMs, RAG, Vertex AI</strong>) and full-stack development (React.js, Flask, REST APIs) on Google Cloud, AWS &amp; Azure. Across <strong>6 internships</strong>, <strong>2 published research papers</strong>, and a multimodal AI system at <strong>91% accuracy</strong> — I bridge research and production-ready systems.</p></div>
+    <div class="ac rev"><h5>Education</h5><ul><li>B.Tech CSE (DS) — NIET — 8.07/10 (Honours)</li><li>Class XII — St. Joseph's — 85.40%</li><li>Class X — St. Joseph's — 81.50%</li></ul></div>
+    <div class="ac rev"><h5>Languages</h5><ul><li>English — Fluent</li><li>Hindi — Native</li><li>French — Beginner (A1)</li></ul></div>
+    <div class="ac rev"><h5>Find Me</h5><ul><li>Greater Noida, UP</li><li>+91 9910367552</li><li>shrutisrivastava502102@gmail.com</li></ul></div>
+  </div>
+  <div class="impact-strip">
+    <div class="impact-item rev"><div class="impact-num" data-count="91">0</div><div class="impact-suffix">%</div><div class="impact-lbl">Multimodal AI accuracy<br/><span>MindGuard · 240 sessions</span></div></div>
+    <div class="impact-item rev"><div class="impact-num" data-count="92">0</div><div class="impact-suffix">%</div><div class="impact-lbl">Resume-matcher accuracy<br/><span>−60% screening time</span></div></div>
+    <div class="impact-item rev"><div class="impact-num" data-count="30">0</div><div class="impact-suffix">%</div><div class="impact-lbl">LLM relevance boost<br/><span>Google Cloud internship</span></div></div>
+    <div class="impact-item rev"><div class="impact-num" data-count="35">0</div><div class="impact-suffix">%</div><div class="impact-lbl">Faster network setup<br/><span>Python automation · Cisco</span></div></div>
+  </div>
+  <div class="now-wrap rev" style="margin-top:44px;">
+    <div class="now-status"><span class="now-pulse"></span><span id="now-status-text">Open to opportunities</span></div>
+    <div class="now-list" id="now-list"></div>
+  </div>
+</div></section><div class="div"></div>
+
+<!-- SKILLS -->
+<section id="skills"><div class="wrap">
+  <div class="sh rev"><span class="stag">02 — Skills</span><h2 class="stit">Technical Expertise</h2><div class="sline"></div></div>
+  <div class="skg">
+    <div class="skc rev"><div class="skt"><i class="bi bi-code-slash"></i>Programming</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">Python</span><span class="skp">92%</span></div><div class="skt2"><div class="skf" data-w="92"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">HTML / CSS</span><span class="skp">95%</span></div><div class="skt2"><div class="skf" data-w="95"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">JavaScript</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">SQL</span><span class="skp">87%</span></div><div class="skt2"><div class="skf" data-w="87"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Java</span><span class="skp">82%</span></div><div class="skt2"><div class="skf" data-w="82"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">R</span><span class="skp">75%</span></div><div class="skt2"><div class="skf" data-w="75"></div></div></div>
+    </div></div>
+    <div class="skc rev"><div class="skt"><i class="bi bi-robot"></i>AI / ML</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">Pandas & NumPy</span><span class="skp">90%</span></div><div class="skt2"><div class="skf" data-w="90"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Scikit-learn</span><span class="skp">90%</span></div><div class="skt2"><div class="skf" data-w="90"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">TensorFlow / Keras</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">NLP — NLTK/spaCy</span><span class="skp">82%</span></div><div class="skt2"><div class="skf" data-w="82"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Feature Engineering</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Prompt Engineering</span><span class="skp">70%</span></div><div class="skt2"><div class="skf" data-w="70"></div></div></div>
+    </div></div>
+    <div class="skc rev"><div class="skt"><i class="bi bi-stars"></i>Generative AI</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">LLMs & Vertex AI</span><span class="skp">88%</span></div><div class="skt2"><div class="skf" data-w="88"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Gemini API / PaLM</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">RAG Pipelines</span><span class="skp">82%</span></div><div class="skt2"><div class="skf" data-w="82"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Prompt Engineering</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+    </div></div>
+    <div class="skc rev"><div class="skt"><i class="bi bi-cloud-fill"></i>Cloud & DevOps</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">Google Cloud/Vertex</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Git & GitHub</span><span class="skp">90%</span></div><div class="skt2"><div class="skf" data-w="90"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">AWS / Azure</span><span class="skp">75%</span></div><div class="skt2"><div class="skf" data-w="75"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Docker</span><span class="skp">72%</span></div><div class="skt2"><div class="skf" data-w="72"></div></div></div>
+    </div></div>
+    <div class="skc rev"><div class="skt"><i class="bi bi-bar-chart-fill"></i>BI & Full-Stack</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">Power BI & Tableau</span><span class="skp">87%</span></div><div class="skt2"><div class="skf" data-w="87"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">React.js</span><span class="skp">88%</span></div><div class="skt2"><div class="skf" data-w="88"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Flask / FastAPI</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">REST APIs & MySQL</span><span class="skp">86%</span></div><div class="skt2"><div class="skf" data-w="86"></div></div></div>
+    </div></div>
+    <div class="skc rev"><div class="skt"><i class="bi bi-building"></i>Enterprise & XR</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">ServiceNow ITSM</span><span class="skp">80%</span></div><div class="skt2"><div class="skf" data-w="80"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Unity & Meta Spark</span><span class="skp">80%</span></div><div class="skt2"><div class="skf" data-w="80"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Vuforia Engine</span><span class="skp">75%</span></div><div class="skt2"><div class="skf" data-w="75"></div></div></div>
+    </div></div>
+    <div class="skc rev"><div class="skt"><i class="bi bi-cpu"></i>CS Core</div><div class="skrs">
+      <div class="skr"><div class="skm"><span class="skn">DSA</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">OOP</span><span class="skp">88%</span></div><div class="skt2"><div class="skf" data-w="88"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">DBMS</span><span class="skp">85%</span></div><div class="skt2"><div class="skf" data-w="85"></div></div></div>
+      <div class="skr"><div class="skm"><span class="skn">Networks</span><span class="skp">80%</span></div><div class="skt2"><div class="skf" data-w="80"></div></div></div>
+    </div></div>
+  </div>
+  <div class="marquee">
+    <div class="marquee-track" id="marquee-track"></div>
+  </div>
+  <div class="radar-wrap rev">
+    <div class="radar-side">
+      <h3 class="radar-title">Core Strength Radar</h3>
+      <p class="radar-sub">A live snapshot of Shruti's strongest domains, computed from her skill set.</p>
+      <div class="radar-legend" id="radar-legend"></div>
+    </div>
+    <canvas id="radar" width="340" height="340"></canvas>
+  </div>
+</div></section><div class="div"></div>
+
+<!-- PROJECTS -->
+<section id="projects"><div class="wrap">
+  <div class="sh rev"><span class="stag">03 — Projects</span><h2 class="stit">Featured Work</h2><div class="sline"></div></div>
+  <div class="pg" id="projects-grid"></div>
+</div></section><div class="div"></div>
+
+<!-- EXPERIENCE -->
+<section id="experience"><div class="wrap">
+  <div class="sh rev"><span class="stag">04 — Experience</span><h2 class="stit">Professional Journey</h2><div class="sline"></div></div>
+  <div class="el" id="exp-list"></div>
+</div></section><div class="div"></div>
+
+<!-- RESEARCH PUBLICATIONS -->
+<section id="research"><div class="wrap">
+  <div class="sh rev"><span class="stag">05 — Research</span><h2 class="stit">Publications</h2><div class="sline"></div></div>
+  <div class="pub-grid" id="pub-grid"></div>
+  <div class="code-stats rev">
+    <div class="cs-card">
+      <div class="cs-head"><i class="bi bi-github"></i> GitHub Activity</div>
+      <img src="https://github-readme-stats.vercel.app/api?username=Shruti502102&show_icons=true&hide_border=true&bg_color=0b0b1e&title_color=8b5cf6&icon_color=06d6a0&text_color=c4b5fd&ring_color=6d28d9" alt="GitHub stats" loading="lazy" onerror="this.parentElement.querySelector('.cs-fallback').style.display='block';this.style.display='none';"/>
+      <div class="cs-fallback"><a href="https://github.com/Shruti502102/" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View GitHub profile</a></div>
+    </div>
+    <div class="cs-card">
+      <div class="cs-head"><i class="bi bi-code-square"></i> Top Languages</div>
+      <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=Shruti502102&layout=compact&hide_border=true&bg_color=0b0b1e&title_color=8b5cf6&text_color=c4b5fd" alt="Top languages" loading="lazy" onerror="this.parentElement.querySelector('.cs-fallback').style.display='block';this.style.display='none';"/>
+      <div class="cs-fallback"><a href="https://leetcode.com/u/Shruti502102/" target="_blank"><i class="bi bi-box-arrow-up-right"></i> View LeetCode profile</a></div>
+    </div>
+  </div>
+</div></section><div class="div"></div>
+
+<!-- TESTIMONIALS -->
+<section id="testimonials"><div class="wrap">
+  <div class="sh rev"><span class="stag">06 — Social Proof</span><h2 class="stit">What People Say</h2><div class="sline"></div></div>
+  <div class="testi-wrap" id="testi-wrap"></div>
+</div></section><div class="div"></div>
+
+<!-- ACHIEVEMENTS -->
+<section id="achievements"><div class="wrap">
+  <div class="sh rev"><span class="stag">07 — Awards</span><h2 class="stit">Achievements</h2><div class="sline"></div></div>
+  <div class="achiev-grid" id="achiev-grid"></div>
+</div></section><div class="div"></div>
+
+<!-- RESUMES -->
+<section id="resumes"><div class="wrap">
+  <div class="sh rev"><span class="stag">08 — Download</span><h2 class="stit">Resume Versions</h2><div class="sline"></div></div>
+  <div class="resume-grid" id="resume-grid"></div>
+</div></section><div class="div"></div>
+
+<!-- CONTACT -->
+<section id="contact"><div class="wrap">
+  <div class="sh rev"><span class="stag">09 — Reach Out</span><h2 class="stit">Let's Build Together</h2><div class="sline"></div></div>
+  <div class="contact-form-wrap rev">
+    <form class="contact-form" id="contactForm" onsubmit="return sendContact(event)">
+      <div class="cf-row">
+        <div class="cf-field"><input type="text" id="cf-name" placeholder="Your name" required/></div>
+        <div class="cf-field"><input type="email" id="cf-email" placeholder="Your email" required/></div>
+      </div>
+      <div class="cf-field"><input type="text" id="cf-subject" placeholder="Subject (e.g. Interview opportunity)"/></div>
+      <div class="cf-field"><textarea id="cf-message" placeholder="Your message…" rows="4" required></textarea></div>
+      <button type="submit" class="cf-submit" id="cf-btn"><i class="bi bi-send-fill"></i> Send Message</button>
+      <p class="cf-note" id="cf-note"></p>
+    </form>
+  </div>
+  <div class="cg">
+    <a href="mailto:shrutisrivastava502102@gmail.com" class="cc rev"><i class="bi bi-envelope-fill"></i><h5>Email</h5><span>shrutisrivastava502102@gmail.com</span></a>
+    <a href="https://www.linkedin.com/in/shruti-srivastava-2b2101269/" target="_blank" class="cc rev"><i class="bi bi-linkedin"></i><h5>LinkedIn</h5><span>shruti-srivastava-2b2101269</span></a>
+    <a href="https://github.com/Shruti502102/" target="_blank" class="cc rev"><i class="bi bi-github"></i><h5>GitHub</h5><span>Shruti502102</span></a>
+    <a href="https://leetcode.com/u/Shruti502102/" target="_blank" class="cc rev"><i class="bi bi-code-slash"></i><h5>LeetCode</h5><span>Shruti502102</span></a>
+  </div>
+  <div class="ccta rev">
+    <a href="mailto:shrutisrivastava502102@gmail.com" class="btnp"><i class="bi bi-briefcase-fill"></i> Hire Me</a>
+    <button class="btno" onclick="dlResume()"><i class="bi bi-download"></i> Resume</button>
+    <button class="btno" onclick="saveVCard()"><i class="bi bi-person-vcard"></i> Save Contact</button>
+    <button class="btno" onclick="copyEmail(this)"><i class="bi bi-clipboard"></i> Copy Email</button>
+    <button class="btno" onclick="sharePortfolio()"><i class="bi bi-share"></i> Share</button>
+    <a href="tr.html" class="btno"><i class="bi bi-award"></i> Certificates</a>
+    <a href="blog.html" class="btno"><i class="bi bi-journal-code"></i> Blog</a>
+    <a href="showcase.html" class="btno"><i class="bi bi-images"></i> Showcase</a>
+    <a href="playground.html" class="btno"><i class="bi bi-controller"></i> 3D Playground</a>
+    <a href="skills-match.html" class="btno"><i class="bi bi-cpu"></i> AI Skill Match</a>
+  </div>
+</div></section>
+
+<footer><p>© 2026 <em>Shruti Srivastava</em> — Data Scientist · AI/ML Engineer · Full-Stack Developer · Built with ☕ &amp; passion</p></footer>
+
+<!-- ══════════ 3D CHIBI COMPANION ══════════ -->
+<div class="chibi-station" id="chibi-station">
+  <div class="chibi-bubble" id="cbubb">
+    <div class="cb-online"></div>
+    <div class="cb-text" id="cbtxt">Hi! I'm Shru-AI 👋 Click me to interact!</div>
+    <div class="cb-btns">
+      <button class="cb-btn" onclick="cNav('skills')">🔧 Skills</button>
+      <button class="cb-btn" onclick="cNav('projects')">🚀 Projects</button>
+      <button class="cb-btn" onclick="cNav('achievements')">🏆 Awards</button>
+      <button class="cb-btn" onclick="cNav('contact')">📧 Contact</button>
+    </div>
+    <div class="pose-strip" id="pose-strip">
+      <button class="pose-btn active" onclick="setPose('idle',this)" title="Idle">😊 Idle</button>
+      <button class="pose-btn" onclick="setPose('wave',this)" title="Wave">👋 Wave</button>
+      <button class="pose-btn" onclick="setPose('dance',this)" title="Dance">💃 Dance</button>
+      <button class="pose-btn" onclick="setPose('think',this)" title="Think">🤔 Think</button>
+      <button class="pose-btn" onclick="setPose('bounce',this)" title="Bounce">⬆️ Bounce</button>
+      <button class="pose-btn" onclick="setPose('spin',this)" title="Spin">🌀 Spin</button>
+      <button class="pose-btn" onclick="setPose('excited',this)" title="Excited">🤩 Hype</button>
+    </div>
+  </div>
+
+  <div class="chibi-stage" id="chibi-stage">
+    <div class="chibi-scene" id="chibi-scene">
+      <!-- aura + shadow -->
+      <div class="chibi-aura"></div>
+      <div class="chibi-mood-ring"></div>
+      <!-- particles -->
+      <div class="chibi-particles" id="chibi-particles"></div>
+      <!-- chibi image -->
+      <div class="chibi-body">
+        <img id="chibi-img" src="chibi-ai.png" alt="Shru-AI" class="pose-idle"
+          onerror="this.src=window.CHIBI_IMG||this.src"/>
+      </div>
+      <div class="chibi-shadow"></div>
+    </div>
+  </div>
+</div>
+
+<!-- AI CHAT -->
+<div id="chatfab" onclick="toggleChat()">🤖<div class="fab-dot"></div></div>
+<div id="chatbox">
+  <div class="ch-head">
+    <img id="chat-chibi-img" src="chibi-ai.png" alt="Shru-AI" onerror="this.src=window.CHIBI_IMG||this.src"/>
+    <div class="ch-hinfo"><h5>Shru-AI</h5><span>● Online — ask anything!</span></div>
+  </div>
+  <div class="ch-msgs" id="cmsgs"><div class="msg bot">Hey! 👋 I'm Shru-AI. Ask me about Shruti's skills, projects, certs or how to hire her!</div></div>
+  <div class="ch-quick">
+    <button class="qb" onclick="sq('skills')">🔧 Skills</button>
+    <button class="qb" onclick="sq('projects')">🚀 Projects</button>
+    <button class="qb" onclick="sq('internships')">🏢 Jobs</button>
+    <button class="qb" onclick="sq('resume')">📄 Resume</button>
+  </div>
+  <div class="ch-in">
+    <input type="text" id="cinput" placeholder="Ask about Shruti…" onkeydown="if(event.key==='Enter')sendMsg()"/>
+    <button class="ch-send" onclick="sendMsg()"><i class="bi bi-send-fill"></i></button>
+  </div>
+</div>
+
+<!-- ADMIN LOGIN -->
+<div id="login-overlay">
+  <div class="login-box">
+    <h2>🔐 Admin Login</h2>
+    <p>Enter password to manage the portfolio</p>
+    <input type="password" id="pw-input" placeholder="Password…" onkeydown="if(event.key==='Enter')doLogin()"/>
+    <div class="login-err" id="login-err">Wrong password. Try again.</div>
+    <button class="btnp" style="width:100%;justify-content:center;" onclick="doLogin()"><i class="bi bi-shield-check"></i> Login</button>
+    <br/><br/>
+    <button style="background:none;border:none;color:var(--mu);font-size:.8rem;cursor:pointer;" onclick="closeLogin()">Cancel</button>
+  </div>
+</div>
+
+<!-- ADMIN PANEL -->
+<div id="admin-overlay">
+  <div class="admin-modal">
+    <div class="admin-head">
+      <h2><i class="bi bi-shield-shaded"></i> Admin Dashboard</h2>
+      <div style="display:flex;align-items:center;gap:4px;"><button class="admin-logout-btn" onclick="logoutAdmin()"><i class="bi bi-box-arrow-right"></i> Logout</button><button class="admin-close" onclick="closeAdmin()"><i class="bi bi-x-lg"></i></button></div>
+    </div>
+    <div class="admin-body">
+      <div class="admin-nav">
+        <button class="anav-btn active" onclick="switchTab('profile',this)"><i class="bi bi-person-circle"></i> Profile</button>
+        <button class="anav-btn" onclick="switchTab('photo',this)"><i class="bi bi-image"></i> Photo</button>
+        <button class="anav-btn" onclick="switchTab('projects',this)"><i class="bi bi-grid-1x2"></i> Projects</button>
+        <button class="anav-btn" onclick="switchTab('resumes',this)"><i class="bi bi-file-earmark-pdf"></i> Resumes</button>
+        <button class="anav-btn" onclick="switchTab('achievements',this)"><i class="bi bi-trophy"></i> Awards</button>
+        <button class="anav-btn" onclick="switchTab('testimonials',this)"><i class="bi bi-chat-quote"></i> Reviews</button>
+        <button class="anav-btn" onclick="switchTab('password',this)"><i class="bi bi-key"></i> Password</button>
+      </div>
+      <div class="admin-panels">
+        <div class="apanel active" id="ap-profile">
+          <h3><i class="bi bi-person-circle"></i> Edit Profile</h3>
+          <div class="fg-row">
+            <div class="fg"><label>Name</label><input type="text" id="pf-name"/></div>
+            <div class="fg"><label>Tagline</label><input type="text" id="pf-tag"/></div>
+          </div>
+          <div class="fg"><label>About Text</label><textarea id="pf-about" rows="5"></textarea></div>
+          <div class="fg-row">
+            <div class="fg"><label>Email</label><input type="email" id="pf-email"/></div>
+            <div class="fg"><label>Phone</label><input type="text" id="pf-phone"/></div>
+          </div>
+          <button class="btn-save" onclick="saveProfile()"><i class="bi bi-check2-circle"></i> Save Profile</button>
+        </div>
+        <div class="apanel" id="ap-photo">
+          <h3><i class="bi bi-image"></i> Profile Photo</h3>
+          <div class="photo-upload" onclick="document.getElementById('photo-file').click()">
+            <img id="photo-preview-img" src="image.png" class="photo-preview" alt="Preview" onerror="this.src=window.PROFILE_IMG||this.src"/>
+            <div class="upload-hint">Click to upload new photo (JPG/PNG)</div>
+            <input type="file" id="photo-file" accept="image/*" style="display:none" onchange="previewPhoto(this)"/>
+          </div>
+          <br/><button class="btn-save" onclick="savePhoto()"><i class="bi bi-check2-circle"></i> Apply Photo</button>
+        </div>
+        <div class="apanel" id="ap-projects">
+          <h3><i class="bi bi-grid-1x2"></i> Manage Projects</h3>
+          <div id="admin-proj-list" class="admin-list"></div>
+          <details><summary style="cursor:pointer;font-family:var(--fd);font-size:.9rem;color:var(--v3);padding:10px 0;">➕ Add New Project</summary>
+          <div style="padding:16px 0;">
+            <div class="fg"><label>Title</label><input type="text" id="np-title" placeholder="Project title"/></div>
+            <div class="fg"><label>Description</label><textarea id="np-desc" rows="3"></textarea></div>
+            <div class="fg-row">
+              <div class="fg"><label>Link</label><input type="text" id="np-link" placeholder="https://github.com/…"/></div>
+              <div class="fg"><label>Tags (comma separated)</label><input type="text" id="np-tags" placeholder="Python, ML"/></div>
+            </div>
+            <button class="btn-add" onclick="addProject()"><i class="bi bi-plus-lg"></i> Add</button>
+          </div></details>
+        </div>
+        <div class="apanel" id="ap-resumes">
+          <h3><i class="bi bi-file-earmark-pdf"></i> Resume PDFs by Role</h3>
+          <p style="font-size:.84rem;color:var(--mu);margin-bottom:16px;">Upload a PDF for any role below — click <strong>Upload PDF</strong> on a role to attach or replace its file. You can keep as many role-specific resumes as you like. Visitors download them from the Resume section.</p>
+          <div class="quick-upload-box">
+            <div class="qu-left"><i class="bi bi-cloud-arrow-up-fill"></i><div><div class="qu-title">Quick Upload</div><div class="qu-sub" id="qu-sub">Attach a PDF to your Master Resume in one click</div></div></div>
+            <button class="btn-add" onclick="document.getElementById('quick-file').click()"><i class="bi bi-upload"></i> Choose PDF</button>
+            <input type="file" id="quick-file" accept=".pdf" style="display:none" onchange="quickUploadResume(this)"/>
+          </div>
+          <div id="admin-resume-list" class="admin-list"></div>
+          <details><summary style="cursor:pointer;font-family:var(--fd);font-size:.9rem;color:var(--v3);padding:10px 0;">➕ Add Resume Role</summary>
+          <div style="padding:16px 0;">
+            <div class="fg"><label>Role Name</label><input type="text" id="nr-role" placeholder="e.g. ML Research Engineer"/></div>
+            <div class="resume-upload-area" onclick="document.getElementById('nr-file').click()">
+              <i class="bi bi-file-earmark-arrow-up"></i>
+              <p>Click to upload PDF</p>
+              <div id="nr-status" class="rs-no">No file selected</div>
+              <input type="file" id="nr-file" accept=".pdf" style="display:none" onchange="markPDF(this,'nr-status','nr-data')"/>
+              <input type="hidden" id="nr-data"/>
+            </div>
+            <br/><button class="btn-add" onclick="addResume()"><i class="bi bi-plus-lg"></i> Add</button>
+          </div></details>
+        </div>
+        <div class="apanel" id="ap-achievements">
+          <h3><i class="bi bi-trophy"></i> Manage Achievements</h3>
+          <div id="admin-ach-list" class="admin-list"></div>
+          <details><summary style="cursor:pointer;font-family:var(--fd);font-size:.9rem;color:var(--v3);padding:10px 0;">➕ Add Achievement</summary>
+          <div style="padding:16px 0;">
+            <div class="fg-row">
+              <div class="fg"><label>Emoji</label><input type="text" id="na-icon" placeholder="🏆"/></div>
+              <div class="fg"><label>Year</label><input type="text" id="na-year" placeholder="2025"/></div>
+            </div>
+            <div class="fg"><label>Title</label><input type="text" id="na-title" placeholder="1st Place — Competition"/></div>
+            <div class="fg"><label>Organization</label><input type="text" id="na-org" placeholder="Google, GFG…"/></div>
+            <button class="btn-add" onclick="addAch()"><i class="bi bi-plus-lg"></i> Add</button>
+          </div></details>
+        </div>
+        <div class="apanel" id="ap-testimonials">
+          <h3><i class="bi bi-chat-quote"></i> Manage Testimonials</h3>
+          <div id="admin-testi-list" class="admin-list"></div>
+          <details><summary style="cursor:pointer;font-family:var(--fd);font-size:.9rem;color:var(--v3);padding:10px 0;">➕ Add Testimonial</summary>
+          <div style="padding:16px 0;">
+            <div class="fg-row">
+              <div class="fg"><label>Emoji Avatar</label><input type="text" id="nt-avatar" placeholder="🧑‍💼"/></div>
+              <div class="fg"><label>Name</label><input type="text" id="nt-name" placeholder="John Doe"/></div>
+            </div>
+            <div class="fg"><label>Role / Company</label><input type="text" id="nt-role" placeholder="Senior Engineer · Google"/></div>
+            <div class="fg"><label>Testimonial</label><textarea id="nt-text" rows="3" placeholder="Shruti is..."></textarea></div>
+            <button class="btn-add" onclick="addTesti()"><i class="bi bi-plus-lg"></i> Add</button>
+          </div></details>
+        </div>
+        <div class="apanel" id="ap-password">
+          <h3><i class="bi bi-key"></i> Change Password</h3>
+          <div class="fg"><label>Current Password</label><input type="password" id="cp-cur"/></div>
+          <div class="fg"><label>New Password</label><input type="password" id="cp-new"/></div>
+          <div class="fg"><label>Confirm</label><input type="password" id="cp-conf"/></div>
+          <button class="btn-save" onclick="changePW()"><i class="bi bi-shield-check"></i> Update</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<button id="scrollTop" onclick="window.scrollTo({top:0,behavior:'smooth'})"><i class="bi bi-arrow-up"></i></button>
+<div class="toast" id="toast"></div>
+
+<script src="images.js"></script>
+<script src="admin-data.js"></script>
+<script>
+const D=()=>window.SS_DATA, SAVE=()=>window.SS_SAVE();
+
+/* ── SET IMAGES FROM BASE64 FALLBACK ── */
+window.addEventListener('DOMContentLoaded',()=>{
+  document.body.classList.add('page-in');
+  if(sessionStorage.getItem('ss_admin')==='1'){document.body.classList.add('admin-mode');}
+  // page transitions on internal links
+  document.querySelectorAll('a[href$=".html"]').forEach(a=>{
+    a.addEventListener('click',e=>{const href=a.getAttribute('href');if(href&&!href.startsWith('http')){e.preventDefault();document.body.classList.add('page-out');setTimeout(()=>location.href=href,320);}});
+  });
+  // scrolltop visibility
+  window.addEventListener('scroll',()=>{const st=document.getElementById('scrollTop');if(st)st.classList.toggle('show',window.scrollY>400);});
+  // inject base64 as src if image.png fails (for local/offline)
+  const pImg=document.getElementById('profile-img');
+  const cImg=document.getElementById('chibi-img');
+  const chatChibi=document.getElementById('chat-chibi-img');
+  const photoPreview=document.getElementById('photo-preview-img');
+
+  function tryLoad(el, fallback){
+    if(!el) return;
+    el.addEventListener('error',()=>{ if(fallback) el.src=fallback; },{once:true});
+    // also immediately try base64 as primary if no path set correctly
+    setTimeout(()=>{ if(!el.naturalWidth && fallback) el.src=fallback; }, 600);
+  }
+  tryLoad(pImg, window.PROFILE_IMG);
+  tryLoad(cImg, window.CHIBI_IMG);
+  tryLoad(chatChibi, window.CHIBI_IMG);
+  tryLoad(photoPreview, window.PROFILE_IMG);
+});
+
+/* ── AURORA ── */
+(function(){
+  const c=document.getElementById('aurora'),ctx=c.getContext('2d');
+  let W,H,t=0;
+  const resize=()=>{W=c.width=window.innerWidth;H=c.height=window.innerHeight;};
+  resize();window.addEventListener('resize',resize);
+  const blobs=[{x:.1,y:.2,r:.35,col:'109,40,217',sp:.0004,ph:0},{x:.85,y:.75,r:.28,col:'6,214,160',sp:.0006,ph:1},{x:.5,y:.5,r:.2,col:'245,158,11',sp:.0008,ph:2},{x:.8,y:.15,r:.22,col:'239,68,68',sp:.0005,ph:3}];
+  function draw(){
+    ctx.clearRect(0,0,W,H);
+    blobs.forEach(b=>{
+      const bx=W*(b.x+Math.sin(t*b.sp*7+b.ph)*.08),by=H*(b.y+Math.cos(t*b.sp*5+b.ph)*.07),br=Math.min(W,H)*b.r;
+      const g=ctx.createRadialGradient(bx,by,0,bx,by,br);
+      g.addColorStop(0,`rgba(${b.col},.11)`);g.addColorStop(1,`rgba(${b.col},0)`);
+      ctx.fillStyle=g;ctx.beginPath();ctx.arc(bx,by,br,0,Math.PI*2);ctx.fill();
+    });
+    t++;requestAnimationFrame(draw);
+  }
+  draw();
+})();
+
+/* ── CURSOR ── */
+const cd=document.getElementById('cd'),cr=document.getElementById('cr');
+let mx=0,my=0,rx=0,ry=0;
+document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;cd.style.left=mx+'px';cd.style.top=my+'px';});
+(function lr(){rx+=(mx-rx)*.1;ry+=(my-ry)*.1;cr.style.left=rx+'px';cr.style.top=ry+'px';requestAnimationFrame(lr);})();
+function addMag(el){el.addEventListener('mouseenter',()=>cr.classList.add('mag'));el.addEventListener('mouseleave',()=>cr.classList.remove('mag'));}
+document.querySelectorAll('a,button,.pc,.skc,.ac,.cc,.resume-card,.ach-card').forEach(addMag);
+
+/* ── LOADER ── */
+/* Loader — smooth progress, minimum 3.5s on screen */
+let pct=0;const lpEl=document.getElementById('lpct');
+const _loaderStart=Date.now();
+const pi=setInterval(()=>{
+  const elapsed=Date.now()-_loaderStart;
+  // First 1.5s: crawl to ~60%. After: ease to 100%
+  const inc=elapsed<1500?(Math.floor(Math.random()*3)+1):(Math.floor(Math.random()*6)+3);
+  pct=Math.min(100,pct+inc);
+  lpEl.textContent=pct+'%';
+  const lf=document.getElementById('lfill');if(lf)lf.style.width=pct+'%';
+  const lb=document.getElementById('lbl');if(lb){
+    if(pct<25)lb.innerHTML='Initialising Portfolio.OS<span class="ldots">...</span>';
+    else if(pct<50)lb.innerHTML='Loading Skills & Projects<span class="ldots">...</span>';
+    else if(pct<75)lb.innerHTML='Summoning Shru-AI<span class="ldots">...</span>';
+    else if(pct<100)lb.innerHTML='Almost Ready<span class="ldots">...</span>';
+    else lb.innerHTML='Welcome! 🎉';
+  }
+  if(pct>=100)clearInterval(pi);
+},80);
+function _showPortfolio(){
+  const l=document.getElementById('loader');
+  l.style.transition='opacity .8s ease';l.style.opacity='0';
+  setTimeout(()=>{l.style.display='none';runCounters();initReveal();renderAll();initChibiParticles();},800);
+  setTimeout(()=>cSay("Welcome to Shruti's portfolio! 🎉 I'm Shru-AI — click me to interact!",true),2200);
+  setTimeout(()=>{setPose('wave',null);setTimeout(()=>setPose('idle',null),3200);},2500);
+}
+window.addEventListener('load',()=>{
+  const elapsed=Date.now()-_loaderStart;
+  const minDisplay=3600; // minimum 3.6 seconds on screen
+  const wait=Math.max(0,minDisplay-elapsed);
+  // also ensure pct reaches 100 before dismiss
+  const checkAndGo=()=>{if(pct>=100)_showPortfolio();else setTimeout(checkAndGo,120);};
+  setTimeout(checkAndGo,wait);
+});
+
+/* ── SCROLL ── */
+window.addEventListener('scroll',()=>{
+  const s=window.scrollY,h=document.documentElement.scrollHeight-window.innerHeight;
+  document.getElementById('progress').style.width=(s/h*100)+'%';
+  document.getElementById('nav').classList.toggle('sc',s>60);
+  // chibi reacts when scrolling to different sections
+  const sectionMap={about:"Let me tell you about Shruti! 📖",skills:"Check out these impressive skills! 💻",projects:"These are her coolest projects! 🚀",experience:"6 internships — impressive! 🏢",achievements:"Awards earned through hard work! 🏆",contact:"Want to hire her? Contact below! 📧"};
+  Object.keys(sectionMap).forEach(id=>{
+    const el=document.getElementById(id);
+    if(el){const r=el.getBoundingClientRect();if(r.top>-100&&r.top<200)lastSection=id;}
+  });
+});
+let lastSection='',prevSection='';
+setInterval(()=>{
+  if(lastSection&&lastSection!==prevSection&&!chibiOpen){
+    const msgs={about:"Let me tell you about Shruti! 📖",skills:"Impressive skill set right? 💻",projects:"Real production projects! 🚀",experience:"6 internships! 🏢",achievements:"Hard-earned awards! 🏆",contact:"Let's connect! 📧"};
+    if(msgs[lastSection]){cSay(msgs[lastSection],true);prevSection=lastSection;}
+  }
+},3000);
+
+/* ── COUNTERS ── */
+function runCounters(){
+  document.querySelectorAll('.st-n[data-to]').forEach((el,idx)=>{
+    const to=+el.dataset.to;
+    let v=0,start=null;
+    const dur=1800+(idx*150); // stagger each stat: 1800ms, 1950ms, 2100ms, 2250ms
+    function easeOut(t){return 1-Math.pow(1-t,3);}
+    setTimeout(()=>{
+      function step(ts){
+        if(!start)start=ts;
+        const prog=Math.min(1,(ts-start)/dur);
+        v=Math.round(easeOut(prog)*to);
+        el.textContent=v;
+        if(prog<1)requestAnimationFrame(step);
+        else el.textContent=to;
+      }
+      requestAnimationFrame(step);
+    },idx*180); // stagger start times too
+  });
+}
+
+/* ── SKILL BARS ── */
+document.querySelectorAll('.skc').forEach(c=>{
+  new IntersectionObserver(e=>{e.forEach(x=>{
+    if(x.isIntersecting){
+      x.target.querySelectorAll('.skf').forEach((b,i)=>{
+        setTimeout(()=>b.style.width=b.dataset.w+'%',i*100); // stagger each bar 100ms
+      });
+    }
+  });},{threshold:.15}).observe(c);
+});
+
+/* ── SCROLL REVEAL ── */
+function initReveal(){
+  const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.12});
+  document.querySelectorAll('.rev').forEach((el,i)=>{
+    // group siblings — each group of 4 staggers nicely
+    const delay=(i%4)*0.1;
+    el.style.transitionDelay=`${delay}s`;
+    obs.observe(el);
+  });
+}
+
+/* ── TYPED ROLES ── */
+const roles=['Data Scientist','AI/ML Engineer','Full Stack Developer','AR/VR Builder','Cloud Practitioner','NLP Engineer'];
+let ri=0,ci=0,del=false;
+function typeIt(){
+  const el=document.getElementById('typed'),cur=roles[ri];
+  if(!del){el.textContent=cur.slice(0,++ci);if(ci===cur.length){del=true;setTimeout(typeIt,2200);return;}}
+  else{el.textContent=cur.slice(0,--ci);if(ci===0){del=false;ri=(ri+1)%roles.length;}}
+  setTimeout(typeIt,del?46:78);
+}
+setTimeout(typeIt,2500);
+
+/* ══════════════════════
+   3D CHIBI SYSTEM
+══════════════════════ */
+let chibiOpen=false, cIdx=0, currentPose='idle';
+
+const cMsgs=[
+  "Hi! I'm Shru-AI, Shruti's AI companion! 🤖✨",
+  "She built AR/VR experiences with Unity & Meta Spark! 🥽",
+  "She published 2 research papers on AI mental-health! 📄",
+  "MindGuard AI hit 91% accuracy across 240 sessions! 🧠",
+  "Interned at Google Cloud doing Gen AI! ☁️🔥",
+  "24+ certifications — check the Certs page! 🏆",
+  "2nd place at Google Arcade! 🎮",
+  "Python, TensorFlow, React — she does it all! 💻",
+  "Click the pose buttons to change my animation! 💃",
+  "Ask me anything in the chat bot → 🤖",
+  "Download her resume in 4 different role versions! 📄",
+  "She speaks English, Hindi & learning French! 🌍",
+];
+
+const poseMsgs={
+  idle:"Back to normal! 😊",
+  wave:"Hiii! 👋 Nice to meet you!",
+  dance:"Let's celebrate Shruti's achievements! 💃🕺",
+  think:"Hmm... analyzing your data needs... 🤔",
+  bounce:"So excited to show you her portfolio! ⬆️",
+  spin:"Full 360° spin — like her skillset! 🌀",
+  excited:"OMG this portfolio is SO COOL! 🤩🔥",
+};
+
+function initChibiParticles(){
+  const container=document.getElementById('chibi-particles');
+  const colors=['#c4b5fd','#06d6a0','#f59e0b','#22d3ee','#ef4444'];
+  for(let i=0;i<12;i++){
+    const p=document.createElement('div');
+    const size=Math.random()*5+3;
+    const radius=Math.random()*30+50;
+    const duration=Math.random()*4+3;
+    const delay=Math.random()*-6;
+    const color=colors[Math.floor(Math.random()*colors.length)];
+    p.className='cpt';
+    p.style.cssText=`width:${size}px;height:${size}px;background:${color};--r:${radius}px;left:50%;top:55%;animation-duration:${duration}s;animation-delay:${delay}s;box-shadow:0 0 6px ${color};`;
+    container.appendChild(p);
+  }
+}
+
+function setPose(pose,btn){
+  currentPose=pose;
+  const img=document.getElementById('chibi-img');
+  // remove all pose classes
+  img.className='';
+  void img.offsetWidth; // reflow to restart animation
+  img.className=`pose-${pose}`;
+
+  // update button states
+  document.querySelectorAll('.pose-btn').forEach(b=>b.classList.remove('active'));
+  if(btn)btn.classList.add('active');
+  else{
+    document.querySelectorAll('.pose-btn').forEach(b=>{if(b.textContent.includes(pose.charAt(0).toUpperCase()+pose.slice(1))||b.onclick.toString().includes(`'${pose}'`))b.classList.add('active');});
+  }
+  // say something
+  if(poseMsgs[pose])cSay(poseMsgs[pose],true);
+
+  // auto-return to idle after some poses
+  if(['wave','excited','bounce'].includes(pose)){
+    setTimeout(()=>{if(currentPose===pose)setPose('idle',null);},4000);
+  }
+}
+
+// 3D mouse tilt effect on chibi
+const stage=document.getElementById('chibi-stage');
+if(stage){
+  stage.addEventListener('mousemove',e=>{
+    const r=stage.getBoundingClientRect();
+    const x=((e.clientX-r.left)/r.width-.5)*30;
+    const y=((e.clientY-r.top)/r.height-.5)*-20;
+    document.getElementById('chibi-scene').style.transform=`rotateY(${x}deg) rotateX(${y}deg)`;
+  });
+  stage.addEventListener('mouseleave',()=>{
+    document.getElementById('chibi-scene').style.transform='rotateY(0deg) rotateX(0deg)';
+  });
+  stage.addEventListener('click',()=>{
+    if(!chibiOpen){toggleChibi();}
+    else{
+      // cycle through fun poses on click when open
+      const poses=['wave','dance','excited','bounce','spin','think'];
+      const next=poses[cIdx++%poses.length];
+      setPose(next,null);
+    }
+  });
+}
+
+function cSay(text,show=false){
+  document.getElementById('cbtxt').textContent=text;
+  if(show||chibiOpen){
+    document.getElementById('cbubb').classList.add('on');
+    if(!chibiOpen)setTimeout(()=>document.getElementById('cbubb').classList.remove('on'),6000);
+  }
+}
+
+function toggleChibi(){
+  chibiOpen=!chibiOpen;
+  const b=document.getElementById('cbubb');
+  if(chibiOpen){
+    b.classList.add('on');
+    cSay(cMsgs[cIdx++%cMsgs.length],true);
+    setPose('wave',null);
+    setTimeout(()=>{if(currentPose==='wave')setPose('idle',null);},3000);
+  }else{
+    b.classList.remove('on');
+  }
+}
+
+function cNav(id){if(window.unlock)unlock('chibi');
+  document.getElementById(id)?.scrollIntoView({behavior:'smooth'});
+  cSay('Navigating to '+id.charAt(0).toUpperCase()+id.slice(1)+'! ✈️',true);
+  setPose('bounce',null);
+  setTimeout(()=>{document.getElementById('cbubb').classList.remove('on');chibiOpen=false;},2500);
+}
+
+// Auto chibi messages
+setInterval(()=>{if(!chibiOpen&&Math.random()<.3)cSay(cMsgs[cIdx++%cMsgs.length],true);},22000);
+
+// Random auto pose changes when idle
+setInterval(()=>{
+  if(currentPose==='idle'&&!chibiOpen&&Math.random()<.25){
+    const auto=['wave','think','bounce'];
+    const p=auto[Math.floor(Math.random()*auto.length)];
+    setPose(p,null);
+  }
+},15000);
+
+/* ── AI CHAT ── */
+let chatOpen=false;
+function botReply(q){
+  q=q.toLowerCase();
+  const KB={
+    skills:'Python (92%), HTML/CSS (95%), JS, SQL, Java, R, TensorFlow, Keras, Scikit-learn, NLP (NLTK/spaCy), Power BI, Tableau, React, Google Cloud, AWS, Docker, Unity, ServiceNow.',
+    projects:D().projects.map((p,i)=>`${i+1}) ${p.title}`).join('\n'),
+    internships:'① Software Dev @ Codtech ② Gen AI @ Google Cloud ③ Networking @ Cisco ④ ServiceNow ITSM ⑤ AR/VR @ NIET ⑥ Data Science @ YBI Foundation',
+    contact:`📧 ${D().profile.email}\n💼 linkedin.com/in/shruti-srivastava-2b2101269\n🐙 github.com/Shruti502102`,
+    resume:`She has ${D().resumes.length} resume versions: ${D().resumes.map(r=>r.role).join(', ')}. Scroll to the Resume section to download!`
+  };
+  if(/skill|tech|know/.test(q)){setPose('excited',null);return'🔧 Skills:\n'+KB.skills;}
+  if(/project|work|built/.test(q)){setPose('dance',null);return'🚀 Projects:\n'+KB.projects;}
+  if(/intern|experienc/.test(q)){setPose('think',null);return'🏢 Internships:\n'+KB.internships;}
+  if(/contact|hire|email/.test(q)){setPose('wave',null);return'📬 Contact:\n'+KB.contact;}
+  if(/resume|cv|download/.test(q))return KB.resume;
+  if(/cert/.test(q))return`🏆 She has ${D().certs.length} certifications! Visit the Certs page.`;
+  if(/achieve|award|win/.test(q))return'🏅 '+D().achievements.map(a=>`${a.icon} ${a.title}`).join('\n');
+  if(/pose|dance|wave|anim/.test(q)){setPose('dance',null);return"💃 Try the pose buttons on the chibi! Click her to open the menu.";}
+  if(/hi|hello|hey/.test(q)){setPose('wave',null);return"👋 Hey! I'm Shru-AI. Ask about Shruti's skills, projects, certs or how to hire her!";}
+  return"🤖 I know Shruti's skills, projects, internships, certs & achievements. Ask away!";
+}
+function toggleChat(){chatOpen=!chatOpen;document.getElementById('chatbox').classList.toggle('open',chatOpen);document.querySelector('.fab-dot').style.display=chatOpen?'none':'block';}
+function addMsg(t,type){const d=document.createElement('div');d.className='msg '+type;d.textContent=t;const c=document.getElementById('cmsgs');c.appendChild(d);c.scrollTop=c.scrollHeight;}
+function sendMsg(){const i=document.getElementById('cinput'),v=i.value.trim();if(!v)return;addMsg(v,'user');i.value='';setTimeout(()=>addMsg(botReply(v),'bot'),600);}
+function sq(k){addMsg(k,'user');setTimeout(()=>addMsg(botReply(k),'bot'),600);}
+
+/* ── RENDER ── */
+function renderAll(){renderProjects();renderAchievements();renderResumes();loadProfileFields();updateCertStat();renderExperience();renderPublications();renderTestimonials();renderNow();}
+function revealIn(container){setTimeout(()=>{const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.05});container.querySelectorAll('.rev').forEach(el=>obs.observe(el));},50);}
+function renderExperience(){
+  const el=document.getElementById('exp-list');if(!el||!D().experience)return;
+  el.innerHTML=D().experience.map(e=>`<div class="ei rev"><div class="ep">${e.period}<br/>${e.loc||''}</div><div><div class="er">${e.role}</div><div class="eo">${e.org}</div><ul class="eul">${(e.points||[]).map(p=>`<li>${p}</li>`).join('')}</ul></div></div>`).join('');
+  revealIn(el);
+}
+function renderPublications(){
+  const el=document.getElementById('pub-grid');if(!el||!D().publications)return;
+  el.innerHTML=D().publications.map((p,i)=>`<div class="pub-card rev"><span class="pub-badge"><i class="bi bi-journal-text"></i> Paper ${i+1}</span><div class="pub-title">${p.title}</div><div class="pub-authors">${p.authors}</div><div class="pub-venue"><em>${p.venue}</em> · ${p.date}${p.doi?` · DOI: ${p.doi}`:''}</div>${p.link?`<a href="${p.link}" target="_blank" class="pub-link"><i class="bi bi-box-arrow-up-right"></i> View Publication</a>`:''}</div>`).join('');
+  revealIn(el);
+}
+function updateCertStat(){const el=document.getElementById('cert-stat');if(el&&D().certs){el.dataset.to=D().certs.length;}}
+
+function renderProjects(){
+  const g=document.getElementById('projects-grid');
+  g.innerHTML=D().projects.map((p,i)=>`
+  <div class="pc rev" style="transition-delay:${i*.05}s">
+    <button class="admin-del" onclick="delProject(${p.id})"><i class="bi bi-trash"></i></button>
+    <span class="pnum">${p.num||String(i+1).padStart(2,'0')}</span>
+    <h3 class="ptit">${escA(p.title)}</h3>
+    <p class="pdesc">${escA(p.desc)}</p>
+    <div class="ptags">${p.tags.map(t=>`<span class="ptag">${escA(t)}</span>`).join('')}</div>
+    <div class="plink-row">
+      ${(D().caseStudies&&D().caseStudies[p.id])?`<button class="plink pcase" onclick="openCase(${p.id})"><i class="bi bi-file-earmark-text"></i> Case Study</button>`:''}
+      <a href="${p.link}" target="_blank" class="plink"><i class="bi bi-arrow-up-right-square"></i> Code</a>
+    </div>
+  </div>`).join('');
+  setTimeout(()=>{
+    const obs=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.05});
+    g.querySelectorAll('.rev').forEach(el=>obs.observe(el));
+  },50);
+}
+
+function renderAchievements(){
+  document.getElementById('achiev-grid').innerHTML=D().achievements.map(a=>`
+  <div class="ach-card rev"><div class="ach-icon">${a.icon}</div>
+  <div class="ach-info"><h4>${a.title}</h4><p>${a.org}</p><div class="ach-year">${a.year}</div></div>
+  </div>`).join('');
+}
+
+function renderResumes(){
+  const icons={'Master Resume (All-in-One)':'bi-file-earmark-person','Software Engineer':'bi-laptop','AI/ML Engineer':'bi-robot','Data Scientist':'bi-graph-up','Data Analyst':'bi-bar-chart-fill','QA Engineer':'bi-bug'};
+  document.getElementById('resume-grid').innerHTML=D().resumes.map(r=>`
+  <div class="resume-card rev">
+    <i class="bi ${icons[r.role]||'bi-file-earmark-pdf'}"></i>
+    <h5>${r.role}</h5>
+    <span>${r.dataUrl&&r.dataUrl.length>10?'✅ PDF Ready':'Text available'}</span>
+    <button class="dl-btn" onclick="dlResumePDF(${r.id})"><i class="bi bi-download"></i> Download</button>
+  </div>`).join('');
+}
+
+function loadProfileFields(){
+  const p=D().profile;
+  const s=(id,v)=>{const e=document.getElementById(id);if(e)e.value=v||'';};
+  s('pf-name',p.name);s('pf-tag',p.tagline);s('pf-about',p.about);s('pf-email',p.email);s('pf-phone',p.phone);
+  // sync about text on page
+  const at=document.getElementById('about-text');
+  if(at&&p.about)at.innerHTML=p.about;
+}
+
+/* ── ADMIN ── */
+function openLogin(){document.getElementById('login-overlay').classList.add('open');setTimeout(()=>document.getElementById('pw-input').focus(),100);}
+function closeLogin(){document.getElementById('login-overlay').classList.remove('open');document.getElementById('pw-input').value='';document.getElementById('login-err').style.display='none';}
+function doLogin(){
+  if(document.getElementById('pw-input').value===D().password){closeLogin();openAdmin();}
+  else{document.getElementById('login-err').style.display='block';}
+}
+function openAdmin(){
+  document.body.classList.add('admin-mode');
+  sessionStorage.setItem('ss_admin','1');
+  document.getElementById('admin-overlay').classList.add('open');
+  renderAdminLists();loadProfileFields();
+  setPose('excited',null);cSay('Admin mode activated! 🔐 Make your changes!',true);
+}
+function closeAdmin(){document.body.classList.remove('admin-mode');document.getElementById('admin-overlay').classList.remove('open');renderAll();}
+function logoutAdmin(){sessionStorage.removeItem('ss_admin');document.body.classList.remove('admin-mode');document.getElementById('admin-overlay').classList.remove('open');renderAll();showToast('👋 Logged out');}
+function switchTab(id,btn){
+  document.querySelectorAll('.apanel').forEach(p=>p.classList.remove('active'));
+  document.querySelectorAll('.anav-btn').forEach(b=>b.classList.remove('active'));
+  document.getElementById('ap-'+id).classList.add('active');btn.classList.add('active');
+}
+
+function renderAdminLists(){renderTestiAdmin();
+  document.getElementById('admin-proj-list').innerHTML=D().projects.map(p=>`<div class="ali"><div class="ali-info"><h4>${escA(p.title)}</h4><p>${p.tags.join(', ')}</p></div><div class="ali-actions"><button class="btn-edit" onclick="editProject(${p.id})"><i class="bi bi-pencil"></i></button><button class="btn-del" onclick="delProject(${p.id})"><i class="bi bi-trash"></i></button></div></div>`).join('');
+  document.getElementById('admin-resume-list').innerHTML=D().resumes.map(r=>`<div class="ali"><div class="ali-info"><h4>${escA(r.role)}</h4><p>${r.dataUrl&&r.dataUrl.length>10?'<span style="color:var(--m)">✅ PDF attached</span>':'⚠️ No PDF yet'}</p></div><div class="ali-actions"><button class="btn-upload" onclick="document.getElementById('rfile-${r.id}').click()"><i class="bi bi-upload"></i> Upload PDF</button><input type="file" id="rfile-${r.id}" accept=".pdf" style="display:none" onchange="uploadResumeFor(${r.id},this)"/><button class="btn-edit" onclick="editResume(${r.id})"><i class="bi bi-pencil"></i></button><button class="btn-del" onclick="delResume(${r.id})"><i class="bi bi-trash"></i></button></div></div>`).join('');
+  document.getElementById('admin-ach-list').innerHTML=D().achievements.map(a=>`<div class="ali"><div class="ali-info"><h4>${a.icon} ${escA(a.title)}</h4><p>${escA(a.org)} · ${a.year}</p></div><div class="ali-actions"><button class="btn-edit" onclick="editAch(${a.id})"><i class="bi bi-pencil"></i></button><button class="btn-del" onclick="delAch(${a.id})"><i class="bi bi-trash"></i></button></div></div>`).join('');
+}
+function escA(s){return(s==null?'':String(s)).replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&quot;').replace(/"/g,'&quot;');}
+function renderTestiAdmin(){
+  const el=document.getElementById('admin-testi-list');if(!el||!D().testimonials)return;
+  el.innerHTML=D().testimonials.map(t=>`<div class="ali"><div class="ali-info"><h4>${t.avatar||'👤'} ${escA(t.name)}</h4><p>${escA(t.role)}</p></div><div class="ali-actions"><button class="btn-edit" onclick="editTesti(${t.id})"><i class="bi bi-pencil"></i></button><button class="btn-del" onclick="delTesti(${t.id})"><i class="bi bi-trash"></i></button></div></div>`).join('');
+}
+function addTesti(){
+  const g=id=>document.getElementById(id)?.value.trim()||'';
+  const name=g('nt-name'),role=g('nt-role'),text=g('nt-text'),avatar=g('nt-avatar')||'👤';
+  if(!name||!text){showToast('⚠️ Name and testimonial required');return;}
+  if(!D().testimonials)D().testimonials=[];
+  const id=Math.max(0,...D().testimonials.map(t=>t.id))+1;
+  D().testimonials.push({id,name,role,text,avatar});
+  SAVE();renderTestiAdmin();renderTestimonials();showToast('✅ Testimonial added!');
+  ['nt-name','nt-role','nt-text','nt-avatar'].forEach(i=>{const e=document.getElementById(i);if(e)e.value='';});
+}
+function delTesti(id){if(!confirm('Delete this testimonial?'))return;D().testimonials=D().testimonials.filter(t=>t.id!==id);SAVE();renderTestiAdmin();renderTestimonials();showToast('🗑 Removed');}
+function editTesti(id){
+  const t=D().testimonials.find(x=>x.id===id);if(!t)return;
+  openEditModal('Edit Testimonial',[
+    {key:'avatar',label:'Emoji Avatar',val:t.avatar},
+    {key:'name',label:'Name',val:t.name},
+    {key:'role',label:'Role / Company',val:t.role},
+    {key:'text',label:'Testimonial',val:t.text,type:'textarea'}
+  ],vals=>{t.avatar=vals.avatar||'👤';t.name=vals.name;t.role=vals.role;t.text=vals.text;SAVE();renderTestiAdmin();renderTestimonials();showToast('✅ Updated!');});
+}
+
+function saveProfile(){
+  const g=id=>document.getElementById(id)?.value||'';
+  Object.assign(D().profile,{name:g('pf-name'),tagline:g('pf-tag'),about:g('pf-about'),email:g('pf-email'),phone:g('pf-phone')});
+  const at=document.getElementById('about-text');if(at)at.innerHTML=g('pf-about');
+  SAVE();showToast('✅ Profile saved!');
+}
+function previewPhoto(inp){const f=inp.files[0];if(!f)return;const r=new FileReader();r.onload=e=>document.getElementById('photo-preview-img').src=e.target.result;r.readAsDataURL(f);}
+function savePhoto(){
+  const src=document.getElementById('photo-preview-img').src;
+  document.getElementById('profile-img').src=src;D().profile.photo=src;SAVE();showToast('✅ Photo updated!');
+}
+
+function addProject(){
+  const g=id=>document.getElementById(id)?.value.trim()||'';
+  const t=g('np-title');if(!t){showToast('⚠️ Enter a title');return;}
+  const newId=Math.max(0,...D().projects.map(p=>p.id))+1;
+  D().projects.push({id:newId,num:String(D().projects.length+1).padStart(2,'0'),title:t,desc:g('np-desc'),tags:g('np-tags').split(',').map(x=>x.trim()).filter(Boolean),link:g('np-link')||'https://github.com/Shruti502102/'});
+  SAVE();renderAdminLists();showToast('✅ Project added!');
+  ['np-title','np-desc','np-link','np-tags'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+}
+function delProject(id){D().projects=D().projects.filter(p=>p.id!==id);SAVE();renderAdminLists();renderProjects();showToast('🗑 Removed');}
+
+// ── EDIT existing project ──
+function editProject(id){
+  const p=D().projects.find(x=>x.id===id);if(!p)return;
+  openEditModal('Edit Project',[
+    {key:'title',label:'Title',val:p.title},
+    {key:'desc',label:'Description',val:p.desc,type:'textarea'},
+    {key:'link',label:'Link',val:p.link},
+    {key:'tags',label:'Tags (comma separated)',val:(p.tags||[]).join(', ')}
+  ],vals=>{
+    p.title=vals.title;p.desc=vals.desc;p.link=vals.link||'https://github.com/Shruti502102/';
+    p.tags=vals.tags.split(',').map(x=>x.trim()).filter(Boolean);
+    SAVE();renderAdminLists();renderProjects();showToast('✅ Project updated!');
+  });
+}
+
+function uploadResumeFor(id,inp){
+  const f=inp.files[0];if(!f)return;
+  if(f.type!=='application/pdf'){showToast('⚠️ Please select a PDF');return;}
+  if(f.size>10*1024*1024){showToast('⚠️ PDF too large (max 10MB)');return;}
+  const r=new FileReader();
+  r.onload=e=>{const res=D().resumes.find(x=>x.id===id);if(!res)return;res.dataUrl=e.target.result;res.filename=f.name;SAVE();renderAdminLists();renderResumes();showToast('✅ PDF attached to '+res.role);};
+  r.readAsDataURL(f);
+}
+function quickUploadResume(inp){
+  const f=inp.files[0];if(!f)return;
+  if(f.type!=='application/pdf'){showToast('⚠️ Please select a PDF');return;}
+  if(f.size>10*1024*1024){showToast('⚠️ PDF too large (max 10MB)');return;}
+  const r=new FileReader();
+  r.onload=e=>{
+    // attach to Master resume if present, else first resume, else create one
+    let master=D().resumes.find(x=>/master/i.test(x.role))||D().resumes[0];
+    if(!master){const nid=1;D().resumes.push({id:nid,role:'Master Resume (All-in-One)',filename:f.name,dataUrl:e.target.result,added:new Date().toISOString().slice(0,7)});}
+    else{master.dataUrl=e.target.result;master.filename=f.name;}
+    SAVE();renderAdminLists();renderResumes();
+    document.getElementById('qu-sub').innerHTML='<span style="color:var(--m)">✅ '+f.name+' attached!</span>';
+    showToast('✅ Master resume uploaded!');
+  };
+  r.readAsDataURL(f);
+}
+function markPDF(inp,statusId,dataId){
+  const f=inp.files[0];if(!f)return;
+  const r=new FileReader();r.onload=e=>{const h=document.getElementById(dataId);if(h)h.value=e.target.result;document.getElementById(statusId).textContent='✅ '+f.name;document.getElementById(statusId).className='rs-ok';};r.readAsDataURL(f);
+}
+function addResume(){
+  const role=document.getElementById('nr-role')?.value.trim();if(!role){showToast('⚠️ Enter role');return;}
+  const dataUrl=document.getElementById('nr-data')?.value||'';
+  const newId=Math.max(0,...D().resumes.map(r=>r.id))+1;
+  D().resumes.push({id:newId,role,filename:`resume_${role.replace(/\s/g,'_').toLowerCase()}.pdf`,dataUrl,added:new Date().toISOString().slice(0,7)});
+  SAVE();renderAdminLists();renderResumes();showToast('✅ Resume added!');
+  document.getElementById('nr-role').value='';document.getElementById('nr-data').value='';document.getElementById('nr-status').textContent='No file selected';document.getElementById('nr-status').className='rs-no';
+}
+function delResume(id){D().resumes=D().resumes.filter(r=>r.id!==id);SAVE();renderAdminLists();renderResumes();showToast('🗑 Removed');}
+function editResume(id){
+  const r=D().resumes.find(x=>x.id===id);if(!r)return;
+  openEditModal('Edit Resume Role',[{key:'role',label:'Role Name',val:r.role}],vals=>{
+    r.role=vals.role;r.filename=`resume_${vals.role.replace(/\s/g,'_').toLowerCase()}.pdf`;
+    SAVE();renderAdminLists();renderResumes();showToast('✅ Resume role updated!');
+  });
+}
+
+function addAch(){
+  const g=id=>document.getElementById(id)?.value.trim()||'';
+  const t=g('na-title');if(!t){showToast('⚠️ Enter title');return;}
+  const newId=Math.max(0,...D().achievements.map(a=>a.id))+1;
+  D().achievements.push({id:newId,icon:g('na-icon')||'🏅',title:t,org:g('na-org'),year:g('na-year')});
+  SAVE();renderAdminLists();renderAchievements();showToast('✅ Achievement added!');
+  ['na-icon','na-title','na-org','na-year'].forEach(id=>{const el=document.getElementById(id);if(el)el.value='';});
+}
+function delAch(id){D().achievements=D().achievements.filter(a=>a.id!==id);SAVE();renderAdminLists();renderAchievements();showToast('🗑 Removed');}
+function editAch(id){
+  const a=D().achievements.find(x=>x.id===id);if(!a)return;
+  openEditModal('Edit Achievement',[
+    {key:'icon',label:'Emoji',val:a.icon},
+    {key:'title',label:'Title',val:a.title},
+    {key:'org',label:'Organization',val:a.org},
+    {key:'year',label:'Year',val:a.year}
+  ],vals=>{
+    a.icon=vals.icon||'🏅';a.title=vals.title;a.org=vals.org;a.year=vals.year;
+    SAVE();renderAdminLists();renderAchievements();showToast('✅ Achievement updated!');
+  });
+}
+
+// ── UNIVERSAL EDIT MODAL ──
+let editSaveCb=null;
+function openEditModal(title,fields,onSave){
+  editSaveCb=onSave;
+  document.getElementById('edit-modal-title').innerHTML='<i class="bi bi-pencil-square"></i> '+title;
+  document.getElementById('edit-modal-body').innerHTML=fields.map(f=>
+    f.type==='textarea'
+      ? `<div class="fg"><label>${f.label}</label><textarea id="em-${f.key}" rows="3">${escA(f.val)}</textarea></div>`
+      : `<div class="fg"><label>${f.label}</label><input type="text" id="em-${f.key}" value="${escA(f.val)}"/></div>`
+  ).join('');
+  document.getElementById('edit-modal-body').dataset.keys=fields.map(f=>f.key).join(',');
+  document.getElementById('edit-modal').classList.add('open');
+}
+function closeEditModal(){document.getElementById('edit-modal').classList.remove('open');editSaveCb=null;}
+function submitEditModal(){
+  if(!editSaveCb)return;
+  const keys=document.getElementById('edit-modal-body').dataset.keys.split(',');
+  const vals={};keys.forEach(k=>{const el=document.getElementById('em-'+k);vals[k]=el?el.value.trim():'';});
+  editSaveCb(vals);closeEditModal();
+}
+
+function changePW(){
+  const cur=document.getElementById('cp-cur')?.value||'';
+  const nw=document.getElementById('cp-new')?.value||'';
+  const conf=document.getElementById('cp-conf')?.value||'';
+  if(cur!==D().password){showToast('❌ Wrong current password');return;}
+  if(nw.length<6){showToast('⚠️ Min 6 chars');return;}
+  if(nw!==conf){showToast('⚠️ Passwords don\'t match');return;}
+  D().password=nw;SAVE();showToast('✅ Password changed!');
+  ['cp-cur','cp-new','cp-conf'].forEach(id=>{const e=document.getElementById(id);if(e)e.value='';});
+}
+
+/* ── RESUME DL ── */
+function dlResumePDF(id){
+  const r=D().resumes.find(x=>x.id===id);
+  if(r&&r.dataUrl&&r.dataUrl.length>10){const a=document.createElement('a');a.href=r.dataUrl;a.download=`Shruti_${r.role.replace(/\s/g,'_')}_Resume.pdf`;a.click();}
+  else dlResume(r?.role||'');
+}
+function dlResume(role=''){
+  const t=`SHRUTI SRIVASTAVA — ${role||'Data Scientist · AI/ML Engineer · Full-Stack Developer'}\nEmail: shrutisrivastava502102@gmail.com | Phone: +91 9910367552\nGitHub: Shruti502102 | LinkedIn: shruti-srivastava-2b2101269 | Portfolio: shruti502102.github.io/Portfolio\n\nSUMMARY\nCSE (Data Science) graduate, CGPA 8.07/10, First Division with Honours (Sem 8 SGPA 9.67), Minor in AI & ML.\nSkilled in ML, Generative AI (LLMs, RAG, Vertex AI), full-stack (React.js, Flask, REST APIs) & cloud (GCP, AWS, Azure).\n6 internships · 2 published research papers · multimodal AI system at 91% accuracy.\n\nEDUCATION\nB.Tech CSE (Data Science) | NIET, Greater Noida | Nov 2022 – Jun 2026 | CGPA 8.07/10\n\nINTERNSHIPS\n• Software Development — Codtech IT Solutions (Jun-Jul 2026)\n• Generative AI — SmartInternz × Google Cloud (Jun-Aug 2025)\n• Networking — Cisco Networking Academy (Jun-Aug 2025)\n• ITSM — ServiceNow (May-Jun 2025)\n• AR/VR — NIET (Jul 2024)\n• Data Science & ML — YBI Foundation (Aug-Oct 2023)\n\nSKILLS\nPython, Java, R, SQL, JavaScript, Node.js, PHP | scikit-learn, TensorFlow, Keras, NLP, LSTM\nVertex AI, Gemini API, RAG, LLMs, Prompt Engineering | React.js, Flask, FastAPI, REST APIs, MySQL\nGCP, AWS, Azure, Docker, CI/CD | Power BI, Tableau, DAX | ServiceNow, Cisco, Unity, Meta Spark, Vuforia\n\nPROJECTS\n${D().projects.map((p,i)=>`${i+1}. ${p.title}`).join('\n')}\n\nPUBLICATIONS\n${(D().publications||[]).map((p,i)=>`[${i+1}] ${p.title} — ${p.venue}, ${p.date}`).join('\n')}\n\nHONOURS\n${(D().achievements||[]).map(a=>`• ${a.title} (${a.year})`).join('\n')}\n\nLANGUAGES: English (Fluent) · Hindi (Native) · French (A1)`;
+  const b=new Blob([t],{type:'text/plain'}),u=URL.createObjectURL(b),a=document.createElement('a');
+  a.href=u;a.download=`Shruti_${(role||'Resume').replace(/\s/g,'_')}.txt`;document.body.appendChild(a);a.click();URL.revokeObjectURL(u);document.body.removeChild(a);
+  cSay('Resume downloaded! Hope to hear from you soon 📄',true);if(window.unlock)unlock('recruiter');
+  setPose('excited',null);
+}
+
+function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),3200);}
+
+document.querySelectorAll('a[href^="#"]').forEach(a=>{a.addEventListener('click',e=>{const t=document.querySelector(a.getAttribute('href'));if(t){e.preventDefault();t.scrollIntoView({behavior:'smooth',block:'start'});}});});
+
+
+
+/* ── SAFE STORAGE (works in private mode / storage-disabled browsers) ── */
+const safeLS={
+  get(k){try{return localStorage.getItem(k);}catch(e){return null;}},
+  set(k,v){try{localStorage.setItem(k,v);}catch(e){}},
+  remove(k){try{localStorage.removeItem(k);}catch(e){}}
+};
+
+/* ═══════════════════════════════════════════
+   POWERFUL FEATURE MODULES
+   ═══════════════════════════════════════════ */
+
+/* ── 1. CONSTELLATION PARTICLE NETWORK (mouse-reactive) ── */
+(function constellation(){
+  const cv=document.getElementById('constellation');if(!cv)return;
+  const cx=cv.getContext('2d');
+  let W,H,pts=[],mouse={x:-999,y:-999};
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+  function size(){W=cv.width=innerWidth;H=cv.height=innerHeight;const n=Math.min(90,Math.floor(W*H/16000));pts=[];for(let i=0;i<n;i++)pts.push({x:Math.random()*W,y:Math.random()*H,vx:(Math.random()-.5)*.35,vy:(Math.random()-.5)*.35,r:Math.random()*1.6+.6});}
+  size();addEventListener('resize',size);
+  addEventListener('mousemove',e=>{mouse.x=e.clientX;mouse.y=e.clientY;});
+  addEventListener('mouseleave',()=>{mouse.x=-999;mouse.y=-999;});
+  const themeRGB=()=>getComputedStyle(document.documentElement).getPropertyValue('--cst-rgb').trim()||'139,92,246';
+  function draw(){
+    cx.clearRect(0,0,W,H);const rgb=themeRGB();
+    for(const p of pts){
+      p.x+=p.vx;p.y+=p.vy;
+      if(p.x<0||p.x>W)p.vx*=-1;if(p.y<0||p.y>H)p.vy*=-1;
+      const dx=p.x-mouse.x,dy=p.y-mouse.y,dist=Math.hypot(dx,dy);
+      if(dist<120){const f=(120-dist)/120*1.5;p.x+=dx/dist*f;p.y+=dy/dist*f;}
+      cx.beginPath();cx.arc(p.x,p.y,p.r,0,7);cx.fillStyle=`rgba(${rgb},.8)`;cx.fill();
+    }
+    for(let i=0;i<pts.length;i++)for(let j=i+1;j<pts.length;j++){
+      const a=pts[i],b=pts[j],d=Math.hypot(a.x-b.x,a.y-b.y);
+      if(d<115){cx.beginPath();cx.moveTo(a.x,a.y);cx.lineTo(b.x,b.y);cx.strokeStyle=`rgba(${rgb},${.14*(1-d/115)})`;cx.lineWidth=.6;cx.stroke();}
+    }
+    // link to mouse
+    if(mouse.x>0)for(const p of pts){const d=Math.hypot(p.x-mouse.x,p.y-mouse.y);if(d<160){cx.beginPath();cx.moveTo(p.x,p.y);cx.lineTo(mouse.x,mouse.y);cx.strokeStyle=`rgba(${rgb},${.2*(1-d/160)})`;cx.lineWidth=.7;cx.stroke();}}
+    requestAnimationFrame(draw);
+  }
+  if(!reduce)draw();
+})();
+
+/* ── 2. THEME ENGINE (4 themes, persisted) ── */
+const THEMES={
+  violet:{name:'Violet Dream',dots:['#6d28d9','#06d6a0','#f59e0b'],vars:{'--bg':'#04040e','--v':'#6d28d9','--v2':'#8b5cf6','--v3':'#c4b5fd','--m':'#06d6a0','--g':'#f59e0b','--c':'#22d3ee','--cst-rgb':'139,92,246'}},
+  cyber:{name:'Cyber Neon',dots:['#22d3ee','#ec4899','#a3e635'],vars:{'--bg':'#02060f','--v':'#0891b2','--v2':'#22d3ee','--v3':'#7dd3fc','--m':'#a3e635','--g':'#ec4899','--c':'#22d3ee','--cst-rgb':'34,211,238'}},
+  sunset:{name:'Sunset Blaze',dots:['#f59e0b','#ef4444','#ec4899'],vars:{'--bg':'#0d0407','--v':'#e11d48','--v2':'#fb7185','--v3':'#fda4af','--m':'#f59e0b','--g':'#fbbf24','--c':'#fb923c','--cst-rgb':'251,113,133'}},
+  matrix:{name:'Matrix Green',dots:['#10b981','#34d399','#06d6a0'],vars:{'--bg':'#020a06','--v':'#059669','--v2':'#10b981','--v3':'#6ee7b7','--m':'#34d399','--g':'#a3e635','--c':'#22d3ee','--cst-rgb':'16,185,129'}}
+};
+let curTheme=safeLS.get('ss_theme')||'violet';
+function applyTheme(key){
+  const t=THEMES[key];if(!t)return;curTheme=key;
+  Object.entries(t.vars).forEach(([k,v])=>document.documentElement.style.setProperty(k,v));
+  safeLS.set('ss_theme',key);
+  document.querySelectorAll('.theme-opt').forEach(o=>o.classList.toggle('active',o.dataset.key===key));
+}
+function buildThemeMenu(){
+  document.getElementById('theme-menu').innerHTML=Object.entries(THEMES).map(([k,t])=>
+    `<div class="theme-opt ${k===curTheme?'active':''}" data-key="${k}" onclick="applyTheme('${k}');unlock('themer')">
+      <div class="theme-dots">${t.dots.map(d=>`<span class="theme-dot" style="background:${d}"></span>`).join('')}</div>${t.name}</div>`).join('');
+}
+function toggleThemeMenu(){document.getElementById('theme-menu').classList.toggle('open');}
+document.addEventListener('click',e=>{if(!e.target.closest('#theme-fab')&&!e.target.closest('#theme-menu'))document.getElementById('theme-menu').classList.remove('open');});
+
+/* ── 3. COMMAND PALETTE (fuzzy search + actions) ── */
+const CMDK_ITEMS=[
+  {t:'Home / Hero',s:'Back to top',ic:'bi-house',tag:'nav',act:()=>scrollToId('top')},
+  {t:'About',s:'Who is Shruti',ic:'bi-person',tag:'nav',act:()=>scrollToId('about')},
+  {t:'Skills',s:'Technical expertise',ic:'bi-code-slash',tag:'nav',act:()=>scrollToId('skills')},
+  {t:'Projects',s:'Featured work',ic:'bi-grid-1x2',tag:'nav',act:()=>scrollToId('projects')},
+  {t:'Experience',s:'6 internships',ic:'bi-briefcase',tag:'nav',act:()=>scrollToId('experience')},
+  {t:'Research',s:'Published papers',ic:'bi-journal-text',tag:'nav',act:()=>scrollToId('research')},
+  {t:'Achievements',s:'Awards & honours',ic:'bi-trophy',tag:'nav',act:()=>scrollToId('achievements')},
+  {t:'Contact',s:'Get in touch',ic:'bi-envelope',tag:'nav',act:()=>scrollToId('contact')},
+  {t:'Certifications',s:'24 certificates',ic:'bi-award',tag:'page',act:()=>go('tr.html')},
+  {t:'Blog',s:'Technical articles',ic:'bi-journal-code',tag:'page',act:()=>go('blog.html')},
+  {t:'Showcase',s:'Media gallery',ic:'bi-images',tag:'page',act:()=>go('showcase.html')},
+  {t:'3D Playground',s:'Interactive character',ic:'bi-controller',tag:'page',act:()=>go('playground.html')},
+  {t:'AI Skill Match',s:'Recruiter tool',ic:'bi-cpu',tag:'page',act:()=>go('skills-match.html')},
+  {t:'Download Resume',s:'Get the PDF/text',ic:'bi-file-earmark-arrow-down',tag:'action',act:()=>dlResume()},
+  {t:'Email Shruti',s:'shrutisrivastava502102@gmail.com',ic:'bi-send',tag:'action',act:()=>location.href='mailto:shrutisrivastava502102@gmail.com'},
+  {t:'LinkedIn',s:'Professional profile',ic:'bi-linkedin',tag:'action',act:()=>window.open('https://www.linkedin.com/in/shruti-srivastava-2b2101269/','_blank')},
+  {t:'GitHub',s:'Code repositories',ic:'bi-github',tag:'action',act:()=>window.open('https://github.com/Shruti502102/','_blank')},
+  {t:'Change Theme',s:'Switch color palette',ic:'bi-palette',tag:'action',act:()=>{closeCmdk();toggleThemeMenu();}},
+  {t:'Admin Login',s:'Edit portfolio',ic:'bi-shield-lock',tag:'action',act:()=>{closeCmdk();openLogin();}},
+];
+// inject dynamic project items
+function cmdkAll(){
+  const proj=(D().projects||[]).map(p=>({t:p.title,s:'Project · '+(p.tags||[]).slice(0,2).join(', '),ic:'bi-rocket-takeoff',tag:'project',act:()=>scrollToId('projects')}));
+  return CMDK_ITEMS.concat(proj);
+}
+let cmdkSel=0,cmdkFiltered=[];
+function openCmdk(){document.getElementById('cmdk').classList.add('open');const inp=document.getElementById('cmdk-input');inp.value='';setTimeout(()=>inp.focus(),50);filterCmdk('');unlock('commander');}
+function closeCmdk(){document.getElementById('cmdk').classList.remove('open');}
+function fuzzy(q,txt){q=q.toLowerCase();txt=txt.toLowerCase();if(!q)return true;let i=0;for(const ch of txt){if(ch===q[i])i++;if(i>=q.length)return true;}return txt.includes(q);}
+function filterCmdk(q){
+  cmdkFiltered=cmdkAll().filter(it=>fuzzy(q,it.t+' '+it.s+' '+it.tag));cmdkSel=0;
+  const r=document.getElementById('cmdk-results');
+  if(!cmdkFiltered.length){r.innerHTML='<div class="cmdk-empty">No matches. Try "projects", "resume" or "AI".</div>';return;}
+  r.innerHTML=cmdkFiltered.map((it,i)=>`<div class="cmdk-item ${i===0?'sel':''}" data-i="${i}" onclick="runCmdk(${i})"><i class="bi ${it.ic}"></i><div class="ci-txt"><div class="ci-title">${it.t}</div><div class="ci-sub">${it.s}</div></div><span class="ci-tag">${it.tag}</span></div>`).join('');
+}
+function runCmdk(i){const it=cmdkFiltered[i];if(it){closeCmdk();setTimeout(it.act,120);}}
+function moveCmdk(d){const items=document.querySelectorAll('.cmdk-item');if(!items.length)return;items[cmdkSel]?.classList.remove('sel');cmdkSel=(cmdkSel+d+items.length)%items.length;items[cmdkSel].classList.add('sel');items[cmdkSel].scrollIntoView({block:'nearest'});}
+function scrollToId(id){if(id==='top'){window.scrollTo({top:0,behavior:'smooth'});return;}const el=document.getElementById(id);if(el)el.scrollIntoView({behavior:'smooth',block:'start'});}
+function go(href){document.body.classList.add('page-out');setTimeout(()=>location.href=href,300);}
+
+document.addEventListener('keydown',e=>{
+  if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();document.getElementById('cmdk').classList.contains('open')?closeCmdk():openCmdk();return;}
+  if(document.getElementById('cmdk').classList.contains('open')){
+    if(e.key==='Escape')closeCmdk();
+    else if(e.key==='ArrowDown'){e.preventDefault();moveCmdk(1);}
+    else if(e.key==='ArrowUp'){e.preventDefault();moveCmdk(-1);}
+    else if(e.key==='Enter'){e.preventDefault();runCmdk(cmdkSel);}
+  }
+});
+document.getElementById('cmdk-input')?.addEventListener('input',e=>filterCmdk(e.target.value));
+document.getElementById('cmdk')?.addEventListener('click',e=>{if(e.target.id==='cmdk')closeCmdk();});
+
+/* ── 4. VISITOR XP / ACHIEVEMENT SYSTEM ── */
+const ACHIEVEMENTS=[
+  {id:'arrival',ic:'👋',t:'First Contact',d:'Landed on the portfolio'},
+  {id:'explorer',ic:'🧭',t:'Explorer',d:'Viewed 4+ sections'},
+  {id:'deepdive',ic:'🔍',t:'Deep Diver',d:'Viewed every section'},
+  {id:'commander',ic:'⌘',t:'Power User',d:'Opened the command palette'},
+  {id:'themer',ic:'🎨',t:'Stylist',d:'Changed the theme'},
+  {id:'chibi',ic:'🤖',t:'AI Friend',d:'Interacted with Shru-AI'},
+  {id:'recruiter',ic:'💼',t:'Recruiter',d:'Downloaded the resume'},
+  {id:'konami',ic:'🎮',t:'Secret Keeper',d:'Found the Konami code'},
+];
+let unlocked=JSON.parse(safeLS.get('ss_unlocked')||'[]');
+function unlock(id){
+  if(unlocked.includes(id))return;
+  const a=ACHIEVEMENTS.find(x=>x.id===id);if(!a)return;
+  unlocked.push(id);safeLS.set('ss_unlocked',JSON.stringify(unlocked));
+  showXpToast(a.ic,a.t,a.d);updateXp();
+}
+function showXpToast(ic,title,sub){
+  document.getElementById('xpt-icon').textContent=ic;
+  document.getElementById('xpt-title').textContent='Unlocked: '+title;
+  document.getElementById('xpt-sub').textContent=sub;
+  const t=document.getElementById('xp-toast');t.classList.add('show');
+  clearTimeout(window._xpT);window._xpT=setTimeout(()=>t.classList.remove('show'),3400);
+}
+function updateXp(){
+  const pct=Math.round(unlocked.length/ACHIEVEMENTS.length*100);
+  document.getElementById('xp-bar').style.width=pct+'%';
+  const badge=document.getElementById('xp-badge');badge.classList.add('show');
+  const rank=pct>=100?'Legend':pct>=75?'Master':pct>=50?'Adept':pct>=25?'Explorer':'Rookie';
+  document.getElementById('xp-text').textContent=`${rank} · ${pct}%`;
+}
+function openAchModal(){
+  document.getElementById('ach-list').innerHTML=ACHIEVEMENTS.map(a=>`<div class="ach-list-item ${unlocked.includes(a.id)?'unlocked':''}"><span class="ali-ic">${a.ic}</span><div><div class="ali-t">${a.t}</div><div class="ali-d">${unlocked.includes(a.id)?a.d:'🔒 Locked'}</div></div><i class="bi bi-check-circle-fill ali-check"></i></div>`).join('');
+  document.getElementById('amc-progress').textContent=`${unlocked.length}/${ACHIEVEMENTS.length}`;
+  document.getElementById('ach-modal').classList.add('open');
+}
+function closeAchModal(){document.getElementById('ach-modal').classList.remove('open');}
+document.getElementById('ach-modal')?.addEventListener('click',e=>{if(e.target.id==='ach-modal')closeAchModal();});
+
+// section-view tracking for explorer/deepdive
+const viewedSections=new Set();
+const trackSections=['about','skills','projects','experience','research','achievements','contact'];
+const secObs=new IntersectionObserver(es=>{es.forEach(x=>{if(x.isIntersecting){viewedSections.add(x.target.id);if(viewedSections.size>=4)unlock('explorer');if(trackSections.every(s=>viewedSections.has(s)))unlock('deepdive');}});},{threshold:.4});
+trackSections.forEach(id=>{const el=document.getElementById(id);if(el)secObs.observe(el);});
+
+function initFeatures(){
+  buildThemeMenu();applyTheme(curTheme);
+  const ci=document.getElementById('cmdk-input');if(ci&&!ci._bound){ci._bound=1;ci.addEventListener('input',e=>filterCmdk(e.target.value));}
+  const cm=document.getElementById('cmdk');if(cm&&!cm._bound){cm._bound=1;cm.addEventListener('click',e=>{if(e.target.id==='cmdk')closeCmdk();});}
+  const am=document.getElementById('ach-modal');if(am&&!am._bound){am._bound=1;am.addEventListener('click',e=>{if(e.target.id==='ach-modal')closeAchModal();});}
+  setTimeout(()=>{unlock('arrival');updateXp();},1500);
+}
+if(document.getElementById('theme-menu')){initFeatures();}
+else{window.addEventListener('DOMContentLoaded',initFeatures);document.addEventListener('readystatechange',()=>{if(document.readyState==='complete'&&!document.querySelector('.theme-opt'))initFeatures();});}
+
+
+
+/* ── 5. LIVE SKILLS RADAR CHART (animated, data-driven) ── */
+(function radar(){
+  const cv=document.getElementById('radar');if(!cv)return;
+  const ctx=cv.getContext('2d');
+  const axes=[{k:'AI / ML',v:90,c:'#8b5cf6'},{k:'Generative AI',v:85,c:'#06d6a0'},{k:'Data & BI',v:87,c:'#f59e0b'},{k:'Full-Stack',v:86,c:'#22d3ee'},{k:'Cloud/DevOps',v:80,c:'#ec4899'},{k:'Programming',v:88,c:'#a3e635'}];
+  const cx=170,cy=170,R=120,N=axes.length;
+  let prog=0,started=false,raf;
+  document.getElementById('radar-legend').innerHTML=axes.map(a=>`<div class="radar-leg-item"><span class="rl-dot" style="background:${a.c}"></span>${a.k}<span class="rl-val">${a.v}%</span></div>`).join('');
+  function pt(i,r){const ang=-Math.PI/2+i*2*Math.PI/N;return[cx+Math.cos(ang)*r,cy+Math.sin(ang)*r];}
+  function draw(){
+    ctx.clearRect(0,0,340,340);
+    // grid rings
+    for(let ring=1;ring<=4;ring++){ctx.beginPath();for(let i=0;i<=N;i++){const[x,y]=pt(i%N,R*ring/4);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);}ctx.strokeStyle='rgba(255,255,255,.07)';ctx.lineWidth=1;ctx.stroke();}
+    // spokes + labels
+    ctx.font='10px "JetBrains Mono",monospace';ctx.fillStyle='rgba(238,238,255,.5)';ctx.textAlign='center';
+    axes.forEach((a,i)=>{const[x,y]=pt(i,R);ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(x,y);ctx.strokeStyle='rgba(255,255,255,.06)';ctx.stroke();const[lx,ly]=pt(i,R+18);ctx.fillText(a.k,lx,ly+3);});
+    // data polygon (animated)
+    ctx.beginPath();
+    axes.forEach((a,i)=>{const[x,y]=pt(i,R*(a.v/100)*prog);i===0?ctx.moveTo(x,y):ctx.lineTo(x,y);});
+    ctx.closePath();
+    const grad=ctx.createLinearGradient(50,50,290,290);grad.addColorStop(0,'rgba(139,92,246,.4)');grad.addColorStop(1,'rgba(6,214,160,.4)');
+    ctx.fillStyle=grad;ctx.fill();ctx.strokeStyle='rgba(139,92,246,.9)';ctx.lineWidth=2;ctx.stroke();
+    // vertices
+    axes.forEach((a,i)=>{const[x,y]=pt(i,R*(a.v/100)*prog);ctx.beginPath();ctx.arc(x,y,3.5,0,7);ctx.fillStyle=a.c;ctx.fill();});
+    if(prog<1){prog=Math.min(1,prog+.03);raf=requestAnimationFrame(draw);}
+  }
+  new IntersectionObserver((es,o)=>{es.forEach(x=>{if(x.isIntersecting&&!started){started=true;draw();o.disconnect();}});},{threshold:.3}).observe(cv);
+})();
+
+
+/* ── CONTACT FORM (Formspree with mailto fallback) ── */
+// To receive messages in your inbox: create a free form at formspree.io and paste the endpoint below.
+const FORMSPREE_ENDPOINT = ''; // e.g. 'https://formspree.io/f/xxxxxxxx'
+async function sendContact(e){
+  e.preventDefault();
+  const name=document.getElementById('cf-name').value.trim();
+  const email=document.getElementById('cf-email').value.trim();
+  const subject=document.getElementById('cf-subject').value.trim()||'Portfolio contact';
+  const message=document.getElementById('cf-message').value.trim();
+  const note=document.getElementById('cf-note'),btn=document.getElementById('cf-btn');
+  if(!name||!email||!message){note.textContent='Please fill in all required fields.';note.className='cf-note err';return false;}
+  if(FORMSPREE_ENDPOINT){
+    btn.disabled=true;note.textContent='Sending…';note.className='cf-note';
+    try{
+      const r=await fetch(FORMSPREE_ENDPOINT,{method:'POST',headers:{'Accept':'application/json','Content-Type':'application/json'},body:JSON.stringify({name,email,subject,message})});
+      if(r.ok){note.textContent='✅ Message sent! Shruti will get back to you soon.';note.className='cf-note ok';document.getElementById('contactForm').reset();if(window.unlock)unlock('recruiter');}
+      else throw new Error('fail');
+    }catch(err){note.textContent='Could not send — opening your email app instead…';note.className='cf-note';mailtoFallback(name,email,subject,message);}
+    btn.disabled=false;
+  } else {
+    // graceful fallback: opens email client pre-filled
+    mailtoFallback(name,email,subject,message);
+    note.textContent='✅ Opening your email app with the message ready to send!';note.className='cf-note ok';
+    if(window.unlock)unlock('recruiter');
+  }
+  return false;
+}
+function mailtoFallback(name,email,subject,message){
+  const body=encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+  window.location.href=`mailto:shrutisrivastava502102@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+}
+
+
+/* ── IMPACT NUMBER COUNT-UP ── */
+(function impactCounters(){
+  const items=document.querySelectorAll('.impact-num[data-count]');if(!items.length)return;
+  const obs=new IntersectionObserver(es=>{es.forEach(x=>{
+    if(x.isIntersecting){const el=x.target,target=+el.dataset.count;let cur=0;const step=Math.max(1,Math.round(target/40));
+      const t=setInterval(()=>{cur+=step;if(cur>=target){cur=target;clearInterval(t);}el.textContent=cur;},22);
+      obs.unobserve(el);}
+  });},{threshold:.5});
+  items.forEach(el=>obs.observe(el));
+})();
+
+
+/* ── EXTRA FEATURE: SAVE CONTACT (vCard .vcf) ── */
+function saveVCard(){
+  const p=D().profile;
+  const vcf=`BEGIN:VCARD
+VERSION:3.0
+N:Srivastava;Shruti;;;
+FN:Shruti Srivastava
+TITLE:Data Scientist & AI/ML Engineer
+EMAIL;TYPE=INTERNET:${p.email||'shrutisrivastava502102@gmail.com'}
+TEL;TYPE=CELL:${p.phone||'+91 9910367552'}
+URL:https://shruti502102.github.io/Portfolio/
+URL;TYPE=LinkedIn:${p.linkedin||'https://www.linkedin.com/in/shruti-srivastava-2b2101269/'}
+URL;TYPE=GitHub:${p.github||'https://github.com/Shruti502102/'}
+ADR;TYPE=HOME:;;Greater Noida;Uttar Pradesh;201310;India
+NOTE:B.Tech CSE (Data Science), First Division with Honours. 6 internships, 2 published papers.
+END:VCARD`;
+  const blob=new Blob([vcf],{type:'text/vcard'});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='Shruti_Srivastava.vcf';document.body.appendChild(a);a.click();document.body.removeChild(a);
+  showToast('📇 Contact card downloaded!');if(window.unlock)unlock('recruiter');
+}
+
+/* ── EXTRA FEATURE: COPY EMAIL (clipboard w/ fallback) ── */
+function copyEmail(btn){
+  const email=(D().profile.email)||'shrutisrivastava502102@gmail.com';
+  const done=()=>{const orig=btn.innerHTML;btn.innerHTML='<i class="bi bi-check-lg"></i> Copied!';showToast('📋 Email copied to clipboard!');setTimeout(()=>btn.innerHTML=orig,2000);};
+  if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(email).then(done).catch(()=>fallbackCopy(email,done));}
+  else fallbackCopy(email,done);
+}
+function fallbackCopy(text,cb){
+  const ta=document.createElement('textarea');ta.value=text;ta.style.position='fixed';ta.style.opacity='0';document.body.appendChild(ta);ta.select();
+  try{document.execCommand('copy');cb();}catch(e){showToast('Copy failed — email: '+text);}
+  document.body.removeChild(ta);
+}
+
+/* ── EXTRA FEATURE: SHARE (Web Share API w/ fallback) ── */
+function sharePortfolio(){
+  const data={title:'Shruti Srivastava — Portfolio',text:'Check out Shruti Srivastava, Data Scientist & AI/ML Engineer!',url:'https://shruti502102.github.io/Portfolio/'};
+  if(navigator.share){navigator.share(data).then(()=>{if(window.unlock)unlock('explorer');}).catch(()=>{});}
+  else{copyEmail;const url=data.url;if(navigator.clipboard){navigator.clipboard.writeText(url).then(()=>showToast('🔗 Portfolio link copied!')).catch(()=>showToast('Share: '+url));}else showToast('Share this link: '+url);}
+}
+
+
+/* ── PWA: SERVICE WORKER + INSTALL PROMPT ── */
+if('serviceWorker' in navigator&&location.protocol.startsWith('http')){
+  window.addEventListener('load',()=>{navigator.serviceWorker.register('sw.js').catch(()=>{});});
+}
+let deferredPrompt=null;
+window.addEventListener('beforeinstallprompt',e=>{e.preventDefault();deferredPrompt=e;const b=document.getElementById('install-fab');if(b)b.classList.add('show');});
+function installApp(){
+  if(!deferredPrompt){showToast('Use your browser menu → "Add to Home Screen"');return;}
+  deferredPrompt.prompt();
+  deferredPrompt.userChoice.then(c=>{if(c.outcome==='accepted'){showToast('🎉 App installed!');if(window.unlock)unlock('themer');}deferredPrompt=null;document.getElementById('install-fab').classList.remove('show');});
+}
+window.addEventListener('appinstalled',()=>{const b=document.getElementById('install-fab');if(b)b.classList.remove('show');});
+
+
+/* ── TESTIMONIALS ── */
+function renderTestimonials(){
+  const el=document.getElementById('testi-wrap');if(!el||!D().testimonials)return;
+  el.innerHTML=D().testimonials.map(t=>`<div class="testi-card rev"><div class="quote-mark">"</div><p class="testi-text">${escA(t.text)}</p><div class="testi-author"><div class="testi-avatar">${t.avatar||'👤'}</div><div><div class="testi-name">${escA(t.name)}</div><div class="testi-role">${escA(t.role)}</div></div></div></div>`).join('');
+  setTimeout(()=>{const o=new IntersectionObserver(e=>{e.forEach(x=>{if(x.isIntersecting)x.target.classList.add('in');});},{threshold:.1});el.querySelectorAll('.rev').forEach(c=>o.observe(c));},50);
+}
+/* ── NOW / STATUS ── */
+function renderNow(){
+  if(!D().now)return;
+  const st=document.getElementById('now-status-text');if(st)st.textContent=D().now.status||'Open to opportunities';
+  const list=document.getElementById('now-list');if(list)list.innerHTML=(D().now.items||[]).map(i=>`<div class="now-item">${escA(i)}</div>`).join('');
+}
+/* ── CASE STUDY MODAL ── */
+function openCase(id){
+  const cs=D().caseStudies&&D().caseStudies[id];const proj=D().projects.find(p=>p.id===id);if(!cs||!proj)return;
+  document.getElementById('case-title').textContent=proj.title;
+  document.getElementById('case-tags').innerHTML=(cs.stack||proj.tags||[]).map(t=>`<span>${escA(t)}</span>`).join('');
+  document.getElementById('case-problem').textContent=cs.problem;
+  document.getElementById('case-solution').textContent=cs.solution;
+  document.getElementById('case-impact').textContent=cs.impact;
+  document.getElementById('case-modal').classList.add('open');
+  if(window.unlock)unlock('explorer');
+}
+function closeCase(){document.getElementById('case-modal').classList.remove('open');}
+document.getElementById('case-modal')?.addEventListener('click',e=>{if(e.target.id==='case-modal')closeCase();});
+/* ── KEYBOARD SHORTCUTS ── */
+function openKbd(){document.getElementById('kbd-modal').classList.add('open');}
+function closeKbd(){document.getElementById('kbd-modal').classList.remove('open');}
+document.getElementById('kbd-modal')?.addEventListener('click',e=>{if(e.target.id==='kbd-modal')closeKbd();});
+let gPressed=false;
+document.addEventListener('keydown',e=>{
+  const typing=/^(INPUT|TEXTAREA|SELECT)$/.test(document.activeElement.tagName)||document.getElementById('cmdk').classList.contains('open');
+  if(typing)return;
+  if(e.key==='?'){e.preventDefault();openKbd();}
+  else if(e.key==='a'||e.key==='A'){if(typeof openAchModal==='function')openAchModal();}
+  else if(e.key==='t'||e.key==='T'){toggleThemeMenu();}
+  else if(e.key==='g'||e.key==='G'){gPressed=true;setTimeout(()=>gPressed=false,600);}
+  else if((e.key==='h'||e.key==='H')&&gPressed){window.scrollTo({top:0,behavior:'smooth'});gPressed=false;}
+  else if(e.key==='Escape'){closeCase();closeKbd();}
+});
+
+
+/* ═══════ NEW ANIMATION MODULES ═══════ */
+/* 1. Tech-stack marquee */
+(function marquee(){
+  const track=document.getElementById('marquee-track');if(!track)return;
+  const techs=[['bi-filetype-py','Python'],['bi-diagram-3','TensorFlow'],['bi-robot','PyTorch'],['bi-cpu','Scikit-learn'],['bi-cloud','Google Cloud'],['bi-cloud-fill','AWS'],['bi-window','React.js'],['bi-server','Flask'],['bi-lightning','FastAPI'],['bi-bar-chart','Power BI'],['bi-database','SQL'],['bi-git','Git'],['bi-box','Docker'],['bi-braces','JavaScript'],['bi-cup-hot','Java'],['bi-boxes','Vertex AI'],['bi-chat-dots','Gemini API'],['bi-controller','Unity']];
+  const html=techs.map(([ic,n])=>`<span class="marquee-item"><i class="bi ${ic}"></i>${n}</span>`).join('');
+  track.innerHTML=html+html; // duplicate for seamless loop
+})();
+
+/* 2. 3D tilt on cards */
+(function tilt(){
+  const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;if(reduce)return;
+  function bind(){
+    document.querySelectorAll('.pc,.testi-card,.impact-item,.pub-card').forEach(card=>{
+      if(card._tilt)return;card._tilt=1;card.classList.add('tilt3d');
+      card.addEventListener('mousemove',e=>{
+        const r=card.getBoundingClientRect();
+        const px=(e.clientX-r.left)/r.width-.5,py=(e.clientY-r.top)/r.height-.5;
+        card.style.transform=`perspective(800px) rotateY(${px*7}deg) rotateX(${-py*7}deg) translateY(-4px)`;
+      });
+      card.addEventListener('mouseleave',()=>{card.style.transform='';});
+    });
+  }
+  bind();setInterval(bind,1500); // re-bind after dynamic renders
+})();
+
+/* 3. Confetti burst */
+function confettiBurst(){
+  const colors=['#8b5cf6','#06d6a0','#f59e0b','#ec4899','#22d3ee'];
+  for(let i=0;i<70;i++){
+    const c=document.createElement('div');c.className='confetti-piece';
+    c.style.left=Math.random()*100+'vw';
+    c.style.background=colors[i%colors.length];
+    c.style.animationDuration=(2+Math.random()*1.6)+'s';
+    c.style.animationDelay=(Math.random()*.3)+'s';
+    if(Math.random()>.5)c.style.borderRadius='50%';
+    document.body.appendChild(c);
+    setTimeout(()=>c.remove(),4200);
+  }
+}
+// fire confetti when an achievement unlocks (hook into showXpToast)
+if(typeof showXpToast==='function'){
+  const _origXp=showXpToast;
+  showXpToast=function(ic,t,s){_origXp(ic,t,s);confettiBurst();};
+}
+
+/* 4. Ripple on buttons */
+(function ripple(){
+  document.addEventListener('click',e=>{
+    const btn=e.target.closest('.btnp,.btno,.btn-hire,.cf-submit,.npill');
+    if(!btn)return;
+    const r=btn.getBoundingClientRect();
+    const circle=document.createElement('span');circle.className='ripple';
+    const size=Math.max(r.width,r.height);
+    circle.style.width=circle.style.height=size+'px';
+    circle.style.left=(e.clientX-r.left-size/2)+'px';
+    circle.style.top=(e.clientY-r.top-size/2)+'px';
+    const pos=getComputedStyle(btn).position;
+    if(pos==='static')btn.style.position='relative';
+    btn.style.overflow='hidden';
+    btn.appendChild(circle);
+    setTimeout(()=>circle.remove(),650);
+  });
+})();
+
+/* 5. Parallax glow orbs on scroll */
+(function parallax(){
+  const o1=document.querySelector('.go1'),o2=document.querySelector('.go2');if(!o1)return;
+  let ticking=false;
+  window.addEventListener('scroll',()=>{
+    if(ticking)return;ticking=true;
+    requestAnimationFrame(()=>{
+      const y=window.scrollY;
+      o1.style.transform=`translateY(${y*.15}px)`;
+      o2.style.transform=`translateY(${-y*.1}px)`;
+      ticking=false;
+    });
+  },{passive:true});
+})();
+
+/* KONAMI */
+let kc=[];const kk=['ArrowUp','ArrowUp','ArrowDown','ArrowDown','ArrowLeft','ArrowRight','ArrowLeft','ArrowRight','KeyB','KeyA'];
+document.addEventListener('keydown',e=>{kc.push(e.code);if(kc.length>10)kc.shift();if(JSON.stringify(kc)===JSON.stringify(kk)){setPose('dance',null);cSay('🎉 Konami Code! Secret unlocked! Shruti approves!',true);if(window.unlock)unlock('konami');kc=[];}});
+</script>
+<!-- Universal Edit Modal -->
+<div id="edit-modal">
+  <div class="edit-modal-card">
+    <h3 id="edit-modal-title"><i class="bi bi-pencil-square"></i> Edit</h3>
+    <div id="edit-modal-body"></div>
+    <div class="edit-modal-btns">
+      <button class="btn-save" onclick="submitEditModal()"><i class="bi bi-check2-circle"></i> Save Changes</button>
+      <button class="btn-del" onclick="closeEditModal()" style="background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--w);"><i class="bi bi-x-lg"></i> Cancel</button>
+    </div>
+  </div>
+</div>
+<!-- ═══ COMMAND PALETTE ═══ -->
+<div id="cmdk">
+  <div class="cmdk-box">
+    <div class="cmdk-input-row">
+      <i class="bi bi-search"></i>
+      <input id="cmdk-input" placeholder="Search sections, projects, actions… (try 'resume' or 'AI')" autocomplete="off"/>
+      <span class="cmdk-hint">ESC</span>
+    </div>
+    <div class="cmdk-results" id="cmdk-results"></div>
+    <div class="cmdk-foot">
+      <span><kbd>↑</kbd><kbd>↓</kbd> navigate</span>
+      <span><kbd>↵</kbd> open</span>
+      <span><kbd>esc</kbd> close</span>
+    </div>
+  </div>
+</div>
+
+<!-- ═══ THEME SWITCHER ═══ -->
+<button id="install-fab" onclick="installApp()"><i class="bi bi-download"></i> Install App</button>
+<div id="theme-fab" onclick="toggleThemeMenu()" title="Change theme"><i class="bi bi-palette-fill"></i></div>
+<div id="theme-menu"></div>
+
+<!-- ═══ XP TOAST ═══ -->
+<div class="xp-toast" id="xp-toast"><div class="xpt-icon" id="xpt-icon">🏆</div><div><div class="xpt-title" id="xpt-title">Achievement!</div><div class="xpt-sub" id="xpt-sub"></div></div></div>
+
+<!-- ═══ ACHIEVEMENTS MODAL ═══ -->
+<div id="ach-modal">
+  <div class="ach-modal-card">
+    <h3><i class="bi bi-trophy-fill" style="color:var(--g)"></i> Explorer Achievements</h3>
+    <div class="amc-sub">Unlock these by exploring the portfolio. Progress: <span id="amc-progress">0/0</span></div>
+    <div id="ach-list"></div>
+    <button class="btn-del" onclick="closeAchModal()" style="width:100%;margin-top:12px;background:rgba(255,255,255,.06);border-color:rgba(255,255,255,.12);color:var(--w);justify-content:center;">Close</button>
+  </div>
+</div>
+<!-- CASE STUDY MODAL -->
+<div id="case-modal">
+  <div class="case-card">
+    <h2 id="case-title">Project</h2>
+    <div class="case-tags" id="case-tags"></div>
+    <div class="case-block problem"><h4>The Problem</h4><p id="case-problem"></p></div>
+    <div class="case-block solution"><h4>My Solution</h4><p id="case-solution"></p></div>
+    <div class="case-block impact"><h4>The Impact</h4><p id="case-impact"></p></div>
+    <button class="case-close" onclick="closeCase()">Close</button>
+  </div>
+</div>
+<!-- KEYBOARD SHORTCUTS MODAL -->
+<div id="kbd-modal">
+  <div class="kbd-card">
+    <h3><i class="bi bi-keyboard"></i> Keyboard Shortcuts</h3>
+    <div class="kbd-row"><span>Command palette</span><div class="kbd-keys"><kbd>Ctrl</kbd><kbd>K</kbd></div></div>
+    <div class="kbd-row"><span>This shortcuts panel</span><div class="kbd-keys"><kbd>?</kbd></div></div>
+    <div class="kbd-row"><span>Achievements</span><div class="kbd-keys"><kbd>A</kbd></div></div>
+    <div class="kbd-row"><span>Change theme</span><div class="kbd-keys"><kbd>T</kbd></div></div>
+    <div class="kbd-row"><span>Top of page</span><div class="kbd-keys"><kbd>G</kbd><kbd>H</kbd></div></div>
+    <div class="kbd-row"><span>Close any dialog</span><div class="kbd-keys"><kbd>Esc</kbd></div></div>
+    <button class="case-close" onclick="closeKbd()">Got it</button>
+  </div>
+</div>
+</body>
+</html>
