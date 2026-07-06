@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://shruti502102.github.io/Portfolio/sitemap.xml
