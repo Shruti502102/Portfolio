@@ -26,7 +26,7 @@ window.SS_DATA = window.SS_DATA || {
     leetcode: "https://leetcode.com/u/Shruti502102/"
   },
   resumes: [
-    { id: 1, role: "Master Resume (All-in-One)", filename: "Shruti_Srivastava_Resume.pdf", dataUrl: null, added: "2026-06" },
+    { id: 1, role: "Master Resume (All-in-One)", filename: "Shruti_Srivastava_Resume.pdf", filePath: "resume111.pdf", dataUrl: null, added: "2026-06" },
     { id: 2, role: "Software Engineer", filename: "resume_swe.pdf", dataUrl: null, added: "2026-06" },
     { id: 3, role: "AI/ML Engineer", filename: "resume_ai.pdf", dataUrl: null, added: "2026-06" },
     { id: 4, role: "Data Scientist", filename: "resume_ds.pdf", dataUrl: null, added: "2026-06" },
