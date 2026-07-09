@@ -1,7 +1,7 @@
 // Shared data store — loaded by all pages
 // Version check: clears stale localStorage so achievements/resumes always load correctly
 (function(){
-  const VER='ss_v9_2026';
+  const VER='ss_v10_2026';
   try{
     if(localStorage.getItem('ss_version')!==VER){
       localStorage.removeItem('ss_portfolio_data');
@@ -107,6 +107,26 @@ window.SS_DATA = window.SS_DATA || {
     2: { problem:"Manual resume screening is slow and inconsistent across large applicant pools.", solution:"Vectorised resumes with NLP + Vertex AI semantic embeddings, then used an LLM to score candidates against job descriptions via a Flask REST API.", impact:"92% matching accuracy, reducing manual screening time by 60%.", stack:["Python","Gemini API","Vertex AI","Flask","RAG"] },
     3: { problem:"Sales teams needed real-time forecasts instead of static monthly reports.", solution:"Automated an ETL pipeline into Azure SQL and combined ARIMA with a Random Forest ensemble, surfaced via a live Power BI dashboard.", impact:"88% forecast accuracy with real-time KPI drill-throughs for stakeholders.", stack:["Python","ARIMA","Random Forest","Power BI","Azure SQL"] }
   },
+  skills: [
+    { id:1, name:"Programming", icon:"bi-code-slash", items:[
+      {n:"Python",w:92},{n:"HTML / CSS",w:95},{n:"JavaScript",w:85},{n:"SQL",w:87},{n:"Java",w:82},{n:"R",w:75}]},
+    { id:2, name:"AI / Machine Learning", icon:"bi-robot", items:[
+      {n:"Pandas & NumPy",w:90},{n:"Scikit-learn",w:90},{n:"TensorFlow / Keras",w:85},{n:"NLP — NLTK/spaCy",w:82},{n:"Feature Engineering",w:85},{n:"BERT / Transformers",w:78}]},
+    { id:3, name:"Generative AI", icon:"bi-stars", items:[
+      {n:"LLMs & Vertex AI",w:88},{n:"Gemini API / PaLM",w:85},{n:"RAG Pipelines",w:82},{n:"Prompt Engineering",w:85}]},
+    { id:4, name:"Cloud & DevOps", icon:"bi-cloud-fill", items:[
+      {n:"Google Cloud/Vertex",w:85},{n:"Git & GitHub",w:90},{n:"AWS / Azure",w:75},{n:"Docker & CI/CD",w:72}]},
+    { id:5, name:"BI & Full-Stack", icon:"bi-bar-chart-fill", items:[
+      {n:"Power BI & Tableau",w:87},{n:"React.js",w:88},{n:"Flask / FastAPI",w:85},{n:"REST APIs & MySQL",w:86}]},
+    { id:6, name:"Enterprise & XR", icon:"bi-building", items:[
+      {n:"ServiceNow ITSM",w:80},{n:"Cisco Networking",w:76},{n:"Unity & Meta Spark",w:80},{n:"Vuforia Engine",w:75}]}
+  ],
+  impacts: [
+    { id:1, num:91, suf:"%", label:"Multimodal AI accuracy", sub:"MindGuard · 240 sessions" },
+    { id:2, num:92, suf:"%", label:"Resume-matcher accuracy", sub:"−60% screening time" },
+    { id:3, num:30, suf:"%", label:"LLM relevance boost", sub:"Google Cloud internship" },
+    { id:4, num:35, suf:"%", label:"Faster network setup", sub:"Python automation · Cisco" }
+  ],
   now: {
     status: "Open to opportunities",
     items: ["🎓 Graduated B.Tech CSE (Data Science) — First Division with Honours","🔬 Extending MindGuard AI research on multimodal fusion","☁️ Deepening Google Cloud Vertex AI & production LLM systems","💼 Seeking Software Engineer / Data Scientist / AI-ML roles"]
